@@ -1,0 +1,111 @@
+{{template "head.html" .}}
+<body class="page page-id-2591 page-template page-template-template-fullwidth-php responsive-on">
+<!-- .main-container -->
+<div class="main-container">
+
+	<div class="bg"></div>
+	{{template "header.html" .}}
+	<div class="container">
+
+		<!-- .row -->
+		<div class="row">
+
+			<div class="content page-content no-sidebar span12">
+
+				<div class="content-inner">
+
+					<article class="post-2591 page type-page status-publish hentry" >
+
+						<div class="entry-header">
+
+							<h1 class="entry-title page-title">
+								<span>创建话题</span>
+							</h1>
+
+						</div>
+
+						<div class="entry-content">
+							{{template "msgerr.html" .}}
+							<form action="" method="post">
+								<div class="sc row-fluid">
+									<div class="span6">
+										<div>
+											<h5>话题标题:</h5>
+											<input type="text" name="title" value="" class="input-xxlarge"></div>
+									</div>
+									<div class="span6">
+										<div>
+											<h5>选择节点:</h5>
+											<div class="controls">
+												<select id="selectError" name="nodeid">
+													{{if .nodes}}
+              											{{range .nodes}}
+														<option value="{{.Id}}">{{.Title}}</option>
+														{{end}}
+              										{{else}}
+														<option value="0">尚无节点</option>
+													{{end}}
+												</select>
+												<span class="help-inline">（选择本话题归属的上级节点，必选）</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="sc row-fluid">
+									<div class="span12">
+										<div class="well">
+											<h5>话题内容：</h5>
+											<textarea class="editor" name="content" colspan="3" rowspan="20" style="z-index:9900;"></textarea>
+										</div>
+										<input type="submit" class="btn" value="提交"></div>
+								</div>
+							</form>
+							{{template "editor-tinymce.html" .}}
+						</div>
+
+					</article>
+
+				</div>
+
+			</div>
+			<!-- /.content -->
+
+		</div>
+		<!-- /.row -->
+
+		<div class="breadcrumb breadcrumbs">
+			<div class="breadcrumb-trail">
+				<span class="trail-before">
+					You are here
+					<span class="sep"> <i class="icon-angle-right"></i>
+					</span>
+				</span>
+				<a href="../index.html" title="Buzz Theme" rel="home" class="trail-begin">Home</a>
+				<span class="sep"> <i class="icon-angle-right"></i>
+				</span>
+				<span class="trail-end">创建话题</span>
+			</div>
+		</div>
+	</div>
+	<!-- /.container -->{{template "footer.html" .}}</div>
+<!-- /.main-container -->
+
+<script type='text/javascript' src='/static/plugins/contact-form-7/includes/js/jquery.form.min-ver=3.36.0-2013.06.16.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"\/static\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
+/* ]]>*/</script>
+<script type='text/javascript' src='/static/plugins/contact-form-7/includes/js/scripts-ver=3.4.2.js'></script>
+<script type='text/javascript' src='/static/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='/static/bootstrap-2.1.1/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/static/assets/js/flexslider-ver=2.1.js'></script>
+<script type='text/javascript' src='/static/library/media-player/mediaelement-and-player.min-ver=3.5.1.js'></script>
+<script type='text/javascript' src='/static/assets/js/jquery.fitvids-ver=3.5.1.js'></script>
+<script type='text/javascript' src='/static/assets/js/jquery.imagesloaded.min-ver=1.js'></script>
+<script type='text/javascript' src='/static/assets/js/jquery.jcarousel-ver=1.js'></script>
+<script type='text/javascript' src='/static/assets/js/engine-ver=1374933754.js'></script>
+<script type='text/javascript' src='/static/assets/js/jquery.tweet-ver=3.5.1.js'></script>
+
+</body>
+
+</html>

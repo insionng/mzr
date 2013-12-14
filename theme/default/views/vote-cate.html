@@ -1,0 +1,7 @@
+<span class="btn-group pull-left" style="margin-top:10px;margin-right:10px;">
+	<button class="btn btn-mini btn-inverse" onclick='javascript:$.ajax({ url: "/like/topic/{{.Id}}/", context: document.body, success: function(){
+               alert("有用成功！");
+            }});'>有用 ({{.Hotup}})</button>
+	<a href="/new/comment" class="btn btn-mini btn-inverse" title="回复话题">回复 ({{.ReplyCount}})</a>
+	<a href="/topic/2/" class="btn btn-mini btn-inverse" title="阅读话题">下载 (8)</a>
+</span>

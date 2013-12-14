@@ -1,0 +1,6 @@
+<div class="btn-group pull-right" style="margin-top:10px;margin-right:10px;">
+	<button class="btn btn-inverse" onclick='javascript:$.get("/like/topic/{{.article.Id}}/?ver="+(new Date()).valueOf(), {Action:"get"}, function (data, textStatus){this;$("#score-{{.article.Id}}").html(data);});'><i class="icon-chevron-up icon-white"></i>有用</button>
+	<span id="score-{{.article.Id}}" class="btn btn-inverse" title="{{if .article.Hotscore}}{{.article.Hotscore}}{{else}}0{{end}}分">{{if .article.Hotscore}}{{.article.Hotscore}}{{else}}0{{end}}</span>
+	<button class="btn btn-inverse" onclick='javascript:$.get("/hate/topic/{{.article.Id}}/?ver="+(new Date()).valueOf(), {Action:"get"}, function (data, textStatus){this;$("#score-{{.article.Id}}").html(data);});'>
+<i class="icon-chevron-down icon-white"></i> 没用</button>
+</div>

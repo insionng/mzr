@@ -1,0 +1,88 @@
+  <div id="header">
+    <div class="inner">
+      <div class="bd clx">
+        <div class="logo">
+          <a href="/" title="梨花树">
+            <img src="/static/mzr/img/logo-pink.png" alt="梨花树" height="26px" width="100px"/>
+          </a>
+        </div>
+
+{{$catpage:=.catpage}}
+        <div id="nav" class="menu-nav-container">
+          <ul id="menu-nav" class="menu">
+            <li id="menu-item-4036" class="menu-item menu-item-type-custom menu-item-object-custom {{if compare "home" $catpage}} current-menu-item current_page_item {{end}} menu-item-4036">
+              <a title="返回首页" href="/">首页</a>
+            </li>
+{{if .categorys}}
+            <li id="menu-item-4039" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-parent-item menu-item-4039">
+              <a title="分类" href="###">分类</a>
+              <ul class="sub-menu">
+        {{range .categorys}}
+                <li id="menu-item-{{.Id}}" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-{{.Id}}">
+                  <a title="{{.Title}}" href="/category/{{.Title}}/">{{.Title}}</a>
+                </li>
+        {{end}}
+              </ul>
+            </li>
+{{end}}
+
+{{if .nodes_views_4}}
+        {{range .nodes_views_4}}
+            <li id="menu-item-{{.Id}}" class="menu-item menu-item-type-taxonomy menu-item-object-category {{if compare .Title $catpage}} current-menu-item current_page_item {{end}} menu-item-{{.Id}}">
+              <a title="{{.Title}}" href="/node/{{.Title}}/">{{.Title}}</a>
+            </li>
+        {{end}}
+{{end}}
+
+{{if .userid}}
+            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-parent-item menu-item-4039">
+              <a title="{{.username}}" href="###">{{.username}}</a>
+              <ul class="sub-menu">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6062">
+                  <a title="上传图片" href="/new/topic/">上传图片</a>
+                </li>
+                {{/*
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11873">
+                  <a title="采集图片" href="/catch/topic/">采集图片</a>
+                </li>
+                */}}
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11873">
+                  <a title="创建分类" href="/new/category/">创建分类</a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11873">
+                  <a title="创建节点" href="/new/node/">创建节点</a>
+                </li>
+      {{if compare .userrole -1000}}
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11873">
+                  <a title="编辑分类" href="/edit/category/">编辑分类</a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11873">
+                  <a title="编辑节点" href="/edit/node/">编辑节点</a>
+                </li>
+      {{end}}
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11873">
+                  <a title="退出账号" href="/signout/">退出账号</a>
+                </li>
+              </ul>
+            </li>
+{{else}}
+            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-parent-item menu-item-4039">
+              <a title="注册账号" href="/signup/">注册账号</a>
+              <ul class="sub-menu">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6062">
+                  <a title="登录账号" href="/signin/">登录账号</a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11873">
+                  <a title="注册账号" href="/signup/">注册账号</a>
+                </li>
+              </ul>
+            </li>
+{{end}}
+          </ul>
+        </div>
+        <div id="options">
+          <ul></ul>
+        </div>
+      </div>
+    </div>
+  </div>

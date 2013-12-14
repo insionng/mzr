@@ -1,0 +1,11 @@
+{{if .flash.notice}}
+<div class="sc alert alert-success">{{.flash.notice}}<button type="button" class="close" data-dismiss="alert">×</button></div>
+{{end}}
+
+{{if .flash.warning}}
+<div class="sc alert alert-">{{.flash.warning}}<button type="button" class="close" data-dismiss="alert">×</button></div>
+{{end}}
+
+{{if .flash.error}}
+<div class="sc alert alert-error">{{.flash.error}}<button type="button" class="close" data-dismiss="alert">×</button></div>
+{{end}}

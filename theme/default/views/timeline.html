@@ -1,0 +1,706 @@
+{{template "head.html" .}}
+<body class="single single-post postid-2815 single-format-standard responsive-on">
+
+<!-- .main-container -->
+<div class="main-container">
+
+   <div class="bg"></div>
+   {{template "header.html" .}}
+   <div class="container">
+      <!-- .row -->
+      <div class="row">
+         <div class="sidebar span2 pull-left">
+
+            <div class="row">
+               <div class="span2 thin-sidebar">
+      {{if .topics_hn}}
+         {{range .topics_hn}}
+                  <section class="widget clearfix section Engine_Postcarousel secondary">
+                     <h3 class="widget-title">
+                        <span class="title-bg">.:</span>
+                        <span class="border"></span>
+                     </h3>
+                     <!-- .flexslider -->
+                     <div class="flexslider post-carousel">
+                        <span class="gradient"></span>
+                        <ul class="slides">
+                        {{range .}}
+                           <li>
+                              <div class="post-{{.Id}} post type-post status-publish format-image hentry category-news category-sports">
+
+                                 <div class="featured-area">
+
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+
+                                       <a href="/topic/{{.Id}}/">
+                                          <img width="200" height="111" src="{{.Attachment}}" class="attachment-small_thumb wp-post-image"/>
+                                       </a>
+
+                                    </div>
+                                    <!-- /.featured-image -->
+                                 </div>
+
+                                 <div class="overlay">
+
+                                    <div class="entry-header">
+
+                                       <div class="entry-meta">
+                                          <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                                          <a href="/topic/{{.Id}}/" class="entry-comments block">尚无回应</a>
+                                       </div>
+
+                                       <h2 class="entry-title">
+                                          <a href="/topic/{{.Id}}/">{{.Title}}</a>
+                                       </h2>
+
+                                    </div>
+
+                                    <div class="entry-content">
+                                       {{str2html .Content}}
+                                    </div>
+                                 </div>
+                              </div>
+                           </li>
+                        {{end}}
+                        </ul>
+                     </div>
+                     <!-- /.flexslider -->
+                  </section>
+         {{end}}
+      {{else}}
+                  <section class="widget clearfix section Engine_Postcarousel secondary">
+                     <h3 class="widget-title">
+                        <span class="title-bg">.:</span>
+                        <span class="border"></span>
+                     </h3>
+                     <!-- .flexslider -->
+                     <div class="flexslider post-carousel">
+
+                        <span class="gradient"></span>
+
+                        <ul class="slides">
+                           <li>
+                              <div class="post-0 post type-post status-publish format-image hentry category-news category-sports">
+
+                                 <div class="featured-area">
+
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+
+                                       <a href="/topic/0/">
+                                          <img width="200" height="111" src="http://veryhour.com/static/files/2013/02/Baseball-baseball-52252_1024_768-200x111.jpg" class="attachment-small_thumb wp-post-image"/>
+                                       </a>
+
+                                    </div>
+                                    <!-- /.featured-image -->
+                                 </div>
+
+                                 <div class="overlay">
+
+                                    <div class="entry-header">
+
+                                       <div class="entry-meta">
+                                          <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                                          <a href="/topic/0/" class="entry-comments block">尚无回应</a>
+                                       </div>
+
+                                       <h2 class="entry-title">
+                                          <a href="/topic/0/">{{.Title}}</a>
+                                       </h2>
+
+                                    </div>
+
+                                    <div class="entry-content">
+                                       尚未有内容
+                                    </div>
+                                 </div>
+                              </div>
+                           </li>
+                        </ul>
+
+                     </div>
+                     <!-- /.flexslider -->
+                  </section>
+      {{end}}
+               </div>
+            </div>
+         </div>
+         <div class="content span7">
+            <div class="content-inner clearfix">
+
+               <div id="timelines" class="comments comments-area">
+                  <div class="section">
+                     <div class="section-inner">
+                        <div id="respond">
+                           <h3 id="timeline-title" style="text-transform:uppercase;">{{if .timelines_username}}{{.timelines_username}}{{else}}VERYHOUR{{end}}·时光记录</h3>
+                           {{if compare .timelines_username .username}}
+                           <form action="/new/timeline/" method="post" id="commentform" class="breadcrumb well">
+                              <p class="comment-form-comment">
+                                 <label for="comment">添加一条新时光记录</label>
+                                 {{if .xsrfdata}}{{.xsrfdata}}{{end}}
+                                 <textarea id="timeline" name="timeline" cols="45" rows="8" aria-required="true"></textarea>
+                              </p>
+                              <p class="form-submit">
+                                 <input name="submit" type="submit" id="submit" value="发布" />
+                                 <span class="pull-right">请尽量让自己的分享更有意义</span>
+                              </p>
+                           </form>
+                           {{end}}
+                     {{$userid:=.userid}}
+                     {{if .timelines}}
+                        {{range .timelines}}
+                           <div class="breadcrumb" id="timeline-{{.Id}}">
+                              <div class="entry-meta">
+                                 <span class="badge badge-inverse pull-left" title="得分:{{.Hotscore}}" id="hotscore-{{.Id}}">{{.Hotscore}}</span>
+                                 {{if compare $userid -1000}}
+                                 <span class="pull-right hidden-phone">
+                                    <a href="/edit/topic/{{.Id}}/" title="编辑回应">编辑</a>
+                                    <a href="/top/topic/{{.Id}}/" title="置顶回应">置顶</a>
+                                    <a href="/delete/timeline/{{.Id}}/" title="删除时光记录">删除</a>
+                                    <a href="/reply/timeline/{{.Id}}/" title="回应该时光记录">添加回应</a>
+                                 </span>
+                                 {{end}}
+                              </div>
+                              <div class="clearfix"></div>
+                              <div class="row-fluid" style="margin-top:20px;margin-bottom:20px;">
+                                 <div class="span1">
+                                    <a style="cursor:pointer;" onclick='javascript:$.get("/like/timeline/{{.Id}}/?ver="+(new Date()).valueOf(), {Action:"get"}, function (data, textStatus){this;$("#hotscore-{{.Id}}").html(data);});'> <i class="breadcrumb icon-chevron-up"></i><span id="liked-{{.Id}}"></span>
+                                    </a>
+                                    <div class="clearfix"></div>
+                                    <a style="cursor:pointer;" onclick='javascript:$.get("/hate/timeline/{{.Id}}/?ver="+(new Date()).valueOf(), {Action:"get"}, function (data, textStatus){this;$("#hotscore-{{.Id}}").html(data);});'> <i class="breadcrumb icon-chevron-down"></i><span id="hated-{{.Id}}"></span>
+                                    </a>
+                                 </div>
+                                 <div class="span10">
+                                    <div class="entry-content">
+                                       {{str2html .Content}}
+                                    </div>
+                                    <div class="clearfix"></div>
+                                 </div>
+                                 <div class="span1 hidden-phone">
+                                    <a href="/user/{{.Author}}/">
+                                       <img src="/avatar/{{.Author}}/72x72/"/>                   
+                                    </a>
+                                 </div>
+                              </div>
+
+                              <div class="clearfix"></div>
+                              <div class="entry-meta">
+                                 <span class="pull-left">
+                                    <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">
+                                       <i class="icon-calendar"></i>
+                                       {{if .Created}}{{timesince .Created}}{{else}}1月2日 , 2006年{{end}}
+                                    </time>
+                                 </span>
+                                 <span class="pull-right"><span class="entry-categories"> <i class="icon-user"></i>
+                                    <a href="/user/{{.Author}}/" title="作者" rel="author">{{.Author}}</a>
+                                 </span>，{{if .AuthorSignature}}{{.AuthorSignature}}{{else}}签名神马的最有爱了~{{end}}</span>
+                              </div>
+                           </div>
+                        {{end}}
+                     {{else}}
+
+                           <div class="breadcrumb" id="timeline-{{.Id}}">
+                              <div class="entry-meta">
+                                 <span class="entry-categories"> <i class="icon-user"></i>
+                                    <a href="/user/{{.Author}}/" title="作者" rel="author">{{.Author}}</a>
+                                 </span>
+                                 <span>，{{if .AuthorSignature}}{{.AuthorSignature}}{{else}}签名神马的最有爱了~{{end}}</span>
+                                 <span class="badge badge-inverse pull-right">#{{.Id}}</span>
+                              </div>
+                              <div class="clearfix"></div>
+                              <div class="row-fluid" style="margin-top:20px;margin-bottom:20px;">
+                                 <div class="span1">
+                                    <a href="/signin/" onclick='javascript:$.get("/like/topic/{{.Id}}/", {Action:"get"}, function (data, textStatus){this;$("#liked-{{.Id}}").html(data);});'> <i class="breadcrumb icon-chevron-up"></i>
+                                    </a>
+                                    <div class="clearfix"></div>
+                                    <a href="/signin/" onclick='javascript:$.get("/hate/topic/{{.Id}}/", {Action:"get"}, function (data, textStatus){this;$("#hated-{{.Id}}").html(data);});'> <i class="breadcrumb icon-chevron-down"></i>
+                                    </a>
+                                 </div>
+                                 <div class="span10">
+                                    <div class="entry-content">
+                                       这家伙很懒啊~
+                                    </div>
+                                    <div class="clearfix"></div>
+                                 </div>
+                                 <div class="span1 hidden-phone">
+                                    <a href="###">
+                                       <img style="margin-top:8px;" src="/static/img/usr_72x72.png"/>                           
+                                    </a>
+                                 </div>
+                              </div>
+
+                              <div class="clearfix"></div>
+                              <div class="entry-meta">
+                                 <span class="pull-left">
+                                    <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">
+                                       <i class="icon-calendar"></i>
+                                       {{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}
+                                    </time>
+                                 </span>
+                                 {{if .Id}}
+                                 <span class="pull-right hidden-phone">
+                                    <a href="/edit/topic/{{.Id}}/" title="编辑回应">编辑</a>
+                                    <a href="/top/topic/{{.Id}}/" title="置顶回应">置顶</a>
+                                    <a href="/delete/timeline/{{.Id}}/" title="删除时光记录">删除</a>
+                                    <a href="/reply/timeline/{{.Id}}/" title="回应该时光记录">添加回应</a>
+                                 </span>
+                                 {{end}}
+                              </div>
+                           </div>
+                     {{end}}
+                        </div>
+                        <!-- #timeline -->
+                     </div>
+                  </div>
+               </div>
+               <!-- .timelines-area -->
+      {{if .images_sw}}
+         {{range .images_sw}}
+               <section class="widget related clearfix section Engine_Postcarousel white">
+                  <h3 class="widget-title">
+                     <span class="title-bg">神似</span>
+                  </h3>
+                  <!-- .flexslider -->
+                  <div class="flexslider post-carousel related-posts">
+
+                     <span class="gradient"></span>
+
+                     <ul class="slides">
+                  {{range .}}
+                        <li>
+                           <div class="post-{{.Id}} post type-post status-publish format-image hentry category-news category-sports">
+
+                              <div class="featured-area">
+                                 <!-- .featured-image -->
+                                 <div class="featured-image">
+                                    <a href="/image/{{.Id}}/">
+                                       <img width="200" height="111" src="{{.Location}}" class="attachment-small_thumb wp-post-image"/>
+                                    </a>
+                                 </div>
+                                 <!-- /.featured-image -->
+                              </div>
+
+                              <div class="overlay">
+                                 <header class="entry-header">
+                                    <div class="entry-meta">
+                                       <time class="entry-date block" datetime="{{.Created}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                                       <a href="/image/{{.Id}}/" class="entry-comments block">尚无回应</a>
+                                    </div>
+
+                                    <h2 class="entry-title">
+                                       <a href="/image/{{.Id}}/">
+                                          #{{.Id}}
+                                       </a>
+                                    </h2>
+
+                                 </header>
+
+                              </div>
+
+                           </div>
+                        </li>
+                  {{end}}
+                     </ul>
+
+                  </div>
+                  <!-- /.flexslider -->
+               </section>
+         {{end}}
+      {{else}}
+               <section class="widget related clearfix section Engine_Postcarousel white">
+                  <h3 class="widget-title">
+                     <span class="title-bg">神似</span>
+                  </h3>
+                  <!-- .flexslider -->
+                  <div class="flexslider post-carousel related-posts">
+
+                     <span class="gradient"></span>
+
+                     <ul class="slides">
+
+                        <li>
+
+                           <div class="post-2812 post type-post status-publish format-image hentry category-news category-sports">
+
+                              <div class="featured-area">
+
+                                 <!-- .featured-image -->
+                                 <div class="featured-image">
+
+                                    <a href="/">
+                                       <img width="200" height="111" src="/static/files/2013/02/Baseball-baseball-52252_1024_768-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="Baseball-baseball-52252_1024_768" />
+                                    </a>
+
+                                 </div>
+                                 <!-- /.featured-image -->
+                              </div>
+
+                              <div class="overlay">
+
+                                 <header class="entry-header">
+
+                                    <div class="entry-meta">
+                                       <time class="entry-date block" datetime="2013-02-13T17:44:29+00:00">Feb 13, 2013</time>
+                                       <a href="../dealing-with-more-than-balls-and-strikes/index.html#comments" class="entry-comments block">尚无回应</a>
+                                    </div>
+
+                                    <h2 class="entry-title">
+                                       <a href="/">Dealing With More Than Balls and Strikes</a>
+                                    </h2>
+
+                                 </header>
+
+                              </div>
+
+                           </div>
+                        </li>
+                        <li>
+
+                           <div class="post-2777 post type-post status-publish format-video hentry category-gear category-technology category-videos">
+
+                              <div class="featured-area">
+
+                                 <!-- .featured-image -->
+                                 <div class="featured-image">
+
+                                    <a href="/">
+                                       <img width="200" height="111" src="/static/files/2013/02/iphone_2338311b-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="iphone_2338311b" />
+                                    </a>
+
+                                 </div>
+                                 <!-- /.featured-image --> </div>
+
+                              <div class="overlay">
+
+                                 <header class="entry-header">
+
+                                    <div class="entry-meta">
+                                       <time class="entry-date block" datetime="2013-02-13T16:57:22+00:00">Feb 13, 2013</time>
+                                       <a href="#comments" class="entry-comments block">尚无回应</a>
+                                    </div>
+
+                                    <h2 class="entry-title">
+                                       <a href="/">Vancouver Time Lapse &#8211; Amazing!</a>
+                                    </h2>
+
+                                 </header>
+
+                              </div>
+
+                           </div>
+                        </li>
+                        <li>
+
+                           <div class="post-2774 post type-post status-publish format-video hentry category-gear category-technology">
+
+                              <div class="featured-area">
+
+                                 <!-- .featured-image -->
+                                 <div class="featured-image">
+
+                                    <a href="/">
+                                       <img width="200" height="111" src="/static/files/2013/02/large-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="large" />
+                                    </a>
+
+                                 </div>
+                                 <!-- /.featured-image --> </div>
+
+                              <div class="overlay">
+
+                                 <header class="entry-header">
+
+                                    <div class="entry-meta">
+                                       <time class="entry-date block" datetime="2013-02-13T16:52:13+00:00">Feb 13, 2013</time>
+                                       <a href="#comments" class="entry-comments block">尚无回应</a>
+                                    </div>
+
+                                    <h2 class="entry-title">
+                                       <a href="/">Invisible Rope Prank</a>
+                                    </h2>
+
+                                 </header>
+
+                              </div>
+
+                           </div>
+                        </li>
+                        <li>
+
+                           <div class="post-2767 post type-post status-publish format-standard hentry category-news category-politics">
+
+                              <div class="featured-area">
+
+                                 <!-- .featured-image -->
+                                 <div class="featured-image">
+
+                                    <a href="/">
+                                       <img width="200" height="111" src="/static/files/2013/02/4404488882_b552d06a8b_o-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="The Houses Of Parliament" />
+                                    </a>
+
+                                 </div>
+                                 <!-- /.featured-image -->
+                              </div>
+
+                              <div class="overlay">
+
+                                 <header class="entry-header">
+
+                                    <div class="entry-meta">
+                                       <time class="entry-date block" datetime="2013-02-13T16:42:15+00:00">Feb 13, 2013</time>
+                                       <a href="#comments" class="entry-comments block">尚无回应</a>
+                                    </div>
+
+                                    <h2 class="entry-title">
+                                       <a href="/">President Barack Obama to Addresses the Nation</a>
+                                    </h2>
+
+                                 </header>
+
+                              </div>
+
+                           </div>
+                        </li>
+
+                     </ul>
+
+                  </div>
+                  <!-- /.flexslider -->
+               </section>
+      {{end}}
+            </div>
+         </div>
+
+         <!-- .sidebar -->
+         <div class="sidebar span3 pull-right">
+
+            <div class="row">
+               <div class="span3 normal-sidebar">
+
+                  <section id="search-4" class="widget clearfix section widget_search">
+                     <h3 class="widget-title">
+                        <span class="title-bg">搜索</span>
+                        <span class="border"></span>
+                     </h3>
+                     <!--BEGIN .searchform-->
+                     <form method="get" action="/search/">
+
+                        <div class="input-append">
+
+                           <input type="text" name="keyword" class="search" value="搜索..." onfocus="if(this.value=='搜索...')this.value='';" onblur="if(this.value=='')this.value='搜索...';" />
+
+                           <button type="submit" class="btn btn-warning">
+                              <i class="icon-search"></i>
+                           </button>
+
+                        </div>
+
+                        <!--END .searchform-->
+                     </form>
+                  </section>
+                  <section id="categories-3" class="widget clearfix section widget_categories">
+                     <h3 class="widget-title">
+                        <span class="title-bg">分类</span>
+                        <span class="border"></span>
+                     </h3>
+                     <ul>
+                        {{if .categorys}}
+                           {{range .categorys}}
+                           <li class="cat-item cat-item-{{.Id}}">
+                              <a href="/category/{{.Id}}/" title="查看[{{.Title}}]下的节点">{{.Title}}</a>
+                              <span class="post-count">{{.NodeCount}}</span>
+                           </li>
+                           {{end}}
+                        {{end}}
+                     </ul>
+                  </section>
+      {{if .topics_cat}}
+         {{range .topics_cat}}
+                  <section class="widget clearfix section Engine_Postcarousel white">
+                     <h3 class="widget-title">
+                        <span class="title-bg">:.</span>
+                        <span class="border"></span>
+                     </h3>
+
+                     <!-- .flexslider -->
+                     <div class="flexslider post-carousel">
+                        <span class="gradient"></span>
+                        <ul class="slides">
+                     {{if .}}
+                        {{range .}}
+                           <li>
+
+                              <div class="post-{{.Id}} post type-post status-publish format-image hentry category-news category-sports">
+                                 <div class="featured-area">
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+                                       <a href="/topic/{{.Id}}/">
+                                          <img width="200" height="111" src="{{.Attachment}}" class="attachment-small_thumb wp-post-image"/>
+                                       </a>
+                                    </div>
+                                    <!-- /.featured-image -->
+                                 </div>
+                                 <div class="overlay">
+
+                                    <div class="entry-header">
+
+                                       <div class="entry-meta">
+                                          <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                                          <a href="/topic/{{.Id}}/" class="entry-comments block">尚无回应</a>
+                                       </div>
+
+                                       <h2 class="entry-title">
+                                          <a href="/topic/{{.Id}}/">{{if .Title}}
+                                             {{$ts:=html2str .Title}}
+                                             {{$ts:=substr $ts 0 30}}
+                                             {{str2html $ts}}
+                                       {{end}}</a>
+                                       </h2>
+
+                                    </div>
+
+                                    <div class="entry-content">
+                                       {{if .Content}}
+                                           <p>
+                                             {{$cs:=html2str .Content}}
+                                             {{$cs:=substr $cs 0 240}}
+                                             {{str2html $cs}}
+                                           </p>
+                                       {{end}}
+                                    </div>
+                                 </div>
+
+                              </div>
+                           </li>
+                        {{end}}
+                     {{else}}
+                           <li>
+                              <div class="post-2815 post type-post status-publish format-standard hentry category-news category-sports category-technology">
+                                 <div class="featured-area">
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+                                       <a href="index.html">
+                                          <img width="200" height="111" src="/static/files/2013/02/6368910827_2511b55eac_o-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="Here He Comes Now..." />
+                                       </a>
+                                    </div>
+                                    <!-- /.featured-image -->
+                                 </div>
+
+                                 <div class="overlay">
+                                    <div class="entry-header">
+                                       <div class="entry-meta">
+                                          <time class="entry-date block" datetime="2013-02-13T17:31:57+00:00">Feb 13, 2013</time>
+                                          <a href="index.html#comments" class="entry-comments block">尚无回应</a>
+                                       </div>
+                                       <h2 class="entry-title">
+                                          <a href="index.html">Oscar Pistorius Goes Step By Step</a>
+                                       </h2>
+
+                                    </div>
+
+                                    <div class="entry-content">
+                                       Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam...
+                                    </div>
+                                 </div>
+
+                              </div>
+                           </li>
+                           <li>
+                              <div class="post-2777 post type-post status-publish format-video hentry category-gear category-technology category-videos">
+
+                                 <div class="featured-area">
+
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+
+                                       <a href="../first-look-official-iphone-5-trailer/index.html">
+                                          <img width="200" height="111" src="/static/files/2013/02/iphone_2338311b-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="iphone_2338311b" />
+                                       </a>
+
+                                    </div>
+                                    <!-- /.featured-image --> </div>
+
+                                 <div class="overlay">
+
+                                    <div class="entry-header">
+
+                                       <div class="entry-meta">
+                                          <time class="entry-date block" datetime="2013-02-13T16:57:22+00:00">Feb 13, 2013</time>
+                                          <a href="../first-look-official-iphone-5-trailer/index.html#comments" class="entry-comments block">尚无回应</a>
+                                       </div>
+
+                                       <h2 class="entry-title">
+                                          <a href="../first-look-official-iphone-5-trailer/index.html">Vancouver Time Lapse &#8211; Amazing!</a>
+                                       </h2>
+
+                                    </div>
+
+                                    <div class="entry-content">
+                                       The new iPhone 5 has a remarkably slim design that still makes room for a larger display and a...
+                                    </div>
+                                 </div>
+
+                              </div>
+                           </li>
+                     {{end}}
+                        </ul>
+                     </div>
+                     <!-- /.flexslider --> 
+                  </section>
+         {{end}}
+      {{end}}
+      {{if .ads}}
+                  <section id="meta-2" class="widget clearfix section widget_meta">
+                     <h3 class="widget-title">
+                        <span class="title-bg">广告赞助</span>
+                        <span class="border"></span>
+                     </h3>
+                     <div>广告内容</div>
+                  </section>
+      {{end}}
+               </div>
+            </div>
+         </div>
+         <!-- /.sidebar -->
+      </div>
+      <!-- /.row -->
+
+      <div class="breadcrumb breadcrumbs">
+         <div class="breadcrumb-trail">
+            <span class="trail-before">
+               You are here
+               <span class="sep">
+                  <i class="icon-angle-right"></i>
+               </span>
+            </span>
+            <a href="/" title="Veryhour" rel="home" class="trail-begin">Veryhour.com</a>
+            <span class="sep">
+               <i class="icon-angle-right"></i>
+            </span>
+            <span class="trail-end"><a href="/timeline/#">VERYHOUR·时光记录</a></span>
+         </div>
+      </div>
+   </div>
+   <!-- /.container -->
+   {{template "footer.html" .}}
+</div>
+<!-- /.main-container -->
+
+<script type='text/javascript' src='/static/plugins/contact-form-7/includes/js/jquery.form.min-ver=3.36.0-2013.06.16.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"\/static\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
+/* ]]>*/</script>
+<script type='text/javascript' src='/static/plugins/contact-form-7/includes/js/scripts-ver=3.4.2.js'></script>
+<script type='text/javascript' src='/static/bootstrap-2.1.1/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/static/assets/js/flexslider-ver=2.1.js'></script>
+<script type='text/javascript' src='/static/library/media-player/mediaelement-and-player.min-ver=3.5.1.js'></script>
+<script type='text/javascript' src='/static/assets/js/jquery.fitvids-ver=3.5.1.js'></script>
+<script type='text/javascript' src='/static/assets/js/jquery.imagesloaded.min-ver=1.js'></script>
+<script type='text/javascript' src='/static/assets/js/jquery.jcarousel-ver=1.js'></script>
+<script type='text/javascript' src='/static/assets/js/engine-ver=1374933754.js'></script>
+<script type='text/javascript' src='/static/assets/js/jquery.tweet-ver=3.5.1.js'></script>
+
+</body>
+
+</html>

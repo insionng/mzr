@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+<!--   <link rel="stylesheet/less" type="text/css" href="bootstrap/less/bootstrap.less">
+  <script src="less.min.js" type="text/javascript"></script>
+ -->
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+  <!-- <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-ie6.css"> -->
+
+  <!--[if lte IE 6]>
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-ie6.css">
+  <![endif]-->
+  <!--[if lte IE 7]>
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/ie.css">
+  <![endif]-->
+
+</head>
+<body style="padding:50px 10px;">
+
+
+<div class="bs-docs-example">
+  <ul id="myTab" class="nav nav-tabs">
+    <li class=""><a href="#home" data-toggle="tab">Home</a></li>
+    <li class=""><a href="#profile" data-toggle="tab">Profile</a></li>
+    <li class="dropdown active">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li class=""><a href="#dropdown1" data-toggle="tab">@fat</a></li>
+        <li class="active"><a href="#dropdown2" data-toggle="tab">@mdo</a></li>
+      </ul>
+    </li>
+  </ul>
+  <div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade" id="home">
+      <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+    </div>
+    <div class="tab-pane fade" id="profile">
+      <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+    </div>
+    <div class="tab-pane fade" id="dropdown1">
+      <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+    </div>
+    <div class="tab-pane fade active in" id="dropdown2">
+      <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="bs-docs-example">
+  <div class="well" style="width: 340px; padding: 8px 0;">
+    <ul class="nav nav-list">
+      <li class="nav-header">List header</li>
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Library</a></li>
+      <li><a href="#">Applications</a></li>
+      <li class="nav-header">Another list header</li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Settings</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Help</a></li>
+    </ul>
+  </div> <!-- /well -->
+
+  <br />
+
+<style>
+
+/**
+ * TAB
+ */
+/* root element for tabs  */
+ul.tabbernav
+{
+ margin:0;
+ /*padding: 3px 0;*/
+ border-bottom: 1px solid #778;
+ font: bold 12px Verdana, sans-serif;
+}
+
+ul.tabbernav li
+{
+ list-style: none;
+ margin: 0;
+ display: inline;
+}
+
+ul.tabbernav li a
+{
+ padding: 3px 0.5em;
+ margin-left: 3px;
+ border: 1px solid gray;
+ border-bottom: none;
+ background: #DDE;
+ text-decoration: none;
+}
+
+ul.tabbernav li a:link { color: #448; }
+ul.tabbernav li a:visited { color: #667; }
+
+ul.tabbernav li a:hover
+{
+ color: #000;
+ background: #AAE;
+ border-color: #227;
+}
+
+ul.tabbernav li.tabberactive a
+{
+ background-color: #fff;
+ border: 1px solid red;
+ border-bottom: 1px solid #fff;
+}
+
+ul.tabbernav li.tabberactive a:hover
+{
+ color: #000;
+ background: white;
+ border-bottom: 1px solid white;
+}
+
+/*
+.nav .dropdown-toggle{
+  padding-top:10px;
+  padding-bottom:6px;
+}
+
+.nav .dropdown-toggle .caret {
+  padding: 5px 0 5px;
+}
+
+*/
+
+.nav-tabs .active a {
+
+}
+
+
+</style>
+
+
+<div class="tabbable tabs-below">
+    <div class="tab-content">
+      <div class="tab-pane active" id="A">
+        <p>I'm in Section A.</p>
+      </div>
+      <div class="tab-pane" id="B">
+        <p>Howdy, I'm in Section B.</p>
+      </div>
+      <div class="tab-pane" id="C">
+        <p>What up girl, this is Section C.</p>
+      </div>
+    </div>
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#A" data-toggle="tab">Section 1</a></li>
+      <li class=""><a href="#B" data-toggle="tab">Section 2</a></li>
+      <li class=""><a href="#C" data-toggle="tab">Section 3</a></li>
+    </ul>
+  </div>
+
+
+  <ul class="nav nav-pills">
+    <li class="active"><a href="#">Home</a></li>
+    <li class="disabled"><a href="#">Profile</a></li>
+    <li><a href="#">Messages</a></li>
+
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action Another action Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li class="nav-header">NAV HEADER</li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </li>
+  </ul>
+
+  <div id="nav" class="tabbable" style="margin-bottom: 18px;">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Help</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action Another action Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li class="nav-header">NAV HEADER</li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </li>
+    </ul>
+
+  </div>
+
+
+<ul class="nav1 nav-tabs1 tabbernav"> 
+  <li class="active1 tabberactive" style=""><a href="javascript:void(null);" title="Features">Features</a></li>
+  <li class=""><a href="javascript:void(null);" title="Step 1">Step 1</a></li>
+  <li class=""><a href="javascript:void(null);" title="2">2</a></li>
+  <li class=""><a href="javascript:void(null);" title="3">3</a></li>
+  <li class=""><a href="javascript:void(null);" title="Advanced">Advanced</a></li>
+  <li class=""><a href="javascript:void(null);" title="Download">Download</a></li>
+</ul>
+</div>
+
+    <p style="height:1000px;"></p>
+
+  <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+  <!--[if lte IE 6]>
+  <script type="text/javascript" src="js/bootstrap-ie.js"></script>
+  <![endif]-->
+  <script type="text/javascript">
+
+  </script>
+</body>
+</html>
