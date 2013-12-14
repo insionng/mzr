@@ -1,0 +1,1935 @@
+{{template "head.html" .}}
+<body class="home page page-id-2484 page-template responsive-on">
+
+<!-- .main-container -->
+<div class="main-container">
+
+  <div class="bg"></div>
+  {{template "header.html" .}}
+  <div class="container">
+    <div class="row">
+
+      <!-- .content -->
+      <div class="content index-content span7">
+
+        <div class="content-inner">
+
+          <!-- .home-slider -->
+          <div class="home-slider first">
+
+            <!-- .flexslider -->
+            <div class="flexslider slider" data-autoplay="8" data-effect="slide">
+
+              <ul class="slides">
+                {{if .topics_hotness_headline}}
+                  {{range .topics_hotness_headline}}
+                    <li>
+
+                      <div class="post-{{.Id}} post type-post status-publish format-gallery hentry category-photos category-style">
+                        {{if .Attachment}}
+                        <div class="featured-area">
+                          <div class="featured-image">
+                            <a href="/topic/{{.Id}}/">
+                              <img width="670px" src="{{.Attachment}}" class="attachment-large_thumb wp-post-image"/>
+                            </a>
+                          </div>
+                        </div>
+                        {{else}}
+                        <div class="featured-area">
+                          <div class="featured-image">
+                            <a href="/topic/{{.Id}}/">
+                              <img width="670px" height="300px" src="/static/files/2012/07/6829158646_d4f32ea229_b-540x300.jpg" class="attachment-large_thumb wp-post-image" alt="若无封面则卖广告!" />
+                            </a>
+                          </div>
+                        </div>
+                        {{end}}
+                        <div class="overlay">
+
+                          <header class="entry-header">
+
+                            <div class="entry-meta"> <i class="icon-calendar"></i>
+                              <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time> <i class="icon-comments"></i>
+                              <a href="/topic/{{.Id}}/#comments" class="entry-comments block">我要回应</a>
+                              <span class="btn-group" style="margin: 9px 0 5px;">
+                                <button onclick="window.location='/edit/topic/{{.Id}}/'" class="btn btn-mini">编辑</button>
+                                <button onclick="window.location='/delete/topic/{{.Id}}/'" class="btn btn-mini">删除</button>
+                              </span>
+                            </div>
+
+                            <h2 class="entry-title">
+                              <a href="/topic/{{.Id}}/">{{if .Title}}
+                              {{$ts:=html2str .Title}}
+                              {{$ts:=substr $ts 0 38}}
+                              {{str2html $ts}}
+                            {{end}}</a>
+                            </h2>
+
+                          </header>
+
+                          <div class="entry-content">
+                            {{if .Content}}
+                            <p>
+                              {{$cs:=html2str .Content}}
+                              {{$cs:=substr $cs 0 240}}
+                              {{str2html $cs}}
+                            </p>
+                            {{end}}
+                            <p>
+                              <a href="/topic/{{.Id}}/" class="read-more">阅览</a>
+                            </p>
+                          </div>
+                          <div class="entry-footer">
+
+                            <div class="inner">
+
+                              <span class="hidden-phone">
+                                <i class="icon-user"></i>
+                                {{if .Author}}
+                                  <a href="/author/{{.Author}}/" title="Posts by {{.Author}}" rel="author">{{.Author}}</a>
+                                {{else}}
+                                  <a href="/author/{{.Uid}}/" title="Posts by 会员ID[{{.Uid}}]" rel="author">会员ID[{{.Uid}}]</a>
+                                {{end}}
+                                发表于
+                                <a href="/node/{{.Nid}}/" title="Posts in {{.Node}}">
+                                  ::{{.Node}}::
+                                </a>
+                                节点
+                              </span>
+
+                              <div class="share">
+                                <div class="inner">
+                                  <div class="btn-group pull-right" style="margin-top:10px;margin-right:10px;">
+                                    <a href="/new/topic/" class="btn btn-inverse" title="在同一节点下发表新话题">发帖</a>
+                                  </div>
+                                  {{template "vote-default.html" .}}
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </li>
+                  {{end}}
+                {{else}}
+                    <li>
+
+                      <div class="post-0 post type-post status-publish format-gallery hentry category-photos category-style">
+                        <div class="featured-area">
+                          <div class="featured-image">
+                            <img width="670px" height="300px" src="/static/files/2012/07/6829158646_d4f32ea229_b-540x300.jpg" class="attachment-large_thumb wp-post-image" alt="若无封面则卖广告!" />                        
+                          </div>
+                        </div>
+
+                        <div class="overlay">
+                          <header class="entry-header">
+                            <h2 class="entry-title">《我们在筹办中!》</h2>
+                          </header>
+
+                          <div class="entry-content">
+                            <p>感谢你的来访,目前我们在筹办网站中尚无数据,建议你先行收藏我们,欢迎改天再来~</p>
+                          </div>
+                          <div class="entry-footer">
+
+                            <div class="inner">
+
+                              <span class="hidden-phone">
+                                <i class="icon-user"></i>
+                                <a href="###" title="Posts by Stephen Bluck" rel="author">Insion</a>
+                                发表于
+                                <a href="###" title="Posts in 图片">图片</a>
+                                节点
+                              </span>
+
+                              <div class="share">
+                                <div class="inner">
+                                  <div class="btn-group pull-right" style="margin-top:10px;margin-right:10px;">
+                                    <a href="/new/topic/" class="btn btn-inverse" title="在同一节点下发表新话题">发帖</a>
+                                  </div>
+                                  {{template "vote-default.html" .}}
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                {{end}}
+              </ul>
+
+            </div>
+            <!-- /.flexslider --> </div>
+          <!-- /.home-slider -->
+
+          <!-- .home-widgets -->
+          <div class="home-widgets">
+            <div class="post-0 post type-post status-publish format-gallery hentry category-photos category-style">
+              <div class="overlay">
+
+                <header class="entry-header">
+                  <h2 class="entry-title">推荐榜单</h2>
+                </header>
+
+                <div class="entry-content">
+
+                  <div class="sc accordion" id="accordion-0">
+                    <div class="accordion-group">
+                      <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-0" href="###">提醒登录</a>
+                      </div>
+                      <div id="collapse_0_nullam-quis-risus-eget-urna-mollis-ornare-vel-eu-leo" class="accordion-body collapse in">
+                        <div class="accordion-inner">未登录的情况下你浏览的的所有页面均为快照,登录后可以为你显示新鲜热辣的内容.&nbsp;</div>
+                      </div>
+                    </div>
+                  </div>
+                  {{if .topic_hotness_25}}
+                    {{range .topic_hotness_25}}
+                      <div class="breadcrumb well">
+                        <div class="row-fluid">
+                          <div class="span2 hidden-phone">
+                            <a href="/user/{{if .Author}}{{.Author}}{{else}}{{.Uid}}{{end}}/" title="{{if .Author}}{{.Author}}{{else}}会员ID[{{.Uid}}]{{end}}" rel="author">
+                              <img style="margin-top:8px;" src="/static/img/usr_72x72.png"/>                      
+                            </a>
+                          </div>
+                          <div class="span10">
+                            <h1 class="entry-title">
+                              <span><a href="/topic/{{.Id}}/">{{.Title}}</a></span>
+                            </h1>
+                            <div class="entry-meta breadcrumb well">
+                              <span class="entry-categories"> <i class="icon-user"></i>
+                                 <a href="/user/{{if .Author}}{{.Author}}{{else}}{{.Uid}}{{end}}/" title="{{if .Author}}{{.Author}}{{else}}会员ID[{{.Uid}}]{{end}}" rel="author">{{if .Author}}{{.Author}}{{else}}会员ID[{{.Uid}}]{{end}}</a>
+                              </span>
+                              <time class="entry-date block" datetime="{{.Created}}"> <i class="icon-calendar"></i>
+                                {{dateformat .Created "1月2日 , 2006年"}}
+                              </time>
+                              <span class="entry-categories">
+                                <i class="icon-folder-close"></i>
+                                <a href="/category/{{.Cid}}/" rel="category tag">{{if .Category}}{{.Category}}{{else}}分类尚无名称{{end}}
+                                </a>
+                              </span>
+                              <span class="entry-comments">
+                                <i class="icon-comments"></i>
+                                <a href="/topic/{{.Id}}/#comments" class="entry-comments block">我要回应</a>
+                              </span>
+                              <span class="badge pull-right">{{.ReplyCount}}</span>
+                            </div>
+                            <div class="entry-meta">
+                              <span class="btn-group pull-left">
+                                <button class="btn btn-mini" onclick='javascript:$.get("/like/topic/{{.Id}}/", {Action:"get"}, function (data, textStatus){this;$("#liked-{{.Id}}").html(data);});'>
+                                  感谢(
+                                  <span id="liked-{{.Id}}">{{.Hotup}}</span>
+                                  )
+                                </button>
+                                <button class="btn btn-mini hidden-phone" onclick='javascript:$.get("/hate/topic/{{.Id}}/", {Action:"get"}, function (data, textStatus){this;$("#hated-{{.Id}}").html(data);});'>
+                                  反对(
+                                  <span id="hated-{{.Id}}">{{.Hotdown}}</span>
+                                  )
+                                </button>
+                                <span id="scored-{{.Id}}" class="btn btn-mini" title="作者魅力值:{{.Hotscore}}">魅力({{.Hotscore}})</span>
+                                <button class="btn btn-mini btn-success" onclick='javascript:$.get("/like/topic/{{.Id}}/", {Action:"get"}, function (data, textStatus){this;$("#liked-{{.Id}}").html(data);});'>
+                                  下载(
+                                  <span id="liked-{{.Id}}">{{.Hotup}}</span>
+                                  )
+                                </button>
+                                <a href="/new/topic/1/" class="btn btn-mini btn-inverse" title="在本节点下发布新话题" style="color:#ffffff;">发帖</a>
+                              </span>
+                              <span class="btn-group pull-right hidden-phone">
+                                <button onclick="window.location='/edit/topic/{{.Id}}/'" class="btn btn-mini">编辑</button>
+                                <button onclick="window.location='/edit/topic/{{.Id}}/'" class="btn btn-mini">置顶</button>
+                                <button onclick="window.location='/delete/topic/{{.Id}}/'" class="btn btn-mini">删除</button>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  {{end}}
+                  {{else}}
+                      <div class="breadcrumb well">
+                        <div class="row-fluid">
+                          <div class="span2 hidden-phone">
+                            <a href="/member/luztak">
+                              <img style="margin-top:8px;" src="/static/img/usr_72x72.png"/>                      
+                            </a>
+                          </div>
+                          <div class="span10">
+                            <h1 class="entry-title">
+                              <span>标题</span>
+                            </h1>
+                            <div class="entry-meta">
+                              <span class="entry-categories"> <i class="icon-user"></i>
+                                <a href="/user/insionng" title="作者" rel="作者">insionng</a>
+                              </span>
+                              <time class="entry-date block" datetime="时间"> <i class="icon-calendar"></i>
+                                January 2 , 2006
+                              </time>
+                              <span class="entry-categories">
+                                <i class="icon-folder-close"></i>
+                                <a href="/category/1/" rel="category tag">
+                                             分类尚无名称
+                                </a>
+                              </span>
+                              <span class="entry-comments">
+                                <i class="icon-comments"></i>
+                                <a href="index.html#comments" class="entry-comments block">我要回应</a>
+                              </span>
+                            </div>
+                            <div class="entry-meta">
+                              <span class="btn-group pull-left">
+                                <button class="btn btn-mini" onclick='javascript:$.get("/like/topic/1/", {Action:"get"}, function (data, textStatus){this;$("#liked-{{.Id}}").html(data);});'>
+                                  感谢(
+                                  <span id="liked-1">111</span>
+                                  )
+                                </button>
+                                <button class="btn btn-mini hidden-phone" onclick='javascript:$.get("/hate/topic/1/", {Action:"get"}, function (data, textStatus){this;$("#hated-{{.Id}}").html(data);});'>
+                                  反对(
+                                  <span id="hated-1">22</span>
+                                  )
+                                </button>
+                                <span id="scored-1" class="btn btn-mini" title="作者魅力值:{{.Hotscore}}">魅力(110)</span>
+                                <button class="btn btn-mini btn-success" onclick='javascript:$.get("/like/topic/1/", {Action:"get"}, function (data, textStatus){this;$("#liked-1").html(data);});'>
+                                  下载(
+                                  <span id="liked-1">111</span>
+                                  )
+                                </button>
+                                <a href="/new/topic/1/" class="btn btn-mini btn-inverse" title="在本节点下发布新话题" style="color:#ffffff;">发帖</a>
+                              </span>
+                              <span class="btn-group pull-right hidden-phone">
+                                <button onclick="window.location='/edit/topic/1/'" class="btn btn-mini">编辑</button>
+                                <button onclick="window.location='/edit/topic/1/'" class="btn btn-mini">置顶</button>
+                                <button onclick="window.location='/delete/topic/1/'" class="btn btn-mini">删除</button>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  {{end}}
+                  <ul class="pager">
+                    <li class="previous disabled">
+                      <a href="#">« 前一页</a>
+                    </li>
+
+                    <li class="active">
+                      <a href="#">1</a>
+                    </li>
+                    <li>
+                      <a href="#">2</a>
+                    </li>
+                    <li>
+                      <a href="#">3</a>
+                    </li>
+                    <li>
+                      <a href="#">4</a>
+                    </li>
+                    <li>
+                      <a href="#">5</a>
+                    </li>
+                    <li class="next">
+                      <a href="#">后一页 »</a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+            <section class="widget clearfix section Engine_Postcarousel white">
+              <h3 class="widget-title">
+                <span class="title-bg">最新话题</span>
+                <span class="border"></span>
+              </h3>
+
+              <!-- .flexslider -->
+              <div class="flexslider post-carousel">
+
+                <span class="gradient"></span>
+
+                <ul class="slides">
+
+                {{if .topic_lastest_6}}
+                  {{range .topic_lastest_6}}
+                  <li>
+
+                    <div class="post-{{.Id}} post type-post status-publish format-image hentry category-news category-sports">
+                      {{if .Attachment}}
+                      <div class="featured-area">
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="/topic/{{.Id}}/">
+                            <img width="200" height="111" src="{{.Attachment}}" class="attachment-small_thumb wp-post-image"/>
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image -->
+                      </div>
+                      {{else}}
+                      <div class="featured-area">
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="/topic/1/">
+                            <img width="200" height="111" src="/static/files/2013/02/Baseball-baseball-52252_1024_768-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="Baseball-baseball-52252_1024_768" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image -->
+                      </div>
+                      {{end}}
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                            <a href="#comments" class="entry-comments block">我要回应</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="/topic/{{.Id}}/">{{.Title}}</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content hidden">
+                         内容内容内容..
+                        </div>
+                      </div>
+
+                    </div>
+                  </li>
+                  {{end}}
+                {{end}}
+
+
+                </ul>
+
+              </div>
+              <!-- /.flexslider -->
+            </section>
+            <section id="engine_postlist-2" class="widget clearfix section Engine_Postlist">
+              <h3 class="widget-title">
+                <span class="title-bg">最热话题</span>
+                <span class="border"></span>
+              </h3>
+              <div class="post-list">
+
+                <div class="first-post">
+                {{if .topic_views_top}}
+                  {{range .topic_views_top}}
+                  <div class="post-{{.Id}} post type-post status-publish format-standard hentry category-news category-sports category-technology">
+
+                    {{if .Attachment}}
+                    <div class="featured-area">
+                      <!-- .featured-image -->
+                      <div class="featured-image">
+                        <a href="/topic/{{.Id}}/">
+                          <img width="540" height="300" src="{{.Attachment}}" class="attachment-large_thumb wp-post-image"/>
+                        </a>
+                      </div>
+                      <!-- /.featured-image -->
+                    </div>
+                    {{else}}
+                    <div class="featured-area">
+                      <!-- .featured-image -->
+                      <div class="featured-image">
+                        <a href="/topic/{{.Id}}/">
+                          <img width="540" height="300" src="/static/files/2013/02/6368910827_2511b55eac_o-540x300.jpg" class="attachment-large_thumb wp-post-image" alt="Here He Comes Now..." />
+                        </a>
+                      </div>
+                      <!-- /.featured-image -->
+                    </div>
+                    {{end}}
+                    <div class="overlay">
+
+                      <div class="entry-header">
+
+                        <div class="entry-meta">
+                          <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                          &middot;&nbsp;
+                          <a href="#comments" class="entry-comments block">我要回应</a>
+                        </div>
+
+                        <h2 class="entry-title">
+                          <a href="/topic/{{.Id}}/">{{.Title}}</a>
+                        </h2>
+
+                      </div>
+                      <div class="entry-content">
+                          {{if .Content}}
+                              <p>
+                                {{$cs:=html2str .Content}}
+                                {{$cs:=substr $cs 0 240}}
+                                {{str2html $cs}}
+                              </p>
+                          {{end}}
+                              <p>
+                                <a href="/topic/{{.Id}}/" class="read-more">阅览</a>
+                              </p>
+                      </div>
+
+                    </div>
+                  </div>
+                  {{end}}
+                {{end}}
+                </div>
+
+                <ul>
+                  {{if .topic_views_5}}
+                  {{range .topic_views_5}}
+                  <li>
+
+                    <div class="post-{{.Id}} post type-post status-publish format-video hentry category-gear category-technology category-videos">
+                    {{if .Attachment}}
+                      <div class="featured-area">
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+                          <a href="/topic/{{.Id}}/">
+                            <img width="200" height="200" src="{{.Attachment}}" class="attachment-post-thumbnail wp-post-image"/>
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image -->
+                      </div>
+                    {{else}}
+                      <div class="featured-area">
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+                          <a href="###">
+                            <img width="200" height="200" src="/static/files/2013/02/iphone_2338311b-200x200.jpg" class="attachment-post-thumbnail wp-post-image" alt="iphone_2338311b" />
+                          </a>
+                        </div>
+                        <!-- /.featured-image -->
+                      </div>
+                    {{end}}
+                      <div class="overlay">
+
+                        <header class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                            <a href="#comments" class="entry-comments block">我要回应</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="/topic/{{.Id}}/">{{.Title}}</a>
+                          </h2>
+
+                        </header>
+
+                      </div>
+
+                    </div>
+                  </li>
+                  {{end}}
+                  {{end}}
+                </ul>
+
+              </div>
+            </section>
+            <section id="engine_postlist-3" class="widget clearfix section Engine_Postlist">
+              <h3 class="widget-title">
+                <span class="title-bg">高分话题</span>
+                <span class="border"></span>
+              </h3>
+              <div class="post-list">
+                {{if .topic_hotscore_top}}
+                <div class="first-post">
+                  {{range .topic_hotscore_top}}
+                  <div class="post-{{.Id}} post type-post status-publish format-image hentry category-news category-sports">
+
+                           {{if .Attachment}}
+                              <!-- .featured-area -->
+                              <div class="featured-area">
+                                 <!-- .featured-image -->
+                                 <div class="featured-image">
+                                    <img width="540px" height="300px" src="{{.Attachment}}" class="attachment-large_thumb wp-post-image"/>
+                                 </div>
+                                 <!-- /.featured-image -->
+                              </div>
+                           {{else}}
+                                 <!-- .featured-area 若无封面,则卖广告-->
+                                 <div class="featured-area">
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+                                       <img width="540px" height="300px" src="/static/files/2013/02/6368910827_2511b55eac_o-540x300.jpg" class="attachment-large_thumb wp-post-image"/>
+                                    </div>
+                                    <!-- /.featured-image -->
+                                 </div>
+                           {{end}}
+
+                    <div class="overlay">
+
+                      <div class="entry-header">
+                        <div class="entry-meta">
+                          <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                          &middot;&nbsp;
+                          <a href="dealing-with-more-than-balls-and-strikes/default.html#comments" class="entry-comments block">我要回应</a>
+                        </div>
+                        <h2 class="entry-title">
+                          <a href="/topic/{{.Id}}/">{{.Title}}</a>
+                        </h2>
+                      </div>
+
+                      <div class="entry-content">
+                        {{if .Content}}
+                            <p>
+                              {{$cs:=html2str .Content}}
+                              {{$cs:=substr $cs 0 240}}
+                              {{str2html $cs}}
+                            </p>
+                        {{end}}
+                            <p>
+                              <a href="/topic/{{.Id}}/" class="read-more">阅览</a>
+                            </p>
+                      </div>
+                    </div>
+                  </div>
+                  {{end}}
+                </div>
+                {{end}}
+                <ul>
+                {{if .topic_hotscore_5}}
+                  {{range .topic_hotscore_5}}
+                  <li>
+
+                    <div class="post-{{.Id}} post type-post status-publish format-standard hentry category-news category-sports category-technology">
+                      {{if .Attachment}}
+                      <div class="featured-area">
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+                          <a href="/topic/{{.Id}}/">
+                            <img width="200" height="200" src=" {{.Attachment}}" class="attachment-post-thumbnail wp-post-image"/>
+                          </a>
+                        </div>
+                        <!-- /.featured-image -->
+                      </div>
+                      {{else}}
+                      <div class="featured-area">
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="california-governor-arnold-schwarzenegger/default.html">
+                            <img width="200" height="200" src="/static/files/2012/07/4322738056_8f5433513d_b-200x200.jpg" class="attachment-post-thumbnail wp-post-image" alt="4322738056_8f5433513d_b">
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image -->
+                      </div>
+                      {{end}}
+                      <div class="overlay">
+
+                        <header class="entry-header">
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                            <a href="#comments" class="entry-comments block">我要回应</a>
+                          </div>
+                          <h2 class="entry-title">
+                            <a href="/topic/{{.Id}}/">{{.Title}}</a>
+                          </h2>
+                        </header>
+                        <div class="entry-content">
+                          {{if .Content}}
+                              <p>
+                                {{$cs:=html2str .Content}}
+                                {{$cs:=substr $cs 0 240}}
+                                {{str2html $cs}}
+                              </p>
+                          {{end}}
+                        </div>
+                      </div>
+
+                    </div>
+                  </li>
+                  {{end}}
+                {{end}}
+                </ul>
+
+              </div>
+            </section>
+          </div>
+          <!-- /.home-widgets -->
+        </div>
+
+      </div>
+      <!-- /.content -->
+
+      <!-- .sidebar -->
+      <div class="sidebar span5 pull-right">
+        <div class="header-search">
+          <!--BEGIN .searchform-->
+          <form method="get" action="/search/">
+            <div class="input-append home">
+              <input type="text" name="keyword" class="search" value="搜索..." onfocus="if(this.value=='搜索...')this.value='';" onblur="if(this.value=='')this.value='搜索...';" />
+              <button type="submit" class="btn btn-warning btn-search"> <i class="icon-search"></i>
+              </button>
+              <button class="btn btn-inverse" type="button" onclick="window.location='/new/topic/'">提问</button>
+            </div>
+            <!--END .searchform-->
+          </form>
+        </div>
+        <div class="side-widgets hidden-phone hidden-tablet">
+          <div class="side-widgets-wrap">
+            {{if compare .userid 0}}
+            <div class="well hidden-phone hidden-tablet">
+              <p>非常时刻是一个极乐社区，在这里分享知识、经验和见解，发现世界..</p>
+              <p>注册后可拥有更丰富的资源!</p>
+
+              <div class="clearfix"></div>
+
+              <div class="btn-group">
+                <button class="btn btn-danger" onclick="window.location='/signup/'">限时免费注册账号</button>
+                <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="/signup/">免费注册账号</a>
+                  </li>
+                  <li>
+                    <a href="/signin/">马上登录账号</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            {{end}}
+
+            <ul class="follows clearfix hidden-phone hidden-tablet hidden">
+              <li class="twitter"> <i class="icon-twitter"></i>
+                <a target="_blank" href="http://insion.co/">
+                  <span class="count">228883</span>
+                  当前在线
+                </a>
+              </li>
+
+              <li class="facebook">
+                <i class="icon-facebook"></i>
+                <a target="_blank" href="http://www.veryhour.com/">
+                  <span class="count">26049</span>
+                  正在观看
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+{{if .userid}}
+<div class="tabbed-widget">
+
+  <div class="breadcrumb well">
+    <div class="row-fluid hidden-phone">
+      <div class="span2">
+        <a href="/user/{{.username}}/" title="{{.username}}" rel="author">
+          <img style="margin-top:8px;" src="/static/img/usr_72x72.png"></a>
+      </div>
+      <div class="span10">
+        <h1 class="entry-title">
+          <span>
+            <a href="/user/{{.username}}/">{{.username}}</a>
+          </span>
+          <span class="btn-group btn-mini dropleft pull-right">
+            <button class="btn btn-mini btn-danger" onclick="window.location='/new/topic/'">发帖</button>
+            <button class="btn btn-mini btn-danger dropdown-toggle" data-toggle="dropdown">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/new/topic/">发表话题</a>
+              </li>
+              <li>
+                <a href="/new/node/">建立节点</a>
+              </li>
+              <li>
+                <a href="/new/category/">建立分类</a>
+              </li>
+              <li>
+                <a href="/edit/profile/">编辑资料</a>
+              </li>
+            </ul>
+          </span>
+        </h1>
+        <div class="entry-meta breadcrumb well">
+          <time class="entry-date block" datetime="2013-09-21 04:25:10.188 +0000 +0000">
+            <i class="icon-calendar"></i>
+          VERYHOUR 第 {{.userid}} 号会员，
+          </time>
+          <span class="pull-left">
+            <a href="##">感谢(6)</a>
+            <a href="##">反对(1)</a>
+            <a href="##">魅力(6)</a>
+            <a href="##">下载(9)</a>
+          </span>
+          <div>
+            <span class="badge label-warning pull-right" title="0金币">0</span>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="breadcrumb">
+        {{$un:=.username}}
+        {{if .timeline_1_lastest}}
+          {{range .timeline_1_lastest}}
+          <p class="hidden-tablet">时光记录：
+
+            {{if .Content}}
+              <a href="/user/{{$un}}/">
+              {{$cs:=html2str .Content}}
+              {{$cs:=substr $cs 0 20}}
+              {{str2html $cs}}
+              </a>
+             {{end}}
+
+           </p>
+          {{end}}
+        {{end}}
+    </div>
+    <div class="signup clearfix">
+      <form action="/timeline/" method="post">
+        {{if .xsrfdata}}{{.xsrfdata}}{{end}}
+        <div class="input-append clearfix">
+          <input type="text" name="timeline" value=""/>
+          <button type="submit" class="">弹指间灰飞烟灭</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="widget Engine_Tabbed">
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a href="#popular-engine_tabbed--1" data-toggle="tab">操作</a>
+      </li>
+      <li>
+        <a href="#recent-engine_tabbed--1" data-toggle="tab">私信</a>
+      </li>
+      <li>
+        <a href="#comments-engine_tabbed--1" data-toggle="tab">回应</a>
+      </li>
+      <li>
+        <a href="#cate-engine_tabbed--1" data-toggle="tab">分类</a>
+      </li>
+      <li>
+        <a href="#node-engine_tabbed--1" data-toggle="tab">节点</a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+
+      <div class="tab-pane fade in active" id="popular-engine_tabbed--1">
+
+        <div class="well" style="max-width: 400px; margin: 0 auto 10px;">
+          <a type="button" class="btn btn-large btn-block btn-inverse" href="/new/topic/">创建话题</a>
+          <a type="button" class="btn btn-large btn-block" href="/new/node/">创建节点</a>
+          <a type="button" class="btn btn-large btn-block" href="/new/category/">创建分类</a>
+          <a type="button" class="btn btn-large btn-block" href="/edit/category/">编辑分类</a>
+          <a type="button" class="btn btn-large btn-block" href="/edit/node/">编辑节点</a>
+        </div>
+
+      </div>
+
+      <div class="tab-pane fade in" id="recent-engine_tabbed--1">
+        <div class="post-2812 post type-post status-publish format-image hentry category-news category-sports">
+
+          <div class="featured-area">
+
+            <!-- .featured-image -->
+            <div class="featured-image">
+
+              <a href="dealing-with-more-than-balls-and-strikes/default.html">
+                <img width="200" height="200" src="/static/files/2013/02/Baseball-baseball-52252_1024_768-200x200.jpg" class="attachment-post-thumbnail wp-post-image" alt="Baseball-baseball-52252_1024_768" />
+              </a>
+
+            </div>
+            <!-- /.featured-image --> </div>
+
+          <div class="overlay">
+
+            <header class="entry-header">
+
+              <h2 class="entry-title">
+                <a href="dealing-with-more-than-balls-and-strikes/default.html">Dealing With More Than Balls and Strikes</a>
+              </h2>
+
+              <div class="entry-meta">
+                <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">
+                  {{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}
+                </time>
+                &middot;
+                <a href="#comments" class="entry-comments block">我要回应</a>
+              </div>
+
+            </header>
+
+            <div class="entry-content">
+
+              <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Praesent dapibus, neque id cursus faucibus,&#8230;
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="post-2815 post type-post status-publish format-standard hentry category-news category-sports category-technology">
+
+          <div class="featured-area">
+
+            <!-- .featured-image -->
+            <div class="featured-image">
+
+              <a href="oscar-pistorius-goes-step-by-step/default.html">
+                <img width="200" height="200" src="/static/files/2013/02/6368910827_2511b55eac_o-200x200.jpg" class="attachment-post-thumbnail wp-post-image" alt="Here He Comes Now..." />
+              </a>
+
+            </div>
+            <!-- /.featured-image --> </div>
+
+          <div class="overlay">
+
+            <header class="entry-header">
+
+              <h2 class="entry-title">
+                <a href="oscar-pistorius-goes-step-by-step/default.html">Oscar Pistorius Goes Step By Step</a>
+              </h2>
+
+              <div class="entry-meta">
+                <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">
+                  {{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}
+                </time>
+                &middot;
+                <a href="#comments" class="entry-comments block">我要回应</a>
+              </div>
+
+            </header>
+
+            <div class="entry-content">
+
+              <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Praesent dapibus, neque id cursus faucibus,&#8230;
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="post-2781 post type-post status-publish format-gallery hentry category-photos category-style">
+
+          <div class="featured-area">
+
+            <!-- .featured-image -->
+            <div class="featured-image">
+
+              <a href="/topic/1">
+                <img width="200" height="200" src="/static/files/2012/07/6829158646_d4f32ea229_b-200x200.jpg" class="attachment-post-thumbnail wp-post-image" alt="6829158646_d4f32ea229_b" />
+              </a>
+
+            </div>
+            <!-- /.featured-image --> </div>
+
+          <div class="overlay">
+
+            <header class="entry-header">
+
+              <h2 class="entry-title">
+                <a href="/topic/1">Amet Cras Dolor Tristique Pellentesque</a>
+              </h2>
+
+              <div class="entry-meta">
+                <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">
+                  {{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}
+                </time>
+                &middot;
+                <a href="#comments" class="entry-comments block">我要回应</a>
+              </div>
+
+            </header>
+
+            <div class="entry-content">
+
+              <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque&#8230;
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="post-2777 post type-post status-publish format-video hentry category-gear category-technology category-videos">
+
+          <div class="featured-area">
+
+            <!-- .featured-image -->
+            <div class="featured-image">
+
+              <a href="first-look-official-iphone-5-trailer/default.html">
+                <img width="200" height="200" src="/static/files/2013/02/iphone_2338311b-200x200.jpg" class="attachment-post-thumbnail wp-post-image" alt="iphone_2338311b" />
+              </a>
+
+            </div>
+            <!-- /.featured-image --> </div>
+
+          <div class="overlay">
+
+            <header class="entry-header">
+
+              <h2 class="entry-title">
+                <a href="ailer/default.html">Vancouver Time Lapse &#8211; Amazing!</a>
+              </h2>
+
+              <div class="entry-meta">
+                <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">
+                  {{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}
+                </time>
+                &middot;
+                <a href="#comments" class="entry-comments block">我要回应</a>
+              </div>
+
+            </header>
+
+            <div class="entry-content">
+
+              <p>
+                The new iPhone 5 has a remarkably slim design that still makes room for a larger display and a faster chip. Ultrafast wireless that doesn’t sacrifice battery life. And all-new headphones designed to sound great and fit comfortably. So much went into this iPhone. So&#8230;
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="tab-pane fade in comment-tab" id="comments-engine_tabbed--1">
+
+        <div class="hentry">
+
+          <div class="featured-area">
+
+            <!-- .featured-image -->
+            <div class="featured-image">
+
+              <img alt='' src='http://1.gravatar.com/avatar/982a70a3772bd498c5284f7b8b0128e1?s=80&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=80&r=G' class='avatar avatar-80 photo' height='80' width='80' />
+
+            </div>
+            <!-- /.featured-image --> </div>
+
+          <div class="overlay">
+
+            <header class="entry-header">
+
+              <h2 class="entry-title">your mom</h2>
+
+              <div class="entry-meta">
+                <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">
+                  {{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}
+                </time>
+              </div>
+
+            </header>
+
+            <div class="entry-content">hi</div>
+
+          </div>
+
+        </div>
+
+        <div class="hentry">
+
+          <div class="featured-area">
+
+            <!-- .featured-image -->
+            <div class="featured-image">
+
+              <img alt='' src='http://1.gravatar.com/avatar/9598e2c1cf135a7b1fcd552bb2687956?s=80&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=80&r=G' class='avatar avatar-80 photo' height='80' width='80' />
+
+            </div>
+            <!-- /.featured-image --> </div>
+
+          <div class="overlay">
+
+            <header class="entry-header">
+
+              <h2 class="entry-title">John</h2>
+
+              <div class="entry-meta">
+                <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">
+                  {{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}
+                </time>
+              </div>
+
+            </header>
+
+            <div class="entry-content">second commment</div>
+
+          </div>
+
+        </div>
+
+        <div class="hentry">
+
+          <div class="featured-area">
+
+            <!-- .featured-image -->
+            <div class="featured-image">
+
+              <img alt='' src='http://1.gravatar.com/avatar/9598e2c1cf135a7b1fcd552bb2687956?s=80&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=80&r=G' class='avatar avatar-80 photo' height='80' width='80' />
+
+            </div>
+            <!-- /.featured-image --> </div>
+
+          <div class="overlay">
+
+            <header class="entry-header">
+
+              <h2 class="entry-title">John</h2>
+
+              <div class="entry-meta">
+                <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">
+                  {{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}
+                </time>
+              </div>
+
+            </header>
+
+            <div class="entry-content">kuytrdfghjk</div>
+
+          </div>
+
+        </div>
+
+        <div class="hentry">
+
+          <div class="featured-area">
+
+            <!-- .featured-image -->
+            <div class="featured-image">
+
+              <img alt='' src='http://1.gravatar.com/avatar/b0d8c6e5ea589e6fc3d3e08afb1873bb?s=80&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=80&r=G' class='avatar avatar-80 photo' height='80' width='80' />
+
+            </div>
+            <!-- /.featured-image --> </div>
+
+          <div class="overlay">
+
+            <header class="entry-header">
+
+              <h2 class="entry-title">Johnny</h2>
+
+              <div class="entry-meta">
+                <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">
+                  {{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}
+                </time>
+              </div>
+
+            </header>
+
+            <div class="entry-content">ertyuiop</div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="tab-pane fade in topics" id="cate-engine_tabbed--1">
+        <ul>
+          {{if .categorys}}
+            {{range .categorys}}
+            <li class="cat-item cat-item-{{.Id}}">
+              <a href="/category/{{.Id}}/" title="浏览[{{.Title}}]分类下的节点">{{.Title}}</a>
+              <span class="post-count">{{.NodeCount}}</span>
+            </li>
+            {{end}}
+          {{end}}
+        </ul>
+      </div>
+
+      <div class="tab-pane fade in topics" id="node-engine_tabbed--1">
+        <ul>
+          {{if .nodes}}
+                    {{range .nodes}}
+          <li class="cat-item cat-item-{{.Id}}">
+            <a href="/node/{{.Id}}/" title="浏览[{{.Title}}]节点下的话题">{{.Title}}</a>
+            <span class="post-count">{{.TopicCount}}</span>
+          </li>
+          {{end}}
+                  {{end}}
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+{{end}}
+        <div class="tabbed-widget">
+          <div class="widget Engine_Tabbed">
+            <ul class="nav nav-tabs">
+              <li class="active">
+                <a href="#popular-engino_tabbed--1" data-toggle="tab">流行</a>
+              </li>
+              <li>
+                <a href="#hotness-engino_tabbed--1" data-toggle="tab">热门</a>
+              </li>
+              <li>
+                <a href="#recent-engino_tabbed--1" data-toggle="tab">最近</a>
+              </li>
+              <li>
+                <a href="#comments-engino_tabbed--1" data-toggle="tab">回应</a>
+              </li>
+              <li>
+                <a href="#topics-engino_tabbed--1" data-toggle="tab">分类</a>
+              </li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane fade in active" id="popular-engino_tabbed--1">
+              {{if .topic_views_5_popular}}
+                {{range .topic_views_5_popular}}
+                <div class="post-{{.Id}} post type-post status-publish format-standard hentry category-news category-sports">
+                  {{if .Attachment}}
+                  <div class="featured-area">
+                    <!-- .featured-image -->        
+                    <div class="featured-image">
+                      <a href="/topic/{{.Id}}/">
+                        <img width="200" height="200" src="{{.Attachment}}" class="attachment-post-thumbnail wp-post-image"/>
+                      </a>
+                    </div>
+                    <!-- /.featured-image -->
+                  </div>
+                  {{end}}
+                  <div class="overlay">
+                    <div class="entry-header">
+                      <h2 class="entry-title">
+                        <a href="/topic/{{.Id}}/">{{if .Title}}
+                              {{$ts:=html2str .Title}}
+                              {{$ts:=substr $ts 0 20}}
+                              {{str2html $ts}}..
+                            {{end}}</a>
+                      </h2>
+                      <div class="entry-meta">
+                        <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                        &middot;
+                        <a href="/topic/{{.Id}}/#comments" class="entry-comments block">{{.ReplyCount}} 回应</a>
+                      </div>
+                    </div>
+                    <div class="entry-content">
+                        {{if .Content}}
+                              <p>
+                                {{$cs:=html2str .Content}}
+                                {{$cs:=substr $cs 0 100}}
+                                {{str2html $cs}}
+                              </p>
+                        {{end}}
+                    </div>
+                  </div>
+                </div>
+                {{end}}
+              {{else}}
+                <div class="post-2073 post type-post status-publish format-video hentry category-videos">
+
+                  <div class="featured-area">
+
+                    <!-- .featured-image -->        
+                    <div class="featured-image">
+
+                      <a href="blow-job-by-tadao-cern/default.html">
+                        <img width="200" height="200" src="/static/files/2013/02/305779278_1280-200x200.jpg" class="attachment-post-thumbnail wp-post-image" alt="305779278_1280" />        
+                      </a>
+
+                    </div>
+                    <!-- /.featured-image --> </div>
+
+                  <div class="overlay">
+
+                    <div class="entry-header">
+
+                      <h2 class="entry-title">
+                        <a href="blow-job-by-tadao-cern/default.html">Blow Quam Ornare Pellentesque Adipiscing Mattis</a>
+                      </h2>
+
+                      <div class="entry-meta">
+                        <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                        &middot;
+                        <a href="blow-job-by-tadao-cern/default.html#comments" class="entry-comments block">6 回应</a>
+                      </div>
+
+                    </div>
+
+                    <div class="entry-content">
+
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit&#8230;
+                      </p>
+
+                    </div>
+
+                  </div>
+                </div>
+              {{end}}
+              </div>
+
+              <div class="tab-pane fade in" id="hotness-engino_tabbed--1">
+              {{if .topic_hotness_5}}
+                {{range .topic_hotness_5}}
+                  <div class="post-{{.Id}} post type-post status-publish format-image hentry category-news category-sports">
+                  {{if .Attachment}}
+                    <div class="featured-area">
+                      <!-- .featured-image -->        
+                      <div class="featured-image">
+                        <a href="/topic/{{.Id}}/">
+                          <img width="200" height="200" src="{{.Attachment}}" class="attachment-post-thumbnail wp-post-image"/>
+                        </a>
+                      </div>
+                      <!-- /.featured-image -->
+                    </div>
+                  {{end}}
+                    <div class="overlay">
+                      <header class="entry-header">
+                        <h2 class="entry-title">
+                          <a href="/topic/{{.Id}}/">{{.Title}}</a>
+                        </h2>
+                        <div class="entry-meta">
+                          <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                          &middot;
+                          <a href="/topic/{{.Id}}/#comments" class="entry-comments block">我要回应</a>
+                        </div>
+                      </header>
+                      <div class="entry-content">
+                        {{if .Content}}
+                              <p>
+                                {{$cs:=html2str .Content}}
+                                {{$cs:=substr $cs 0 100}}
+                                {{str2html $cs}}
+                              </p>
+                        {{end}}
+                      </div>
+                    </div>
+                  </div>
+                {{end}}
+              {{else}}
+                  <div class="post-888 post type-post status-publish format-standard hentry category-news category-sports category-technology">
+
+                    <div class="featured-area">
+
+                      <!-- .featured-image -->        
+                      <div class="featured-image">
+
+                        <a href="oscar-pistorius-goes-step-by-step/default.html">
+                          <img width="200" height="200" src="/static/files/2013/02/6368910827_2511b55eac_o-200x200.jpg" class="attachment-post-thumbnail wp-post-image" alt="Here He Comes Now..." />        
+                        </a>
+
+                      </div>
+                      <!-- /.featured-image --> </div>
+
+                    <div class="overlay">
+
+                      <header class="entry-header">
+
+                        <h2 class="entry-title">
+                          <a href="oscar-pistorius-goes-step-by-step/default.html">Oscar Pistorius Goes Step By Step</a>
+                        </h2>
+
+                        <div class="entry-meta">
+                          <time class="entry-date block" datetime="2013-02-13T17:31:57+00:00">Feb 13, 2013</time>
+                          &middot;
+                          <a href="#comments" class="entry-comments block">我要回应</a>
+                        </div>
+
+                      </header>
+
+                      <div class="entry-content">
+
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Praesent dapibus, neque id cursus faucibus,&#8230;
+                        </p>
+
+                      </div>
+
+                    </div>
+                  </div>
+              {{end}}
+              </div>
+              <div class="tab-pane fade in" id="recent-engino_tabbed--1">
+              {{if .topic_lastest_5}}
+                {{range .topic_lastest_5}}
+                <div class="post-{{.Id}} post type-post status-publish format-image hentry category-news category-sports">
+                  {{if .Attachment}}
+                  <div class="featured-area">
+                    <!-- .featured-image -->        
+                    <div class="featured-image">
+                      <a href="/topic/{{.Id}}/">
+                        <img width="200" height="200" src="{{.Attachment}}" class="attachment-post-thumbnail wp-post-image"/>
+                      </a>
+                    </div>
+                    <!-- /.featured-image -->
+                  </div>
+                  {{end}}
+                  <div class="overlay">
+
+                    <header class="entry-header">
+                      <h2 class="entry-title">
+                        <a href="/topic/{{.Id}}/">{{.Title}}</a>
+                      </h2>
+
+                      <div class="entry-meta">
+                       <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                          &middot;
+                        <a href="/topic/{{.Id}}/#comments" class="entry-comments block">我要回应</a>
+                      </div>
+
+                    </header>
+
+                    <div class="entry-content">
+                        {{if .Content}}
+                              <p>
+                                {{$cs:=html2str .Content}}
+                                {{$cs:=substr $cs 0 100}}
+                                {{str2html $cs}}
+                              </p>
+                        {{end}}
+                    </div>
+                  </div>
+                </div>
+                {{end}}
+              {{else}}
+                <div class="post-2815 post type-post status-publish format-standard hentry category-news category-sports category-technology">
+
+                  <div class="featured-area">
+
+                    <!-- .featured-image -->        
+                    <div class="featured-image">
+
+                      <a href="oscar-pistorius-goes-step-by-step/default.html">
+                        <img width="200" height="200" src="/static/files/2013/02/6368910827_2511b55eac_o-200x200.jpg" class="attachment-post-thumbnail wp-post-image" alt="Here He Comes Now..." />        
+                      </a>
+
+                    </div>
+                    <!-- /.featured-image --> </div>
+
+                  <div class="overlay">
+
+                    <header class="entry-header">
+
+                      <h2 class="entry-title">
+                        <a href="oscar-pistorius-goes-step-by-step/default.html">Oscar Pistorius Goes Step By Step</a>
+                      </h2>
+
+                      <div class="entry-meta">
+                        <time class="entry-date block" datetime="2013-02-13T17:31:57+00:00">Feb 13, 2013</time>
+                        &middot;
+                        <a href="#comments" class="entry-comments block">我要回应</a>
+                      </div>
+
+                    </header>
+
+                    <div class="entry-content">
+
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Praesent dapibus, neque id cursus faucibus,&#8230;
+                      </p>
+
+                    </div>
+
+                  </div>
+                </div>
+              {{end}}
+              </div>
+
+              <div class="tab-pane fade in comment-tab" id="comments-engino_tabbed--1">
+              {{if .replys_5_mix}}
+                {{range .replys_5_mix}}
+                <div class="hentry">
+                  {{if .Attachment}}
+                  <div class="featured-area">
+                    <!-- .featured-image -->        
+                    <div class="featured-image">
+                      <a href="/topic/{{.Pid}}/#reply-{{.Id}}">
+                        <img src='{{.Attachment}}' class='avatar avatar-80 photo' height='80' width='80' />
+                      </a>
+                    </div>
+                    <!-- /.featured-image -->
+                  </div>
+                  {{else}}
+                  <div class="featured-area">
+                    <!-- .featured-image -->        
+                    <div class="featured-image">
+                      <a href="/topic/{{.Pid}}/#reply-{{.Id}}">
+                        <img src='/static/img/usr_72x72.png' class='avatar avatar-80 photo' height='80' width='80' />
+                      </a>
+                    </div>
+                    <!-- /.featured-image -->
+                  </div>
+                  {{end}}
+                  <div class="overlay">
+                {{if .Content}}
+                    <div class="entry-content">
+                            <h6>
+                              <a href="/topic/{{.Pid}}/#reply-{{.Id}}">
+                                {{.Author}}说：
+                                {{$cs:=html2str .Content}}
+                                {{$cs:=substr $cs 0 100}}
+                                {{str2html $cs}}
+                              </a>
+                            </h6>
+                    </div>
+                {{end}}
+                    <div class="entry-meta">
+                    <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">
+                      <a href="/topic/{{.Pid}}/#reply-{{.Id}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</a>
+                    </time>
+                    </div>
+                  </div>
+                </div>
+                {{end}}
+              {{else}}
+                <div class="hentry">
+                  <div class="featured-area">
+                    <!-- .featured-image -->        
+                    <div class="featured-image">
+                      <img alt='' src='http://1.gravatar.com/avatar/982a70a3772bd498c5284f7b8b0128e1?s=80&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=80&r=G' class='avatar avatar-80 photo' height='80' width='80' />
+                    </div>
+                    <!-- /.featured-image -->
+                  </div>
+                  <div class="overlay">
+                    <header class="entry-header">
+                      <h2 class="entry-title">尚无回应</h2>
+                      <div class="entry-meta">
+                        <time class="entry-date block" datetime="3月13日 , 1988年">3月13日 , 1988年</time>
+                      </div>
+
+                    </header>
+                    <div class="entry-content">尚无回应数据</div>
+                  </div>
+                </div>
+              {{end}}
+              </div>
+
+              <div class="tab-pane fade in topics" id="topics-engino_tabbed--1">
+                <ul>
+                  {{if .categorys}}
+                    {{range .categorys}}
+                    <li class="cat-item cat-item-{{.Id}}">
+                      <a href="/category/{{.Id}}/" title="浏览[{{.Title}}]分类下的节点">{{.Title}}</a>
+                      <span class="post-count">{{.NodeCount}}</span>
+                    </li>
+                    {{end}}
+                  {{else}}
+                    <li class="cat-item cat-item-0">
+                      <a href="/category/0/" title="尚无分类">尚无分类</a>
+                      <span class="post-count">0</span>
+                    </li>
+                  {{end}}
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="span3 normal-sidebar">
+      {{if .topics_cat}}
+         {{range .topics_cat}}
+                  <section class="widget clearfix section Engine_Postcarousel white">
+                     <h3 class="widget-title">
+                        <span class="title-bg">:.</span>
+                        <span class="border"></span>
+                     </h3>
+
+                     <!-- .flexslider -->
+                     <div class="flexslider post-carousel">
+                        <span class="gradient"></span>
+                        <ul class="slides">
+                     {{if .}}
+                        {{range .}}
+                           <li>
+
+                              <div class="post-{{.Id}} post type-post status-publish format-image hentry category-news category-sports">
+                                 <div class="featured-area">
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+                                       <a href="/topic/{{.Id}}/">
+                                          <img width="200" height="111" src="{{.Attachment}}" class="attachment-small_thumb wp-post-image"/>
+                                       </a>
+                                    </div>
+                                    <!-- /.featured-image -->
+                                 </div>
+                                 <div class="overlay">
+
+                                    <div class="entry-header">
+
+                                       <div class="entry-meta">
+                                          <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                                          <a href="/topic/{{.Id}}/" class="entry-comments block">尚无回应</a>
+                                       </div>
+
+                                       <h2 class="entry-title">
+                                          <a href="/topic/{{.Id}}/">{{if .Title}}
+                                             {{$ts:=html2str .Title}}
+                                             {{$ts:=substr $ts 0 30}}
+                                             {{str2html $ts}}
+                                       {{end}}</a>
+                                       </h2>
+
+                                    </div>
+
+                                    <div class="entry-content">
+                                       {{if .Content}}
+                                           <p>
+                                             {{$cs:=html2str .Content}}
+                                             {{$cs:=substr $cs 0 240}}
+                                             {{str2html $cs}}
+                                           </p>
+                                       {{end}}
+                                    </div>
+                                 </div>
+
+                              </div>
+                           </li>
+                        {{end}}
+                     {{else}}
+                           <li>
+                              <div class="post-2815 post type-post status-publish format-standard hentry category-news category-sports category-technology">
+                                 <div class="featured-area">
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+                                       <a href="index.html">
+                                          <img width="200" height="111" src="/static/files/2013/02/6368910827_2511b55eac_o-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="Here He Comes Now..." />
+                                       </a>
+                                    </div>
+                                    <!-- /.featured-image -->
+                                 </div>
+
+                                 <div class="overlay">
+                                    <div class="entry-header">
+                                       <div class="entry-meta">
+                                          <time class="entry-date block" datetime="2013-02-13T17:31:57+00:00">Feb 13, 2013</time>
+                                          <a href="index.html#comments" class="entry-comments block">尚无回应</a>
+                                       </div>
+                                       <h2 class="entry-title">
+                                          <a href="index.html">Oscar Pistorius Goes Step By Step</a>
+                                       </h2>
+
+                                    </div>
+
+                                    <div class="entry-content">
+                                       Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam...
+                                    </div>
+                                 </div>
+
+                              </div>
+                           </li>
+                           <li>
+                              <div class="post-2777 post type-post status-publish format-video hentry category-gear category-technology category-videos">
+
+                                 <div class="featured-area">
+
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+
+                                       <a href="../first-look-official-iphone-5-trailer/index.html">
+                                          <img width="200" height="111" src="/static/files/2013/02/iphone_2338311b-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="iphone_2338311b" />
+                                       </a>
+
+                                    </div>
+                                    <!-- /.featured-image --> </div>
+
+                                 <div class="overlay">
+
+                                    <div class="entry-header">
+
+                                       <div class="entry-meta">
+                                          <time class="entry-date block" datetime="2013-02-13T16:57:22+00:00">Feb 13, 2013</time>
+                                          <a href="../first-look-official-iphone-5-trailer/index.html#comments" class="entry-comments block">尚无回应</a>
+                                       </div>
+
+                                       <h2 class="entry-title">
+                                          <a href="../first-look-official-iphone-5-trailer/index.html">Vancouver Time Lapse &#8211; Amazing!</a>
+                                       </h2>
+
+                                    </div>
+
+                                    <div class="entry-content">
+                                       The new iPhone 5 has a remarkably slim design that still makes room for a larger display and a...
+                                    </div>
+                                 </div>
+
+                              </div>
+                           </li>
+                     {{end}}
+                        </ul>
+                     </div>
+                     <!-- /.flexslider --> 
+                  </section>
+         {{end}}
+      {{else}}
+                  <section class="widget clearfix section Engine_Postcarousel white">
+                     <h3 class="widget-title">
+                        <span class="title-bg">:.</span>
+                        <span class="border"></span>
+                     </h3>
+
+                     <!-- .flexslider -->
+                     <div class="flexslider post-carousel">
+                        <span class="gradient"></span>
+                        <ul class="slides">
+                           <li>
+
+                              <div class="post-0 post type-post status-publish format-image hentry category-news category-sports">
+                                 <div class="featured-area">
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+                                       <a href="/topic/{{.Id}}/">
+                                          <img width="200" height="111" src="/static/files/2013/02/Baseball-baseball-52252_1024_768-200x111.jpg" class="attachment-small_thumb wp-post-image"/>
+                                       </a>
+                                    </div>
+                                    <!-- /.featured-image -->
+                                 </div>
+                                 <div class="overlay">
+
+                                    <div class="entry-header">
+
+                                       <div class="entry-meta">
+                                          <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                                          <a href="/topic/0/" class="entry-comments block">尚无回应</a>
+                                       </div>
+
+                                       <h2 class="entry-title">
+                                          <a href="/topic/0/">尚无数据</a>
+                                       </h2>
+
+                                    </div>
+
+                                    <div class="entry-content">
+                                           <p>
+                                             尚无数据
+                                           </p>
+                                    </div>
+                                 </div>
+
+                              </div>
+                           </li>
+                           <li>
+                              <div class="post-2815 post type-post status-publish format-standard hentry category-news category-sports category-technology">
+                                 <div class="featured-area">
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+                                       <a href="index.html">
+                                          <img width="200" height="111" src="/static/files/2013/02/6368910827_2511b55eac_o-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="Here He Comes Now..." />
+                                       </a>
+                                    </div>
+                                    <!-- /.featured-image -->
+                                 </div>
+
+                                 <div class="overlay">
+                                    <div class="entry-header">
+                                       <div class="entry-meta">
+                                          <time class="entry-date block" datetime="2013-02-13T17:31:57+00:00">Feb 13, 2013</time>
+                                          <a href="index.html#comments" class="entry-comments block">尚无回应</a>
+                                       </div>
+                                       <h2 class="entry-title">
+                                          <a href="index.html">Oscar Pistorius Goes Step By Step</a>
+                                       </h2>
+
+                                    </div>
+
+                                    <div class="entry-content">
+                                       Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam...
+                                    </div>
+                                 </div>
+
+                              </div>
+                           </li>
+                           <li>
+                              <div class="post-2777 post type-post status-publish format-video hentry category-gear category-technology category-videos">
+
+                                 <div class="featured-area">
+
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+
+                                       <a href="../first-look-official-iphone-5-trailer/index.html">
+                                          <img width="200" height="111" src="/static/files/2013/02/iphone_2338311b-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="iphone_2338311b" />
+                                       </a>
+
+                                    </div>
+                                    <!-- /.featured-image --> </div>
+
+                                 <div class="overlay">
+
+                                    <div class="entry-header">
+
+                                       <div class="entry-meta">
+                                          <time class="entry-date block" datetime="2013-02-13T16:57:22+00:00">Feb 13, 2013</time>
+                                          <a href="../first-look-official-iphone-5-trailer/index.html#comments" class="entry-comments block">尚无回应</a>
+                                       </div>
+
+                                       <h2 class="entry-title">
+                                          <a href="../first-look-official-iphone-5-trailer/index.html">Vancouver Time Lapse &#8211; Amazing!</a>
+                                       </h2>
+
+                                    </div>
+
+                                    <div class="entry-content">
+                                       The new iPhone 5 has a remarkably slim design that still makes room for a larger display and a...
+                                    </div>
+                                 </div>
+
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- /.flexslider --> 
+                  </section>
+      {{end}}
+          </div>
+
+          <div class="span2 thin-sidebar">
+      {{if .topics_hn}}
+         {{range .topics_hn}}
+                  <section class="widget clearfix section Engine_Postcarousel primary">
+                     <h3 class="widget-title">
+                        <span class="title-bg">.:</span>
+                        <span class="border"></span>
+                     </h3>
+                     <!-- .flexslider -->
+                     <div class="flexslider post-carousel">
+                        <span class="gradient"></span>
+                        <ul class="slides">
+                        {{range .}}
+                           <li>
+                              <div class="post-{{.Id}} post type-post status-publish format-image hentry category-news category-sports">
+
+                                 <div class="featured-area">
+
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+
+                                       <a href="/topic/{{.Id}}/">
+                                          <img width="200" height="111" src="{{.Attachment}}" class="attachment-small_thumb wp-post-image"/>
+                                       </a>
+
+                                    </div>
+                                    <!-- /.featured-image -->
+                                 </div>
+
+                                 <div class="overlay">
+
+                                    <div class="entry-header">
+
+                                       <div class="entry-meta">
+                                          <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                                          <a href="/topic/{{.Id}}/" class="entry-comments block">尚无回应</a>
+                                       </div>
+
+                                       <h2 class="entry-title">
+                                          <a href="/topic/{{.Id}}/">{{.Title}}</a>
+                                       </h2>
+
+                                    </div>
+
+                                    <div class="entry-content">
+                                       {{str2html .Content}}
+                                    </div>
+                                 </div>
+                              </div>
+                           </li>
+                        {{end}}
+                        </ul>
+                     </div>
+                     <!-- /.flexslider -->
+                  </section>
+         {{end}}
+      {{else}}
+                  <section class="widget clearfix section Engine_Postcarousel primary">
+                     <h3 class="widget-title">
+                        <span class="title-bg">.:</span>
+                        <span class="border"></span>
+                     </h3>
+                     <!-- .flexslider -->
+                     <div class="flexslider post-carousel">
+
+                        <span class="gradient"></span>
+
+                        <ul class="slides">
+                           <li>
+                              <div class="post-0 post type-post status-publish format-image hentry category-news category-sports">
+
+                                 <div class="featured-area">
+
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+
+                                       <a href="/topic/0/">
+                                          <img width="200" height="111" src="http://veryhour.com/static/files/2013/02/Baseball-baseball-52252_1024_768-200x111.jpg" class="attachment-small_thumb wp-post-image"/>
+                                       </a>
+
+                                    </div>
+                                    <!-- /.featured-image -->
+                                 </div>
+
+                                 <div class="overlay">
+
+                                    <div class="entry-header">
+
+                                       <div class="entry-meta">
+                                          <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                                          <a href="/topic/0/" class="entry-comments block">尚无回应</a>
+                                       </div>
+
+                                       <h2 class="entry-title">
+                                          <a href="/topic/0/">{{.Title}}</a>
+                                       </h2>
+
+                                    </div>
+
+                                    <div class="entry-content">
+                                       尚未有内容
+                                    </div>
+                                 </div>
+                              </div>
+                           </li>
+                        </ul>
+
+                     </div>
+                     <!-- /.flexslider -->
+                  </section>
+      {{end}}
+          </div>
+        </div>
+
+      </div>
+      <!-- /.sidebar --> 
+    </div>
+
+  </div>
+  <!-- /.container -->{{template "footer.html" .}}</div>
+<!-- /.main-container -->
+
+<script type='text/javascript' src='/static/plugins/contact-form-7/includes/js/jquery.form.min-ver=3.36.0-2013.06.16.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"\/static\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
+/* ]]>*/</script>
+<script type='text/javascript' src='/static/plugins/contact-form-7/includes/js/scripts-ver=3.4.2.js'></script>
+<script type='text/javascript' src='/static/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='/static/bootstrap-2.1.1/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/static/assets/js/flexslider-ver=2.1.js'></script>
+<script type='text/javascript' src='/static/library/media-player/mediaelement-and-player.min-ver=3.5.1.js'></script>
+<script type='text/javascript' src='/static/assets/js/jquery.fitvids-ver=3.5.1.js'></script>
+<script type='text/javascript' src='/static/assets/js/jquery.imagesloaded.min-ver=1.js'></script>
+<script type='text/javascript' src='/static/assets/js/jquery.jcarousel-ver=1.js'></script>
+<script type='text/javascript' src='/static/assets/js/engine-ver=1374933754.js'></script>
+<script type='text/javascript' src='/static/assets/js/jquery.tweet-ver=3.5.1.js'></script>
+
+</body>
+
+</html>

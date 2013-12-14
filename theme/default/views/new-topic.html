@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+{{template "head.html".}}
+<body class="home blog">
+	{{template "header.html".}}
+	<div id="content">
+		<div class="bd clx">
+			<div id="index" class="clx">
+				<div class="main">
+					<div class="main-content">
+							<article>
+								<div class="entry-header">
+									<h1 class="entry-title page-title">
+										<span>创建话题</span>
+									</h1>
+
+								</div>
+
+								<div class="entry-content">
+									{{template "msgerr.html" .}}
+									<form action="" method="post">
+										<div class="sc row-fluid">
+											<div class="span6">
+												<div>
+													<h5>话题标题:</h5>
+													<input type="text" name="title" value="" class="input-xxlarge">
+													{{if .xsrfdata}}{{.xsrfdata}}{{end}}
+												</div>
+											</div>
+											<div class="span6">
+												<div>
+													<h5>选择节点:</h5>
+													<div class="controls">
+														<select id="selectError" name="nodeid">
+															{{if .nodes}}
+		              											{{range .nodes}}
+																<option value="{{.Id}}">{{.Title}}</option>
+																{{end}}
+		              										{{else}}
+																<option value="0">尚无节点</option>
+															{{end}}
+														</select>
+														<span class="help-inline">（选择本话题归属的上级节点，必选）</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="sc row-fluid">
+											<div class="span12">
+												<div class="well">
+													<h5>话题内容：</h5>
+													<textarea class="editor" name="content" colspan="3" rowspan="20" style="z-index:9900;"></textarea>
+												</div>
+
+												<input type="submit" style="border: #000 1px solid;padding: 5px;margin-top:10px;margin-bottom:10px;font-size:16px;cursor:pointer;color: #000000;" value="提交"></div>
+										</div>
+									</form>
+									{{template "editor-tinymce.html" .}}
+								</div>
+							</article>
+							<div style="clear:both;"></div>
+					</div>
+
+		</div>
+		<div id="sidebar">
+			{{template "sidebar-search.html".}}
+					<div class="widgets">
+						<h3>热门标签</h3>
+						<div id="pin-tags" class="clx">
+							{{if .nodes_views_20}}
+							{{range .nodes_views_20}}
+							<a href='/node/{{.Title}}/' class='tag-link-{{.Id}}' title='{{.TopicCount}}个话题' style='font-size: 10pt;'>{{.Title}}</a>
+							{{end}}
+						{{end}}
+						</div>
+					</div>
+			{{template "sidebar-topbox.html".}}
+		</div>
+	</div>
+</div>
+</div>
+{{template "footer.html".}}
+</body>
+</html>

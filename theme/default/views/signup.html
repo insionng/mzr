@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+{{template "head.html".}}
+<body class="home blog">
+  {{template "header.html".}}
+  <div id="content">
+    <div class="bd clx">
+      <div id="index" class="clx">
+        <div class="main">
+          <div class="main-content">
+            <article class="post-2591 page type-page status-publish hentry" >
+
+              <div class="entry-header">
+
+                <h1 class="entry-title page-title">
+                  <span>注册账号</span>
+                </h1>
+
+              </div>
+
+              <div class="entry-content">
+                {{template "msgerr.html" .}}
+                    <form class="form-horizontal" action="/signup/" method="post">
+                      <legend>注册账号</legend>
+                      <div class="control-group">
+                        <label class="control-label" for="email">Email</label>
+                        <div class="controls">
+                          <input type="text" id="email" name="email" placeholder="Your email">
+                          {{if .xsrfdata}}{{.xsrfdata}}{{end}}
+                        </div>
+                      </div>
+                      <div class="control-group">
+                        <label class="control-label" for="username">用户名</label>
+                        <div class="controls">
+                          <input type="text" id="username" name="username" placeholder="Pick a username">
+                        </div>
+                      </div>
+                      <div class="control-group">
+                        <label class="control-label" for="password">密码</label>
+                        <div class="controls">
+                          <input type="password" id="password" name="password" placeholder="Create a password"></div>
+                      </div>
+                      <div class="control-group">
+                        <label class="control-label" for="repassword">重复密码</label>
+                        <div class="controls">
+                          <input type="password" id="repassword" name="repassword"  placeholder="Same Password"></div>
+                      </div>
+                      <div class="control-group">
+                        <div class="controls">
+                          <button type="submit" style="border: #000 1px solid;padding: 5px;margin-top:10px;margin-bottom:10px;font-size:16px;cursor:pointer;color: #000000;" value="提交">注册</button>
+                        </div>
+                      </div>
+                    </form>
+              </div>
+            </article>
+            <div style="clear:both;"></div>
+          </div>
+
+    </div>
+    <div id="sidebar">
+      <div id="widgets-sns" class="widgets">
+        <h3></h3>
+        <div id="search" class="clearfix">
+          <form method="get" id="searchform" action="/search/">
+            <input type="text" class="search-input" name="s" id="s" placeholder="搜索只有妹子的世界">
+            <input type="submit" class="search-submit" value="搜索只有妹子的世界"></form>
+        </div>
+      </div>
+      <div class="widgets">
+        <h3>热门标签</h3>
+        <div id="pin-tags" class="clx">
+          {{if .nodes_views_20}}
+              {{range .nodes_views_20}}
+          <a href='/node/{{.Title}}/' class='tag-link-{{.Id}}' title='{{.TopicCount}}个话题' style='font-size: 10pt;'>{{.Title}}</a>
+          {{end}}
+            {{end}}
+        </div>
+      </div>
+      {{template "sidebar-topbox.html".}}
+    </div>
+  </div>
+</div>
+</div>
+{{template "footer.html".}}
+</body>
+</html>

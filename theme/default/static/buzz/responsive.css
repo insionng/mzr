@@ -1,0 +1,121 @@
+@media (max-width: 979px) { 
+	.header-lower { padding: 0 20px }
+
+	.top-bar { padding: 10px 20px }
+
+	.side-widgets-wrap { min-height: 220px }
+
+	.content { margin-top: -230px }
+	
+	.sidebar { margin-top: 20px; }
+	
+	.tab-content .overlay { padding-top: 3px; }
+	
+	.tab-content .entry-title { font-size: 13px; }
+
+	.section .post-wrap {
+	    float: none;
+	    width: auto;
+	    height: auto;
+	    margin-bottom: 10px;
+	}
+
+	.comments .comment-form-author,
+	.comments .comment-form-email,
+	.comments .comment-form-url {
+	    float: none;
+	    padding: 0;
+	    width: 100%;
+	}
+
+	.home-slider .flex-direction-nav a { top: 125px }
+	
+	.home-widgets .Engine_Postcarousel .flexslider .gradient { display: block; }
+
+	.normal-sidebar,
+	.thin-sidebar { width: 290px }
+
+	.Engine_Tabbed .nav-tabs li a { padding: 10px }
+	
+	.post-wrap.first .featured-area { min-height: auto	; }
+}
+
+@media (max-width: 767px) { 
+	.mobile-menu { display: block }
+
+	.content {
+	    margin-top: 0;
+	    padding: 0 20px;
+	}
+	
+	.footer .footer-widgets {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+
+	.follows .count { font-size: 18px }
+
+	.side-widgets-wrap { min-height: none }
+
+	.side-widgets { padding-top: 20px }
+
+	.header { margin-bottom: 20px }
+
+	.home-slider .flex-direction-nav a { top: 20px }
+
+	.bottom-bar {
+	    padding-left: 20px;
+	    padding-right: 20px;
+	}
+
+	.sidebar,
+	.footer-widgets { padding: 0 20px }
+
+	.normal-sidebar,
+	.thin-sidebar { width: 100% }
+
+	.tab-pane.topics { margin: 0; }
+
+	.post-list .first-post,
+	.post-list ul {
+	    float: none;
+	    width: auto;
+	    padding: 0 20px 0 0;
+	    margin: 0;
+	    border: none;
+	}
+	
+	.post-list ul { margin-top: 30px; }
+
+	.post-list ul li {
+	    padding-left: 0;
+	    padding-right: 0;
+	}
+	
+	.post-list li:last-child { margin-bottom: 0 }
+
+	.left,
+	.right { float: none }
+	
+	.default .pager-container {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		margin-left: 0;
+		padding-top: 20px;
+	}
+	
+	.default .pager-container .pagination {
+		top: 20px;
+	}
+	
+	.pager-container .pager-text {
+		margin: 0 0 0 20px;
+		float: right;
+	}
+
+	.footer-info { text-align: center }
+
+	.logo { text-align: center }
+	
+	.breadcrumb { margin-left: 20px; margin-right: 20px; }
+}

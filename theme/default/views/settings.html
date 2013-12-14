@@ -1,0 +1,577 @@
+{{template "head.html" .}}
+<body class="single single-post postid-2815 single-format-standard responsive-on">
+
+<!-- .main-container -->
+<div class="main-container">
+
+   <div class="bg"></div>
+   {{template "header.html" .}}
+   <div class="container">
+      <!-- .row -->
+      <div class="row">
+         <div class="sidebar span2 pull-left">
+
+            <div class="row">
+               <div class="span2 thin-sidebar">
+      {{if .topics_hn}}
+         {{range .topics_hn}}
+                  <section class="widget clearfix section Engine_Postcarousel secondary">
+                     <h3 class="widget-title">
+                        <span class="title-bg">.:</span>
+                        <span class="border"></span>
+                     </h3>
+                     <!-- .flexslider -->
+                     <div class="flexslider post-carousel">
+                        <span class="gradient"></span>
+                        <ul class="slides">
+                        {{range .}}
+                           <li>
+                              <div class="post-{{.Id}} post type-post status-publish format-image hentry category-news category-sports">
+
+                                 <div class="featured-area">
+
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+
+                                       <a href="/topic/{{.Id}}/">
+                                          <img width="200" height="111" src="{{.Attachment}}" class="attachment-small_thumb wp-post-image"/>
+                                       </a>
+
+                                    </div>
+                                    <!-- /.featured-image -->
+                                 </div>
+
+                                 <div class="overlay">
+
+                                    <div class="entry-header">
+
+                                       <div class="entry-meta">
+                                          <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                                          <a href="/topic/{{.Id}}/" class="entry-comments block">尚无回应</a>
+                                       </div>
+
+                                       <h2 class="entry-title">
+                                          <a href="/topic/{{.Id}}/">{{.Title}}</a>
+                                       </h2>
+
+                                    </div>
+
+                                    <div class="entry-content">
+                                       {{str2html .Content}}
+                                    </div>
+                                 </div>
+                              </div>
+                           </li>
+                        {{end}}
+                        </ul>
+                     </div>
+                     <!-- /.flexslider -->
+                  </section>
+         {{end}}
+      {{else}}
+                  <section class="widget clearfix section Engine_Postcarousel secondary">
+                     <h3 class="widget-title">
+                        <span class="title-bg">.:</span>
+                        <span class="border"></span>
+                     </h3>
+                     <!-- .flexslider -->
+                     <div class="flexslider post-carousel">
+
+                        <span class="gradient"></span>
+
+                        <ul class="slides">
+                           <li>
+                              <div class="post-0 post type-post status-publish format-image hentry category-news category-sports">
+
+                                 <div class="featured-area">
+
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+
+                                       <a href="/topic/0/">
+                                          <img width="200" height="111" src="http://veryhour.com/static/files/2013/02/Baseball-baseball-52252_1024_768-200x111.jpg" class="attachment-small_thumb wp-post-image"/>
+                                       </a>
+
+                                    </div>
+                                    <!-- /.featured-image -->
+                                 </div>
+
+                                 <div class="overlay">
+
+                                    <div class="entry-header">
+
+                                       <div class="entry-meta">
+                                          <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                                          <a href="/topic/0/" class="entry-comments block">尚无回应</a>
+                                       </div>
+
+                                       <h2 class="entry-title">
+                                          <a href="/topic/0/">{{.Title}}</a>
+                                       </h2>
+
+                                    </div>
+
+                                    <div class="entry-content">
+                                       尚未有内容
+                                    </div>
+                                 </div>
+                              </div>
+                           </li>
+                        </ul>
+
+                     </div>
+                     <!-- /.flexslider -->
+                  </section>
+      {{end}}
+               </div>
+            </div>
+         </div>
+         <div class="content span7">
+            <div class="content-inner clearfix">
+
+               <div id="timelines" class="comments comments-area">
+                  <div class="section">
+                     <div class="section-inner">
+                        <div id="respond">
+                           <h3 id="timeline-title" style="text-transform:uppercase;">{{.usr.Username}}·个人设定</h3>
+                           {{if compare .timelines_username .username}}
+                           <form action="/new/timeline/" method="post" id="commentform" class="breadcrumb well">
+                              <p class="comment-form-comment">
+                                 <label for="comment">添加一条新时光记录</label>
+                                 {{if .xsrfdata}}{{.xsrfdata}}{{end}}
+                                 <textarea id="timeline" name="timeline" cols="45" rows="8" aria-required="true"></textarea>
+                              </p>
+                              <p class="form-submit">
+                                 <input name="submit" type="submit" id="submit" value="发布" />
+                                 <span class="pull-right">请尽量让自己的分享更有意义</span>
+                              </p>
+                           </form>
+                           {{end}}
+                     
+                           <div class="breadcrumb" id="timeline-{{.Id}}">
+                              <div class="entry-meta breadcrumb">
+                                 <span class="entry-categories"> <i class="icon-user"></i>
+                                    <a href="/user/{{.usr.Username}}/" title="作者" rel="author">{{.usr.Username}}</a>
+                                 </span>
+                                 <span>，{{if .usr.Content}}{{.usr.Content}}{{else}}签名神马的最有爱了~{{end}}</span>
+                                 <span class="badge badge-inverse pull-right">第{{if .usr.Username}}{{.usr.Id}}{{else}}NIL{{end}}号会员</span>
+                              </div>
+                              <div class="clearfix"></div>
+                              <div class="entry-meta">
+                                 {{if .usr.Created}}
+                                 <span class="pull-right">
+                                    <time class="entry-date block" datetime="{{if .usr.Created}}{{.usr.Created}}{{end}}">
+                                       <i class="icon-calendar"></i>
+                                       于{{dateformat .usr.Created "2006年1月2日"}}加入Veryhour
+                                    </time>
+                                 </span>
+                                 {{end}}
+                                 {{if compare .userid -1000}}
+                                 <span class="pull-right hidden-phone">
+                                    <a href="/edit/topic/{{.Id}}/" title="编辑回应">编辑</a>
+                                    <a href="/top/topic/{{.Id}}/" title="置顶回应">置顶</a>
+                                    <a href="/delete/timeline/{{.Id}}/" title="删除时光记录">删除</a>
+                                    <a href="/reply/timeline/{{.Id}}/" title="回应该时光记录">添加回应</a>
+                                 </span>
+                                 {{end}}
+                              </div>
+                              <div class="clearfix"></div>
+                              {{template "msgerr.html" .}}
+                              <form class="form-horizontal" action="/settings/avatar" enctype="multipart/form-data" method="post">
+                                 <legend>设置头像</legend>
+
+                                 <div class="control-group">
+                                    <label class="control-label" for="avatar">
+                                       {{if .usr.Avatar}}
+                                       <img src="{{.usr.Avatar}}"/>
+                                       {{else}}
+                                       <img src="/avatar/{{.username}}/72x72/"/>
+                                       {{end}}
+                                    </label>
+                                    <div class="controls">
+                                       {{if .xsrfdata}}{{.xsrfdata}}{{end}}
+                                       <input type="file" style="margin-top:5px;" id="avatar" name="avatar" class="btn btn-mini"/>
+                                    </div>
+                                 </div>
+                                 <div class="control-group">
+                                    <div class="controls">
+                                       <button type="submit" class="btn">保存</button>
+                                    </div>
+                                 </div>
+                              </form>
+                              <form class="form-horizontal" action="/settings/profile" method="post">
+
+                                 <legend>设置账号</legend>
+                                 <div class="control-group">
+                                    <label class="control-label" for="username">用户名</label>
+                                    <div class="controls">
+                                       {{if .xsrfdata}}{{.xsrfdata}}{{end}}
+                                       <input type="text"{{if .usr.Username}} class="uneditable-input"{{end}} id="username" name="username" value="{{.usr.Username}}"/>
+                                    </div>
+                                 </div>
+                                 <div class="control-group">
+                                    <label class="control-label" for="email">Email</label>
+                                    <div class="controls">
+                                       <input type="text" id="email" name="email" value="{{.usr.Email}}"/>
+                                    </div>
+                                 </div>
+                                 <div class="control-group">
+                                    <label class="control-label" for="nickname">昵称</label>
+                                    <div class="controls">
+                                       <input type="text" id="nickname" name="nickname" value="{{.usr.Nickname}}"/>
+                                    </div>
+                                 </div>
+                                 <div class="control-group">
+                                    <label class="control-label" for="realname">真实姓名</label>
+                                    <div class="controls">
+                                       <input type="text" id="realname" name="realname" value="{{.usr.Realname}}"/>
+                                    </div>
+                                 </div>
+                                 <div class="control-group">
+                                    <label class="control-label" for="content">签名</label>
+                                    <div class="controls">
+                                       <input type="text" id="content" name="content" value="{{.usr.Content}}"/></div>
+                                 </div>
+                                 <div class="control-group">
+                                    <label class="control-label" for="sex">性别</label>
+                                    <div class="controls">
+                                       <label class="radio"><input type="radio" name="sex" id="optionsRadios1" value="0"{{if compare .usr.Sex 0}} checked{{end}}>女</label>
+                                       <label class="radio"><input type="radio" name="sex" id="optionsRadios2" value="1"{{if compare .usr.Sex 1}} checked{{end}}>男</label>
+                                    </div>
+                                 </div>
+                                 
+                                 <div class="control-group">
+                                    <label class="control-label" for="mobile">手机</label>
+                                    <div class="controls">
+                                       <input type="text" id="mobile" name="mobile" value="{{.usr.Mobile}}"/></div>
+                                 </div>
+                                 <div class="control-group">
+                                    <label class="control-label" for="qq">QQ</label>
+                                    <div class="controls">
+                                       <input type="text" id="qq" name="qq" value="{{.usr.Qq}}"/></div>
+                                 </div>
+                                 <div class="control-group">
+                                    <label class="control-label" for="msn">MSN</label>
+                                    <div class="controls">
+                                       <input type="text" id="msn" name="msn" value="{{.usr.Msn}}"/></div>
+                                 </div>
+                                 
+                                 <div class="control-group">
+                                    <label class="control-label" for="weibo">微博</label>
+                                    <div class="controls">
+                                       <input type="text" id="weibo" name="weibo" value="{{.usr.Weibo}}"/></div>
+                                 </div>
+                                 <div class="control-group">
+                                    <label class="control-label" for="website">网站</label>
+                                    <div class="controls">
+                                       <input type="text" id="website" name="website" value="{{.usr.Website}}"/></div>
+                                 </div>
+                                 <div class="control-group">
+                                    <label class="control-label" for="birth">生日</label>
+                                    <div class="controls">
+                                       <input type="text" id="birth" name="birth" value="{{.usr.Birth}}"/></div>
+                                 </div>
+                                 <div class="control-group">
+                                    <label class="control-label" for="province">省份</label>
+                                    <div class="controls">
+                                       <input type="text" id="province" name="province" value="{{.usr.Province}}"/></div>
+                                 </div>
+                                 <div class="control-group">
+                                    <label class="control-label" for="city">城市</label>
+                                    <div class="controls">
+                                       <input type="text" id="city" name="city" value="{{.usr.City}}"/></div>
+                                 </div>
+                                 <div class="control-group">
+                                    <label class="control-label" for="company">公司</label>
+                                    <div class="controls">
+                                       <input type="text" id="company" name="company" value="{{.usr.Company}}"/></div>
+                                 </div>
+                                 
+                                 <div class="control-group">
+                                    <label class="control-label" for="address">地址</label>
+                                    <div class="controls">
+                                       <input type="text" id="address" name="address" value="{{.usr.Address}}"/></div>
+                                 </div>
+                                 
+                                 <div class="control-group">
+                                    <label class="control-label" for="postcode">邮编</label>
+                                    <div class="controls">
+                                       <input type="text" id="postcode" name="postcode" value="{{.usr.Postcode}}"/></div>
+                                 </div>
+                                 
+                                 <div class="control-group">
+                                    <div class="controls">
+                                       <button type="submit" class="btn">保存</button>
+                                    </div>
+                                 </div>
+                              </form>
+                              <form class="form-horizontal" action="/settings/password" method="post">
+
+                                 <legend>设置密码</legend>
+                                 <div class="control-group">
+                                    <label class="control-label" for="curpass">当前密码</label>
+                                    <div class="controls">
+                                       {{if .xsrfdata}}{{.xsrfdata}}{{end}}
+                                       <input type="password" id="curpass" name="curpass" placeholder="Your current password">
+                                    </div>
+                                 </div>
+                                 <div class="control-group">
+                                    <label class="control-label" for="password">设置密码</label>
+                                    <div class="controls">
+                                       <input type="password" id="password" name="password" placeholder="Create a new password"></div>
+                                 </div>
+                                 <div class="control-group">
+                                    <label class="control-label" for="repassword">重验设置密码</label>
+                                    <div class="controls">
+                                       <input type="password" id="repassword" name="repassword"  placeholder="Same Password"></div>
+                                 </div>
+                                 <div class="control-group">
+                                    <div class="controls">
+                                       <button type="submit" class="btn">保存</button>
+                                    </div>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                        <!-- #timeline -->
+                     </div>
+                  </div>
+               </div>
+               <!-- .timelines-area -->
+
+            </div>
+         </div>
+
+         <!-- .sidebar -->
+         <div class="sidebar span3 pull-right">
+
+            <div class="row">
+               <div class="span3 normal-sidebar">
+
+                  <section id="search-4" class="widget clearfix section widget_search">
+                     <h3 class="widget-title">
+                        <span class="title-bg">搜索</span>
+                        <span class="border"></span>
+                     </h3>
+                     <!--BEGIN .searchform-->
+                     <form method="get" action="/search/">
+
+                        <div class="input-append">
+
+                           <input type="text" name="keyword" class="search" value="搜索..." onfocus="if(this.value=='搜索...')this.value='';" onblur="if(this.value=='')this.value='搜索...';" />
+
+                           <button type="submit" class="btn btn-warning">
+                              <i class="icon-search"></i>
+                           </button>
+
+                        </div>
+
+                        <!--END .searchform-->
+                     </form>
+                  </section>
+                  <section id="categories-3" class="widget clearfix section widget_categories">
+                     <h3 class="widget-title">
+                        <span class="title-bg">分类</span>
+                        <span class="border"></span>
+                     </h3>
+                     <ul>
+                        {{if .categorys}}
+                           {{range .categorys}}
+                           <li class="cat-item cat-item-{{.Id}}">
+                              <a href="/category/{{.Id}}/" title="查看[{{.Title}}]下的节点">{{.Title}}</a>
+                              <span class="post-count">{{.NodeCount}}</span>
+                           </li>
+                           {{end}}
+                        {{end}}
+                     </ul>
+                  </section>
+      {{if .topics_cat}}
+         {{range .topics_cat}}
+                  <section class="widget clearfix section Engine_Postcarousel white">
+                     <h3 class="widget-title">
+                        <span class="title-bg">:.</span>
+                        <span class="border"></span>
+                     </h3>
+
+                     <!-- .flexslider -->
+                     <div class="flexslider post-carousel">
+                        <span class="gradient"></span>
+                        <ul class="slides">
+                     {{if .}}
+                        {{range .}}
+                           <li>
+
+                              <div class="post-{{.Id}} post type-post status-publish format-image hentry category-news category-sports">
+                                 <div class="featured-area">
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+                                       <a href="/topic/{{.Id}}/">
+                                          <img width="200" height="111" src="{{.Attachment}}" class="attachment-small_thumb wp-post-image"/>
+                                       </a>
+                                    </div>
+                                    <!-- /.featured-image -->
+                                 </div>
+                                 <div class="overlay">
+
+                                    <div class="entry-header">
+
+                                       <div class="entry-meta">
+                                          <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                                          <a href="/topic/{{.Id}}/" class="entry-comments block">尚无回应</a>
+                                       </div>
+
+                                       <h2 class="entry-title">
+                                          <a href="/topic/{{.Id}}/">{{if .Title}}
+                                             {{$ts:=html2str .Title}}
+                                             {{$ts:=substr $ts 0 30}}
+                                             {{str2html $ts}}
+                                       {{end}}</a>
+                                       </h2>
+
+                                    </div>
+
+                                    <div class="entry-content">
+                                       {{if .Content}}
+                                           <p>
+                                             {{$cs:=html2str .Content}}
+                                             {{$cs:=substr $cs 0 240}}
+                                             {{str2html $cs}}
+                                           </p>
+                                       {{end}}
+                                    </div>
+                                 </div>
+
+                              </div>
+                           </li>
+                        {{end}}
+                     {{else}}
+                           <li>
+                              <div class="post-2815 post type-post status-publish format-standard hentry category-news category-sports category-technology">
+                                 <div class="featured-area">
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+                                       <a href="index.html">
+                                          <img width="200" height="111" src="/static/files/2013/02/6368910827_2511b55eac_o-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="Here He Comes Now..." />
+                                       </a>
+                                    </div>
+                                    <!-- /.featured-image -->
+                                 </div>
+
+                                 <div class="overlay">
+                                    <div class="entry-header">
+                                       <div class="entry-meta">
+                                          <time class="entry-date block" datetime="2013-02-13T17:31:57+00:00">Feb 13, 2013</time>
+                                          <a href="index.html#comments" class="entry-comments block">尚无回应</a>
+                                       </div>
+                                       <h2 class="entry-title">
+                                          <a href="index.html">Oscar Pistorius Goes Step By Step</a>
+                                       </h2>
+
+                                    </div>
+
+                                    <div class="entry-content">
+                                       Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam...
+                                    </div>
+                                 </div>
+
+                              </div>
+                           </li>
+                           <li>
+                              <div class="post-2777 post type-post status-publish format-video hentry category-gear category-technology category-videos">
+
+                                 <div class="featured-area">
+
+                                    <!-- .featured-image -->
+                                    <div class="featured-image">
+
+                                       <a href="../first-look-official-iphone-5-trailer/index.html">
+                                          <img width="200" height="111" src="/static/files/2013/02/iphone_2338311b-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="iphone_2338311b" />
+                                       </a>
+
+                                    </div>
+                                    <!-- /.featured-image --> </div>
+
+                                 <div class="overlay">
+
+                                    <div class="entry-header">
+
+                                       <div class="entry-meta">
+                                          <time class="entry-date block" datetime="2013-02-13T16:57:22+00:00">Feb 13, 2013</time>
+                                          <a href="../first-look-official-iphone-5-trailer/index.html#comments" class="entry-comments block">尚无回应</a>
+                                       </div>
+
+                                       <h2 class="entry-title">
+                                          <a href="../first-look-official-iphone-5-trailer/index.html">Vancouver Time Lapse &#8211; Amazing!</a>
+                                       </h2>
+
+                                    </div>
+
+                                    <div class="entry-content">
+                                       The new iPhone 5 has a remarkably slim design that still makes room for a larger display and a...
+                                    </div>
+                                 </div>
+
+                              </div>
+                           </li>
+                     {{end}}
+                        </ul>
+                     </div>
+                     <!-- /.flexslider --> 
+                  </section>
+         {{end}}
+      {{end}}
+      {{if .ads}}
+                  <section id="meta-2" class="widget clearfix section widget_meta">
+                     <h3 class="widget-title">
+                        <span class="title-bg">广告赞助</span>
+                        <span class="border"></span>
+                     </h3>
+                     <div>广告内容</div>
+                  </section>
+      {{end}}
+               </div>
+            </div>
+         </div>
+         <!-- /.sidebar -->
+      </div>
+      <!-- /.row -->
+
+      <div class="breadcrumb breadcrumbs">
+         <div class="breadcrumb-trail">
+            <span class="trail-before">
+               You are here
+               <span class="sep">
+                  <i class="icon-angle-right"></i>
+               </span>
+            </span>
+            <a href="/" title="Veryhour" rel="home" class="trail-begin">Veryhour.com</a>
+            <span class="sep">
+               <i class="icon-angle-right"></i>
+            </span>
+            <span class="trail-end"><a href="/timeline/#">VERYHOUR·时光记录</a></span>
+         </div>
+      </div>
+   </div>
+   <!-- /.container -->
+   {{template "footer.html" .}}
+</div>
+<!-- /.main-container -->
+
+<script type='text/javascript' src='/static/plugins/contact-form-7/includes/js/jquery.form.min-ver=3.36.0-2013.06.16.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"\/static\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
+/* ]]>*/</script>
+<script type='text/javascript' src='/static/plugins/contact-form-7/includes/js/scripts-ver=3.4.2.js'></script>
+<script type='text/javascript' src='/static/bootstrap-2.1.1/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/static/assets/js/flexslider-ver=2.1.js'></script>
+<script type='text/javascript' src='/static/library/media-player/mediaelement-and-player.min-ver=3.5.1.js'></script>
+<script type='text/javascript' src='/static/assets/js/jquery.fitvids-ver=3.5.1.js'></script>
+<script type='text/javascript' src='/static/assets/js/jquery.imagesloaded.min-ver=1.js'></script>
+<script type='text/javascript' src='/static/assets/js/jquery.jcarousel-ver=1.js'></script>
+<script type='text/javascript' src='/static/assets/js/engine-ver=1374933754.js'></script>
+<script type='text/javascript' src='/static/assets/js/jquery.tweet-ver=3.5.1.js'></script>
+
+</body>
+
+</html>

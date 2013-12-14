@@ -1,0 +1,6 @@
+<div class="btn-group pull-right" style="margin-top:10px;margin-right:10px;">
+	<button class="btn btn-inverse" onclick='javascript:$.get("/like/topic/{{.Id}}/", {Action:"get"}, function (data, textStatus){this;$("#like-{{.Id}}").html(data);});'><i class="icon-chevron-up icon-white"></i>有用 (<span id="like-{{.Id}}">{{.Hotup}}</span>)</button>
+	<span id="score-{{.Id}}" class="btn btn-inverse" title="{{if .Hotscore}}{{.Hotscore}}{{else}}0{{end}}分">{{if .Hotscore}}{{.Hotscore}}{{else}}0{{end}}</span>
+	<button class="btn btn-inverse" onclick='javascript:$.get("/hate/topic/{{.Id}}/", {Action:"get"}, function (data, textStatus){this;$("#hate-{{.Id}}").html(data);});'>
+<i class="icon-chevron-down icon-white"></i> 没用 (<span id="hate-{{.Id}}">{{.Hotdown}}</span>)</button>
+</div>

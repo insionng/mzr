@@ -1,0 +1,2182 @@
+{{template "head.html" .}}
+<body class="home page page-id-2484 page-template responsive-on">
+
+<!-- .main-container -->
+<div class="main-container">
+
+  <div class="bg"></div>
+  {{template "header.html" .}}
+  <div class="container">
+    <div class="row">
+
+      <!-- .content -->
+      <div class="content index-content span7">
+
+        <div class="content-inner">
+
+          <!-- .home-slider -->
+          <div class="home-slider first">
+
+            <div class="post-0 post type-post status-publish format-gallery hentry category-photos category-style">
+
+              <div class="overlay">
+
+                <header class="entry-header">
+                  <h2 class="entry-title">推荐榜</h2>
+                </header>
+
+                <div class="entry-content">
+
+                  <div class="sc accordion" id="accordion-0">
+                    <div class="accordion-group">
+                      <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-0" href="###">提醒登录</a>
+                      </div>
+                      <div id="collapse_0_nullam-quis-risus-eget-urna-mollis-ornare-vel-eu-leo" class="accordion-body collapse in">
+                        <div class="accordion-inner">未登录的情况下你浏览的的所有页面均为快照,登录后可以为你显示新鲜热辣的内容.&nbsp;</div>
+                      </div>
+                    </div>
+                  </div>
+                  {{if .topics_hotness_30}}
+                    {{range .topics_hotness_30}}
+                      <div class="media">
+                    <div class="pull-left">
+                      <a href="#">
+                        <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px; " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABN0lEQVR4Xu2YQQ6EIAxFdeu5ODZnYul2Jk5C0sGiUiAx8FyKVPr76VPWEMJnmfhaEQAHsAXoARP3wIUmCAWgABSAAlBgYgXAIBgEg2AQDE4MAX6GwCAYBINgEAyCwYkVAIO1GPTe//nHOXfyU3xGG9PM1yNmzuRVDpCJ5ZKUyTwRoEfMqx3eTIBcJbdtW/Z9/w2XCtAqZncB5Atkkkc1NQFileVYFCi1fypcLqa1jzd1QM6+2va4EycKWRLTIkI3AY7FPKmmVmF5LxXvLmapCF0FiItp5QCZXClZulBAq/IVBtN9rvUAa8zSysfnqxxgfemb5iFA7Zfgm6ppWQsOwAEciXEkxpGYpXuOMgcKQAEoAAWgwCgd3ZIHFIACUAAKQAFL9xxlDhSAAlAACkCBUTq6JY/pKfAFwg6XkItBuUgAAAAASUVORK5CYII="></a>
+
+                    </div>
+                    <div class="media-body">
+                      <h4 class="media-heading">
+                        <span>
+                          {{.Id}} ·
+                          <a href="/topic/{{.Id}}/">{{.Title}}</a>
+                        </span>
+                        <time class="entry-date block hidden-phone" datetime="2008-03-03T10:11:37+00:00">· Mar 3, 2018</time>
+                      </h4>
+                      <p>
+                        {{if .Content}}
+                        <a href="/topic/{{.Id}}/">
+                              {{$cs:=html2str .Content}}
+                              {{$cs:=substr $cs 0 90}}
+                              {{str2html $cs}}
+                        </a>
+                        {{else}}
+                          此话题内容残缺!
+                        {{end}}
+                      </p>
+                      <div>
+                        {{template "vote-cate.html" .}}
+                        <span class="btn-group pull-left" style="margin-top:10px;margin-right:10px;">
+                          <button onclick="window.location='/edit/topic/{{.Id}}/'" class="btn btn-mini">编辑</button>
+                          <button onclick="window.location='/delete/topic/{{.Id}}/'" class="btn btn-mini">删除</button>
+                          <button class="btn btn-mini">置顶</button>
+                        </span>
+                        <div class="clearfix"></div>
+                      </div>
+                      <div class="breadcrumb"></div>
+                    </div>
+                      </div>
+                    {{end}}
+                  {{else}}
+                  <div class="media">
+                    <div class="pull-left">
+
+                      <a href="#">
+                        <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px; " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABN0lEQVR4Xu2YQQ6EIAxFdeu5ODZnYul2Jk5C0sGiUiAx8FyKVPr76VPWEMJnmfhaEQAHsAXoARP3wIUmCAWgABSAAlBgYgXAIBgEg2AQDE4MAX6GwCAYBINgEAyCwYkVAIO1GPTe//nHOXfyU3xGG9PM1yNmzuRVDpCJ5ZKUyTwRoEfMqx3eTIBcJbdtW/Z9/w2XCtAqZncB5Atkkkc1NQFileVYFCi1fypcLqa1jzd1QM6+2va4EycKWRLTIkI3AY7FPKmmVmF5LxXvLmapCF0FiItp5QCZXClZulBAq/IVBtN9rvUAa8zSysfnqxxgfemb5iFA7Zfgm6ppWQsOwAEciXEkxpGYpXuOMgcKQAEoAAWgwCgd3ZIHFIACUAAKQAFL9xxlDhSAAlAACkCBUTq6JY/pKfAFwg6XkItBuUgAAAAASUVORK5CYII="></a>
+
+                    </div>
+                    <div class="media-body">
+                      <h4 class="media-heading">
+                        <span>
+                          1 ·
+                          <a href="/topic/1">轻量级的工具组件</a>
+                        </span>
+                        <time class="entry-date block hidden-phone" datetime="2008-03-03T10:11:37+00:00">· Mar 3, 2018</time>
+                      </h4>
+                      <p>
+                        <a href="/topic/1">
+                          well能给一个页面元素添加简单的嵌入能给一个页面元素添加简单的嵌入能给一个页面元素添加简单的嵌入能给一个页面元素添加简单的嵌入能给一个页面元素添加简单的嵌入（inset）效果。
+                        </a>
+                      </p>
+                      <div>
+                        <span class="btn-group pull-left" style="margin-top:10px;margin-right:10px;">
+                          <a href="/like/topic/1" class="btn btn-mini btn-inverse" title="阅读话题">喜欢 (8888)</a>
+                          <a href="/new/comment" class="btn btn-mini btn-inverse" title="回复话题">回复 (8888)</a>
+                          <a href="/topic/2" class="btn btn-mini btn-inverse" title="阅读话题">下载 (8888)</a>
+                        </span>
+                        <span class="btn-group pull-left" style="margin-top:10px;margin-right:10px;">
+                          <button class="btn btn-mini">编辑</button>
+                          <button class="btn btn-mini">删除</button>
+                          <button class="btn btn-mini">置顶</button>
+                        </span>
+                        <div class="clearfix"></div>
+                      </div>
+                      <div class="breadcrumb"></div>
+                    </div>
+                  </div>
+                  {{end}}
+                  <ul class="pager">
+                    <li class="previous disabled">
+                      <a href="#">« 前一页</a>
+                    </li>
+
+                    <li class="active">
+                      <a href="#">1</a>
+                    </li>
+                    <li>
+                      <a href="#">2</a>
+                    </li>
+                    <li>
+                      <a href="#">3</a>
+                    </li>
+                    <li>
+                      <a href="#">4</a>
+                    </li>
+                    <li>
+                      <a href="#">5</a>
+                    </li>
+                    <li class="next">
+                      <a href="#">后一页 »</a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.home-slider -->
+
+          <!-- .home-widgets -->
+          <div class="home-widgets">
+            <section class="widget clearfix section Engine_Postcarousel white">
+              <h3 class="widget-title">
+                <span class="title-bg">最新话题</span>
+                <span class="border"></span>
+              </h3>
+
+              <!-- .flexslider -->
+              <div class="flexslider post-carousel">
+
+                <span class="gradient"></span>
+
+                <ul class="slides">
+
+                  <li>
+
+                    <div class="post-2812 post type-post status-publish format-image hentry category-news category-sports">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="dealing-with-more-than-balls-and-strikes/default.html">
+                            <img width="200" height="111" src="/static/files/2013/02/Baseball-baseball-52252_1024_768-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="Baseball-baseball-52252_1024_768" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+                          <p>
+                            <div class="btn-group">
+                              <button class="btn btn-mini btn-inverse">&hearts; 喜欢 (8888)</button>
+                              <button class="btn btn-mini btn-inverse">&spades; 讨厌 (8888)</button>
+                            </div>
+                          </p>
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T17:44:29+00:00">Feb 13, 2013</time>
+                            <a href="dealing-with-more-than-balls-and-strikes/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="dealing-with-more-than-balls-and-strikes/default.html">Dealing With More Than Balls and Strikes</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam...
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2815 post type-post status-publish format-standard hentry category-news category-sports category-technology">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="oscar-pistorius-goes-step-by-step/default.html">
+                            <img width="200" height="111" src="/static/files/2013/02/6368910827_2511b55eac_o-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="Here He Comes Now..." />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+                          <p>
+                            <div class="btn-group">
+                              <button class="btn btn-mini btn-inverse">&hearts; 喜欢 (8888)</button>
+                              <button class="btn btn-mini btn-inverse">&spades; 讨厌 (8888)</button>
+                            </div>
+                          </p>
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T17:31:57+00:00">Feb 13, 2013</time>
+                            <a href="oscar-pistorius-goes-step-by-step/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="oscar-pistorius-goes-step-by-step/default.html">Oscar Pistorius Goes Step By Step</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam...
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2781 post type-post status-publish format-gallery hentry category-photos category-style">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="/topic/1">
+                            <img width="200" height="111" src="/static/files/2012/07/6829158646_d4f32ea229_b-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="6829158646_d4f32ea229_b" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+                          <p>
+                            <div class="btn-group">
+                              <button class="btn btn-mini btn-inverse">&hearts; 喜欢 (8888)</button>
+                              <button class="btn btn-mini btn-inverse">&spades; 讨厌 (8888)</button>
+                            </div>
+                          </p>
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T17:07:43+00:00">Feb 13, 2013</time>
+                            <a href="/topic/1#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="/topic/1">Amet Cras Dolor Tristique Pellentesque</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis....
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2777 post type-post status-publish format-video hentry category-gear category-technology category-videos">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="first-look-official-iphone-5-trailer/default.html">
+                            <img width="200" height="111" src="/static/files/2013/02/iphone_2338311b-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="iphone_2338311b" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T16:57:22+00:00">Feb 13, 2013</time>
+                            <a href="first-look-official-iphone-5-trailer/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="first-look-official-iphone-5-trailer/default.html">Vancouver Time Lapse &#8211; Amazing!</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          The new iPhone 5 has a remarkably slim design that still makes room for a larger display and a...
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2774 post type-post status-publish format-video hentry category-gear category-technology">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="ios-6-using-do-not-disturb/default.html">
+                            <img width="200" height="111" src="/static/files/2013/02/large-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="large" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T16:52:13+00:00">Feb 13, 2013</time>
+                            <a href="ios-6-using-do-not-disturb/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="ios-6-using-do-not-disturb/default.html">Invisible Rope Prank</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          You can use the Do Not Disturb setting while your iOS device is locked to silence calls, alerts, and...
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2771 post type-post status-publish format-standard hentry category-entertainment category-politics">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="california-governor-arnold-schwarzenegger/default.html">
+                            <img width="200" height="111" src="/static/files/2012/07/4322738056_8f5433513d_b-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="4322738056_8f5433513d_b" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T16:48:16+00:00">Feb 13, 2013</time>
+                            <a href="california-governor-arnold-schwarzenegger/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="california-governor-arnold-schwarzenegger/default.html">California Governor Arnold Schwarzenegger</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla...
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2247 post type-post status-publish format-image hentry category-entertainment category-photos category-travel">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="fringilla-mollis-tellus-porta-euismod-nullam/default.html">
+                            <img width="200" height="111" src="/static/files/2012/09/wallpaper-833968-e1347390331980-200x111.jpeg" class="attachment-small_thumb wp-post-image" alt="wallpaper-833968" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+                          <p>
+                            <div class="btn-group">
+                              <button class="btn btn-mini btn-inverse">&hearts; 喜欢 (8888)</button>
+                              <button class="btn btn-mini btn-inverse">&spades; 讨厌 (8888)</button>
+                            </div>
+                          </p>
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2012-09-11T19:06:49+00:00">Sep 11, 2012</time>
+                            <a href="fringilla-mollis-tellus-porta-euismod-nullam/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="fringilla-mollis-tellus-porta-euismod-nullam/default.html">Fringilla Mollis Tellus Porta Euismod Nullam</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam...
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2062 post type-post status-publish format-gallery hentry category-travel">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="bibendum-egestas-nibh-porta-egestas/default.html">
+                            <img width="200" height="111" src="/static/files/2012/09/royal1-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="royal1" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+                          <p>
+                            <div class="btn-group">
+                              <button class="btn btn-mini btn-inverse">&hearts; 喜欢 (8888)</button>
+                              <button class="btn btn-mini btn-inverse">&spades; 讨厌 (8888)</button>
+                            </div>
+                          </p>
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2012-09-07T20:41:44+00:00">Sep 7, 2012</time>
+                            <a href="bibendum-egestas-nibh-porta-egestas/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="bibendum-egestas-nibh-porta-egestas/default.html">Bibendum Egestas Nibh Porta Egestas</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus mollis...
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2080 post type-post status-publish format-image hentry category-photos category-style">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="quam-magna-pharetra/default.html">
+                            <img width="200" height="111" src="/static/files/2012/09/5632699419_89b977e51b_b-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="5632699419_89b977e51b_b" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+                          <p>
+                            <div class="btn-group">
+                              <button class="btn btn-mini btn-inverse">&hearts; 喜欢 (8888)</button>
+                              <button class="btn btn-mini btn-inverse">&spades; 讨厌 (8888)</button>
+                            </div>
+                          </p>
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2012-09-07T20:33:39+00:00">Sep 7, 2012</time>
+                            <a href="quam-magna-pharetra/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="quam-magna-pharetra/default.html">Quam Magna Pharetra</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          宫里的应对却很奇怪，正德既没有雷霆大怒，对相关人等展开清算报复：也没有顺水推舟，将王守仁拿下，这些奏疏犹如石入大海，完全没有留下任何踪迹，更没有引起任何反应，倒让外朝很有些琢磨不定。
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                </ul>
+
+              </div>
+              <!-- /.flexslider --> </section>
+            <section id="engine_postlist-2" class="widget clearfix section Engine_Postlist">
+              <h3 class="widget-title">
+                <span class="title-bg">最热话题</span>
+                <span class="border"></span>
+              </h3>
+              <div class="post-list">
+
+                <div class="first-post">
+
+                  <div class="post-2815 post type-post status-publish format-standard hentry category-news category-sports category-technology">
+
+                    <div class="featured-area">
+
+                      <!-- .featured-image -->
+                      <div class="featured-image">
+
+                        <a href="oscar-pistorius-goes-step-by-step/default.html">
+                          <img width="540" height="300" src="/static/files/2013/02/6368910827_2511b55eac_o-540x300.jpg" class="attachment-large_thumb wp-post-image" alt="Here He Comes Now..." />
+                        </a>
+
+                      </div>
+                      <!-- /.featured-image --> </div>
+
+                    <div class="overlay">
+
+                      <div class="entry-header">
+
+                        <div class="entry-meta">
+                          <time class="entry-date block" datetime="2013-02-13T17:31:57+00:00">Feb 13, 2013</time>
+                          &middot;&nbsp;
+                          <a href="oscar-pistorius-goes-step-by-step/default.html#comments" class="entry-comments block">我要评论</a>
+                        </div>
+
+                        <h2 class="entry-title">
+                          <a href="oscar-pistorius-goes-step-by-step/default.html">Oscar Pistorius Goes Step By Step</a>
+                        </h2>
+
+                      </div>
+
+                      <div class="entry-content">
+
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Praesent dapibus, neque id cursus faucibus,&#8230;
+                        </p>
+                        <p>
+                          <a href="/topic/1" class="read-more">阅览</a>
+                          <a href="/topic/2" class="read-more">收藏</a>
+                          <a href="/topic/3" class="read-more">下载</a>
+                        </p>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <ul>
+
+                  <li>
+
+                    <div class="post-2777 post type-post status-publish format-video hentry category-gear category-technology category-videos">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="first-look-official-iphone-5-trailer/default.html">
+                            <img width="200" height="200" src="/static/files/2013/02/iphone_2338311b-200x200.jpg" class="attachment-post-thumbnail wp-post-image" alt="iphone_2338311b" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <header class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T16:57:22+00:00">Feb 13, 2013</time>
+                            <a href="first-look-official-iphone-5-trailer/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="first-look-official-iphone-5-trailer/default.html">Vancouver Time Lapse &#8211; Amazing!</a>
+                          </h2>
+
+                        </header>
+
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2774 post type-post status-publish format-video hentry category-gear category-technology">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="ios-6-using-do-not-disturb/default.html">
+                            <img width="200" height="200" src="/static/files/2013/02/large-200x200.jpg" class="attachment-post-thumbnail wp-post-image" alt="large" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <header class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T16:52:13+00:00">Feb 13, 2013</time>
+                            <a href="ios-6-using-do-not-disturb/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="ios-6-using-do-not-disturb/default.html">Invisible Rope Prank</a>
+                          </h2>
+
+                        </header>
+
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2771 post type-post status-publish format-standard hentry category-entertainment category-politics">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="california-governor-arnold-schwarzenegger/default.html">
+                            <img width="200" height="200" src="/static/files/2012/07/4322738056_8f5433513d_b-200x200.jpg" class="attachment-post-thumbnail wp-post-image" alt="4322738056_8f5433513d_b" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <header class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T16:48:16+00:00">Feb 13, 2013</time>
+                            <a href="california-governor-arnold-schwarzenegger/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="california-governor-arnold-schwarzenegger/default.html">California Governor Arnold Schwarzenegger</a>
+                          </h2>
+
+                        </header>
+
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2247 post type-post status-publish format-image hentry category-entertainment category-photos category-travel">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="fringilla-mollis-tellus-porta-euismod-nullam/default.html">
+                            <img width="200" height="200" src="/static/files/2012/09/wallpaper-833968-e1347390331980-200x200.jpeg" class="attachment-post-thumbnail wp-post-image" alt="wallpaper-833968" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <header class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2012-09-11T19:06:49+00:00">Sep 11, 2012</time>
+                            <a href="fringilla-mollis-tellus-porta-euismod-nullam/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="fringilla-mollis-tellus-porta-euismod-nullam/default.html">Fringilla Mollis Tellus Porta Euismod Nullam</a>
+                          </h2>
+
+                        </header>
+
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2077 post type-post status-publish format-standard hentry category-entertainment category-news category-photos">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="ipsum-purus-adipiscing-ligula-dolor/default.html">
+                            <img width="200" height="200" src="/static/files/2012/09/4175881829_f1599288a8_b-200x200.jpg" class="attachment-post-thumbnail wp-post-image" alt="4175881829_f1599288a8_b" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <header class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2012-09-07T20:01:18+00:00">Sep 7, 2012</time>
+                            <a href="ipsum-purus-adipiscing-ligula-dolor/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="ipsum-purus-adipiscing-ligula-dolor/default.html">Ipsum Purus Adipiscing Ligula Dolor</a>
+                          </h2>
+
+                        </header>
+
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </section>
+            <section id="engine_postlist-3" class="widget clearfix section Engine_Postlist">
+              <h3 class="widget-title">
+                <span class="title-bg">高分话题</span>
+                <span class="border"></span>
+              </h3>
+              <div class="post-list">
+
+                <div class="first-post">
+
+                  <div class="post-2812 post type-post status-publish format-image hentry category-news category-sports">
+
+                    <div class="featured-area">
+
+                      <!-- .featured-image -->
+                      <div class="featured-image">
+
+                        <a href="dealing-with-more-than-balls-and-strikes/default.html">
+                          <img width="540" height="300" src="/static/files/2013/02/Baseball-baseball-52252_1024_768-540x300.jpg" class="attachment-large_thumb wp-post-image" alt="Baseball-baseball-52252_1024_768" />
+                        </a>
+
+                      </div>
+                      <!-- /.featured-image --> </div>
+
+                    <div class="overlay">
+
+                      <div class="entry-header">
+
+                        <div class="entry-meta">
+                          <time class="entry-date block" datetime="2013-02-13T17:44:29+00:00">Feb 13, 2013</time>
+                          &middot;&nbsp;
+                          <a href="dealing-with-more-than-balls-and-strikes/default.html#comments" class="entry-comments block">我要评论</a>
+                        </div>
+
+                        <h2 class="entry-title">
+                          <a href="dealing-with-more-than-balls-and-strikes/default.html">Dealing With More Than Balls and Strikes</a>
+                        </h2>
+
+                      </div>
+
+                      <div class="entry-content">
+
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Praesent dapibus, neque id cursus faucibus,&#8230;
+                        </p>
+                        <p>
+                          <a href="/topic/1" class="read-more">阅览</a>
+                          <a href="/topic/2" class="read-more">收藏</a>
+                          <a href="/topic/3" class="read-more">下载</a>
+                        </p>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <ul>
+
+                  <li>
+
+                    <div class="post-2815 post type-post status-publish format-standard hentry category-news category-sports category-technology">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="oscar-pistorius-goes-step-by-step/default.html">
+                            <img width="200" height="200" src="/static/files/2013/02/6368910827_2511b55eac_o-200x200.jpg" class="attachment-post-thumbnail wp-post-image" alt="Here He Comes Now..." />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <header class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T17:31:57+00:00">Feb 13, 2013</time>
+                            <a href="oscar-pistorius-goes-step-by-step/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="oscar-pistorius-goes-step-by-step/default.html">Oscar Pistorius Goes Step By Step</a>
+                          </h2>
+
+                        </header>
+
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2771 post type-post status-publish format-standard hentry category-entertainment category-politics">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="california-governor-arnold-schwarzenegger/default.html">
+                            <img width="200" height="200" src="/static/files/2012/07/4322738056_8f5433513d_b-200x200.jpg" class="attachment-post-thumbnail wp-post-image" alt="4322738056_8f5433513d_b" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <header class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T16:48:16+00:00">Feb 13, 2013</time>
+                            <a href="california-governor-arnold-schwarzenegger/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="california-governor-arnold-schwarzenegger/default.html">California Governor Arnold Schwarzenegger</a>
+                          </h2>
+
+                        </header>
+
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2767 post type-post status-publish format-standard hentry category-news category-politics">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="president-barack-obama-to-addresses-the-nation/default.html">
+                            <img width="200" height="200" src="/static/files/2013/02/4404488882_b552d06a8b_o-200x200.jpg" class="attachment-post-thumbnail wp-post-image" alt="The Houses Of Parliament" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <header class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T16:42:15+00:00">Feb 13, 2013</time>
+                            <a href="president-barack-obama-to-addresses-the-nation/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="president-barack-obama-to-addresses-the-nation/default.html">President Barack Obama to Addresses the Nation</a>
+                          </h2>
+
+                        </header>
+
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2760 post type-post status-publish format-standard hentry category-politics">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="david-camerons-personal-popularity-drops/default.html">
+                            <img width="200" height="200" src="/static/files/2012/07/6001628933_78228b56dc_b-200x200.jpg" class="attachment-post-thumbnail wp-post-image" alt="6001628933_78228b56dc_b" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <header class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-11T20:45:40+00:00">Feb 11, 2013</time>
+                            <a href="david-camerons-personal-popularity-drops/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="david-camerons-personal-popularity-drops/default.html">David Cameron&#8217;s Personal Popularity Drops</a>
+                          </h2>
+
+                        </header>
+
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2247 post type-post status-publish format-image hentry category-entertainment category-photos category-travel">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="fringilla-mollis-tellus-porta-euismod-nullam/default.html">
+                            <img width="200" height="200" src="/static/files/2012/09/wallpaper-833968-e1347390331980-200x200.jpeg" class="attachment-post-thumbnail wp-post-image" alt="wallpaper-833968" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <header class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2012-09-11T19:06:49+00:00">Sep 11, 2012</time>
+                            <a href="fringilla-mollis-tellus-porta-euismod-nullam/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="fringilla-mollis-tellus-porta-euismod-nullam/default.html">Fringilla Mollis Tellus Porta Euismod Nullam</a>
+                          </h2>
+
+                        </header>
+
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </section>
+          </div>
+          <!-- /.home-widgets --> </div>
+
+      </div>
+      <!-- /.content -->
+
+      <!-- .sidebar -->
+      <div class="sidebar span5 pull-right">
+
+        <div class="side-widgets hidden-phone">
+
+          <div class="side-widgets-wrap">
+
+            <div class="header-search">
+              <!--BEGIN .searchform-->
+              <form method="get" action="/search/">
+
+                <div class="input-append">
+
+                  <input type="text" name="keyword" class="search" value="搜索..." onfocus="if(this.value=='搜索...')this.value='';" onblur="if(this.value=='')this.value='搜索...';" />
+
+                  <button type="submit" class="btn btn-warning"> <i class="icon-search"></i>
+                  </button>
+
+                </div>
+
+                <!--END .searchform-->
+              </form>
+            </div>
+
+          </div>
+        </div>
+        
+        <div class="tabbed-widget">
+          <div class="widget Engine_Tabbed">
+            <ul class="nav nav-tabs">
+              <li class="active">
+                <a href="#popular-engino_tabbed--1" data-toggle="tab">流行</a>
+              </li>
+              <li>
+                <a href="#hotness-engino_tabbed--1" data-toggle="tab">热门</a>
+              </li>
+              <li>
+                <a href="#recent-engino_tabbed--1" data-toggle="tab">最近</a>
+              </li>
+              <li>
+                <a href="#comments-engino_tabbed--1" data-toggle="tab">回应</a>
+              </li>
+              <li>
+                <a href="#topics-engino_tabbed--1" data-toggle="tab">分类</a>
+              </li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane fade in active" id="popular-engino_tabbed--1">
+              {{if .topic_views_5_popular}}
+                {{range .topic_views_5_popular}}
+                <div class="post-{{.Id}} post type-post status-publish format-standard hentry category-news category-sports">
+                  {{if .Attachment}}
+                  <div class="featured-area">
+                    <!-- .featured-image -->        
+                    <div class="featured-image">
+                      <a href="comment-test/default.html">
+                        <img width="200" height="200" src="{{.Attachment}}" class="attachment-post-thumbnail wp-post-image"/>
+                      </a>
+                    </div>
+                    <!-- /.featured-image -->
+                  </div>
+                  {{end}}
+                  <div class="overlay">
+                    <div class="entry-header">
+                      <h2 class="entry-title">
+                        <a href="/topic/{{.Id}}/">{{.Title}}</a>
+                      </h2>
+                      <div class="entry-meta">
+                        <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                        &middot;
+                        <a href="/topic/{{.Id}}/#comments" class="entry-comments block">19 回应</a>
+                      </div>
+                    </div>
+                    <div class="entry-content">
+                        {{if .Content}}
+                              <p>
+                                {{$cs:=html2str .Content}}
+                                {{$cs:=substr $cs 0 100}}
+                                {{str2html $cs}}
+                              </p>
+                        {{end}}
+                    </div>
+                  </div>
+                </div>
+                {{end}}
+              {{else}}
+                <div class="post-2073 post type-post status-publish format-video hentry category-videos">
+
+                  <div class="featured-area">
+
+                    <!-- .featured-image -->        
+                    <div class="featured-image">
+
+                      <a href="blow-job-by-tadao-cern/default.html">
+                        <img width="200" height="200" src="/static/files/2013/02/305779278_1280-200x200.jpg" class="attachment-post-thumbnail wp-post-image" alt="305779278_1280" />        
+                      </a>
+
+                    </div>
+                    <!-- /.featured-image --> </div>
+
+                  <div class="overlay">
+
+                    <div class="entry-header">
+
+                      <h2 class="entry-title">
+                        <a href="blow-job-by-tadao-cern/default.html">Blow Quam Ornare Pellentesque Adipiscing Mattis</a>
+                      </h2>
+
+                      <div class="entry-meta">
+                        <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                        &middot;
+                        <a href="blow-job-by-tadao-cern/default.html#comments" class="entry-comments block">6 回应</a>
+                      </div>
+
+                    </div>
+
+                    <div class="entry-content">
+
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit&#8230;
+                      </p>
+
+                    </div>
+
+                  </div>
+                </div>
+              {{end}}
+              </div>
+
+              <div class="tab-pane fade in" id="hotness-engino_tabbed--1">
+              {{if .topic_hotness_5}}
+                {{range .topic_hotness_5}}
+                  <div class="post-{{.Id}} post type-post status-publish format-image hentry category-news category-sports">
+                  {{if .Attachment}}
+                    <div class="featured-area">
+                      <!-- .featured-image -->        
+                      <div class="featured-image">
+                        <a href="/topic/{{.Id}}/">
+                          <img width="200" height="200" src="{{.Attachment}}" class="attachment-post-thumbnail wp-post-image"/>
+                        </a>
+                      </div>
+                      <!-- /.featured-image -->
+                    </div>
+                  {{end}}
+                    <div class="overlay">
+                      <header class="entry-header">
+                        <h2 class="entry-title">
+                          <a href="/topic/{{.Id}}/">{{.Title}}</a>
+                        </h2>
+                        <div class="entry-meta">
+                          <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                          &middot;
+                          <a href="/topic/{{.Id}}/#comments" class="entry-comments block">我要回应</a>
+                        </div>
+                      </header>
+                      <div class="entry-content">
+                        {{if .Content}}
+                              <p>
+                                {{$cs:=html2str .Content}}
+                                {{$cs:=substr $cs 0 100}}
+                                {{str2html $cs}}
+                              </p>
+                        {{end}}
+                      </div>
+                    </div>
+                  </div>
+                {{end}}
+              {{else}}
+                  <div class="post-888 post type-post status-publish format-standard hentry category-news category-sports category-technology">
+
+                    <div class="featured-area">
+
+                      <!-- .featured-image -->        
+                      <div class="featured-image">
+
+                        <a href="oscar-pistorius-goes-step-by-step/default.html">
+                          <img width="200" height="200" src="/static/files/2013/02/6368910827_2511b55eac_o-200x200.jpg" class="attachment-post-thumbnail wp-post-image" alt="Here He Comes Now..." />        
+                        </a>
+
+                      </div>
+                      <!-- /.featured-image -->
+                    </div>
+
+                    <div class="overlay">
+
+                      <header class="entry-header">
+
+                        <h2 class="entry-title">
+                          <a href="oscar-pistorius-goes-step-by-step/default.html">Oscar Pistorius Goes Step By Step</a>
+                        </h2>
+
+                        <div class="entry-meta">
+                          <time class="entry-date block" datetime="2013-02-13T17:31:57+00:00">Feb 13, 2013</time>
+                          &middot;
+                          <a href="#comments" class="entry-comments block">我要回应</a>
+                        </div>
+
+                      </header>
+
+                      <div class="entry-content">
+
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Praesent dapibus, neque id cursus faucibus,&#8230;
+                        </p>
+
+                      </div>
+
+                    </div>
+                  </div>
+              {{end}}
+              </div>
+              <div class="tab-pane fade in" id="recent-engino_tabbed--1">
+              {{if .topic_lastest_5}}
+                {{range .topic_lastest_5}}
+                <div class="post-{{.Id}} post type-post status-publish format-image hentry category-news category-sports">
+                  {{if .Attachment}}
+                  <div class="featured-area">
+                    <!-- .featured-image -->        
+                    <div class="featured-image">
+                      <a href="/topic/{{.Id}}/">
+                        <img width="200" height="200" src="{{.Attachment}}" class="attachment-post-thumbnail wp-post-image"/>
+                      </a>
+                    </div>
+                    <!-- /.featured-image -->
+                  </div>
+                  {{end}}
+                  <div class="overlay">
+
+                    <header class="entry-header">
+                      <h2 class="entry-title">
+                        <a href="/topic/{{.Id}}/">{{.Title}}</a>
+                      </h2>
+
+                      <div class="entry-meta">
+                       <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                          &middot;
+                        <a href="/topic/{{.Id}}/#comments" class="entry-comments block">我要回应</a>
+                      </div>
+
+                    </header>
+
+                    <div class="entry-content">
+                        {{if .Content}}
+                              <p>
+                                {{$cs:=html2str .Content}}
+                                {{$cs:=substr $cs 0 100}}
+                                {{str2html $cs}}
+                              </p>
+                        {{end}}
+                    </div>
+                  </div>
+                </div>
+                {{end}}
+              {{else}}
+                <div class="post-2815 post type-post status-publish format-standard hentry category-news category-sports category-technology">
+
+                  <div class="featured-area">
+
+                    <!-- .featured-image -->        
+                    <div class="featured-image">
+
+                      <a href="oscar-pistorius-goes-step-by-step/default.html">
+                        <img width="200" height="200" src="/static/files/2013/02/6368910827_2511b55eac_o-200x200.jpg" class="attachment-post-thumbnail wp-post-image" alt="Here He Comes Now..." />        
+                      </a>
+
+                    </div>
+                    <!-- /.featured-image --> </div>
+
+                  <div class="overlay">
+
+                    <header class="entry-header">
+
+                      <h2 class="entry-title">
+                        <a href="oscar-pistorius-goes-step-by-step/default.html">Oscar Pistorius Goes Step By Step</a>
+                      </h2>
+
+                      <div class="entry-meta">
+                        <time class="entry-date block" datetime="2013-02-13T17:31:57+00:00">Feb 13, 2013</time>
+                        &middot;
+                        <a href="#comments" class="entry-comments block">我要回应</a>
+                      </div>
+
+                    </header>
+
+                    <div class="entry-content">
+
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Praesent dapibus, neque id cursus faucibus,&#8230;
+                      </p>
+
+                    </div>
+
+                  </div>
+                </div>
+              {{end}}
+              </div>
+
+              <div class="tab-pane fade in comment-tab" id="comments-engino_tabbed--1">
+              {{if .replys_5_mix}}
+                {{range .replys_5_mix}}
+                <div class="hentry">
+                  {{if .Attachment}}
+                  <div class="featured-area">
+                    <!-- .featured-image -->        
+                    <div class="featured-image">
+                      <img src='{{.Attachment}}' class='avatar avatar-80 photo' height='80' width='80' />
+                    </div>
+                    <!-- /.featured-image -->
+                  </div>
+                  {{end}}
+                  <div class="overlay">
+                    <header class="entry-header">
+                      <h2 class="entry-title">{{.Author}}</h2>
+                      <div class="entry-meta">
+                        <time class="entry-date block" datetime="{{if .Created}}{{.Created}}{{end}}">{{if .Created}}{{dateformat .Created "1月2日 , 2006年"}}{{else}}1月2日 , 2006年{{end}}</time>
+                      </div>
+
+                    </header>
+                    <div class="entry-content">
+                      {{if .Content}}
+                            <p>
+                              {{$cs:=html2str .Content}}
+                              {{$cs:=substr $cs 0 100}}
+                              {{str2html $cs}}
+                            </p>
+                      {{end}}
+                    </div>
+
+                  </div>
+                </div>
+                {{end}}
+              {{else}}
+                <div class="hentry">
+                  <div class="featured-area">
+                    <!-- .featured-image -->        
+                    <div class="featured-image">
+                      <img alt='' src='http://1.gravatar.com/avatar/982a70a3772bd498c5284f7b8b0128e1?s=80&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=80&r=G' class='avatar avatar-80 photo' height='80' width='80' />
+                    </div>
+                    <!-- /.featured-image -->
+                  </div>
+                  <div class="overlay">
+                    <header class="entry-header">
+                      <h2 class="entry-title">尚无回应</h2>
+                      <div class="entry-meta">
+                        <time class="entry-date block" datetime="3月13日 , 1988年">3月13日 , 1988年</time>
+                      </div>
+
+                    </header>
+                    <div class="entry-content">尚无回应数据</div>
+                  </div>
+                </div>
+              {{end}}
+              </div>
+
+              <div class="tab-pane fade in topics" id="topics-engino_tabbed--1">
+                <ul>
+                  {{if .categorys}}
+                    {{range .categorys}}
+                    <li class="cat-item cat-item-{{.Id}}">
+                      <a href="/category/{{.Id}}/" title="浏览[{{.Title}}]分类下的节点">{{.Title}}</a>
+                      <span class="post-count">{{.NodeCount}}</span>
+                    </li>
+                    {{end}}
+                  {{else}}
+                    <li class="cat-item cat-item-0">
+                      <a href="/category/0/" title="尚无分类">尚无分类</a>
+                      <span class="post-count">0</span>
+                    </li>
+                  {{end}}
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="span3 normal-sidebar">
+
+            <section class="widget clearfix section Engine_Postcarousel white">
+              <h3 class="widget-title">
+                <span class="title-bg">音乐</span>
+                <span class="border"></span>
+              </h3>
+
+              <!-- .flexslider -->
+              <div class="flexslider post-carousel">
+
+                <span class="gradient"></span>
+
+                <ul class="slides">
+
+                  <li>
+
+                    <div class="post-2812 post type-post status-publish format-image hentry category-news category-sports">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="dealing-with-more-than-balls-and-strikes/default.html">
+                            <img width="200" height="111" src="/static/files/2013/02/Baseball-baseball-52252_1024_768-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="Baseball-baseball-52252_1024_768" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T17:44:29+00:00">Feb 13, 2013</time>
+                            <a href="dealing-with-more-than-balls-and-strikes/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="dealing-with-more-than-balls-and-strikes/default.html">Dealing With More Than Balls and Strikes</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam...
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2815 post type-post status-publish format-standard hentry category-news category-sports category-technology">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="oscar-pistorius-goes-step-by-step/default.html">
+                            <img width="200" height="111" src="/static/files/2013/02/6368910827_2511b55eac_o-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="Here He Comes Now..." />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T17:31:57+00:00">Feb 13, 2013</time>
+                            <a href="oscar-pistorius-goes-step-by-step/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="oscar-pistorius-goes-step-by-step/default.html">Oscar Pistorius Goes Step By Step</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam...
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                </ul>
+
+              </div>
+              <!-- /.flexslider --> </section>
+            <section class="widget clearfix section Engine_Postcarousel white">
+              <h3 class="widget-title">
+                <span class="title-bg">后庭花</span>
+                <span class="border"></span>
+              </h3>
+
+              <!-- .flexslider -->
+              <div class="flexslider post-carousel">
+
+                <span class="gradient"></span>
+
+                <ul class="slides">
+
+                  <li>
+
+                    <div class="post-2781 post type-post status-publish format-gallery hentry category-photos category-style">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="/topic/1">
+                            <img width="200" height="111" src="/static/files/2012/07/6829158646_d4f32ea229_b-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="6829158646_d4f32ea229_b" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T17:07:43+00:00">Feb 13, 2013</time>
+                            <a href="/topic/1#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="/topic/1">Amet Cras Dolor Tristique Pellentesque</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis....
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2247 post type-post status-publish format-image hentry category-entertainment category-photos category-travel">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="fringilla-mollis-tellus-porta-euismod-nullam/default.html">
+                            <img width="200" height="111" src="/static/files/2012/09/wallpaper-833968-e1347390331980-200x111.jpeg" class="attachment-small_thumb wp-post-image" alt="wallpaper-833968" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2012-09-11T19:06:49+00:00">Sep 11, 2012</time>
+                            <a href="fringilla-mollis-tellus-porta-euismod-nullam/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="fringilla-mollis-tellus-porta-euismod-nullam/default.html">Fringilla Mollis Tellus Porta Euismod Nullam</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam...
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2062 post type-post status-publish format-gallery hentry category-travel">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="bibendum-egestas-nibh-porta-egestas/default.html">
+                            <img width="200" height="111" src="/static/files/2012/09/royal1-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="royal1" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2012-09-07T20:41:44+00:00">Sep 7, 2012</time>
+                            <a href="bibendum-egestas-nibh-porta-egestas/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="bibendum-egestas-nibh-porta-egestas/default.html">Bibendum Egestas Nibh Porta Egestas</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus mollis...
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                </ul>
+
+              </div>
+              <!-- /.flexslider --> </section>
+          </div>
+
+          <div class="span2 thin-sidebar">
+
+            <section class="widget clearfix section Engine_Postcarousel primary">
+              <h3 class="widget-title">
+                <span class="title-bg">广告</span>
+                <span class="border"></span>
+              </h3>
+
+              <!-- .flexslider -->
+              <div class="flexslider post-carousel">
+
+                <span class="gradient"></span>
+
+                <ul class="slides">
+
+                  <li>
+
+                    <div class="post-2812 post type-post status-publish format-image hentry category-news category-sports">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="dealing-with-more-than-balls-and-strikes/default.html">
+                            <img width="200" height="111" src="/static/files/2013/02/Baseball-baseball-52252_1024_768-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="Baseball-baseball-52252_1024_768" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T17:44:29+00:00">Feb 13, 2013</time>
+                            <a href="dealing-with-more-than-balls-and-strikes/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="dealing-with-more-than-balls-and-strikes/default.html">Dealing With More Than Balls and Strikes</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam...
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2815 post type-post status-publish format-standard hentry category-news category-sports category-technology">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="oscar-pistorius-goes-step-by-step/default.html">
+                            <img width="200" height="111" src="/static/files/2013/02/6368910827_2511b55eac_o-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="Here He Comes Now..." />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T17:31:57+00:00">Feb 13, 2013</time>
+                            <a href="oscar-pistorius-goes-step-by-step/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="oscar-pistorius-goes-step-by-step/default.html">Oscar Pistorius Goes Step By Step</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam...
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                </ul>
+
+              </div>
+              <!-- /.flexslider --> </section>
+            <section class="widget clearfix section Engine_Postcarousel secondary">
+              <h3 class="widget-title">
+                <span class="title-bg">展讯</span>
+                <span class="border"></span>
+              </h3>
+
+              <!-- .flexslider -->
+              <div class="flexslider post-carousel">
+
+                <span class="gradient"></span>
+
+                <ul class="slides">
+
+                  <li>
+
+                    <div class="post-2781 post type-post status-publish format-gallery hentry category-photos category-style">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="/topic/1">
+                            <img width="200" height="111" src="/static/files/2012/07/6829158646_d4f32ea229_b-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="6829158646_d4f32ea229_b" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T17:07:43+00:00">Feb 13, 2013</time>
+                            <a href="/topic/1#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="/topic/1">Amet Cras Dolor Tristique Pellentesque</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis....
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2777 post type-post status-publish format-video hentry category-gear category-technology category-videos">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="first-look-official-iphone-5-trailer/default.html">
+                            <img width="200" height="111" src="/static/files/2013/02/iphone_2338311b-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="iphone_2338311b" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T16:57:22+00:00">Feb 13, 2013</time>
+                            <a href="first-look-official-iphone-5-trailer/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="first-look-official-iphone-5-trailer/default.html">Vancouver Time Lapse &#8211; Amazing!</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          The new iPhone 5 has a remarkably slim design that still makes room for a larger display and a...
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2774 post type-post status-publish format-video hentry category-gear category-technology">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="ios-6-using-do-not-disturb/default.html">
+                            <img width="200" height="111" src="/static/files/2013/02/large-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="large" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T16:52:13+00:00">Feb 13, 2013</time>
+                            <a href="ios-6-using-do-not-disturb/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="ios-6-using-do-not-disturb/default.html">Invisible Rope Prank</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          You can use the Do Not Disturb setting while your iOS device is locked to silence calls, alerts, and...
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                </ul>
+
+              </div>
+              <!-- /.flexslider --> </section>
+            <section class="widget clearfix section Engine_Postcarousel primary">
+              <h3 class="widget-title">
+                <span class="title-bg">美食</span>
+                <span class="border"></span>
+              </h3>
+
+              <!-- .flexslider -->
+              <div class="flexslider post-carousel">
+
+                <span class="gradient"></span>
+
+                <ul class="slides">
+
+                  <li>
+
+                    <div class="post-2771 post type-post status-publish format-standard hentry category-entertainment category-politics">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="california-governor-arnold-schwarzenegger/default.html">
+                            <img width="200" height="111" src="/static/files/2012/07/4322738056_8f5433513d_b-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="4322738056_8f5433513d_b" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T16:48:16+00:00">Feb 13, 2013</time>
+                            <a href="california-governor-arnold-schwarzenegger/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="california-governor-arnold-schwarzenegger/default.html">California Governor Arnold Schwarzenegger</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla...
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2767 post type-post status-publish format-standard hentry category-news category-politics">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="president-barack-obama-to-addresses-the-nation/default.html">
+                            <img width="200" height="111" src="/static/files/2013/02/4404488882_b552d06a8b_o-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="The Houses Of Parliament" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T16:42:15+00:00">Feb 13, 2013</time>
+                            <a href="president-barack-obama-to-addresses-the-nation/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="president-barack-obama-to-addresses-the-nation/default.html">President Barack Obama to Addresses the Nation</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          Barack Hussein Obama II (born August 4, 1961) is the 44th and current President of the United States. He...
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2760 post type-post status-publish format-standard hentry category-politics">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="david-camerons-personal-popularity-drops/default.html">
+                            <img width="200" height="111" src="/static/files/2012/07/6001628933_78228b56dc_b-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="6001628933_78228b56dc_b" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-11T20:45:40+00:00">Feb 11, 2013</time>
+                            <a href="david-camerons-personal-popularity-drops/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="david-camerons-personal-popularity-drops/default.html">David Cameron&#8217;s Personal Popularity Drops</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis....
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                </ul>
+
+              </div>
+              <!-- /.flexslider --> </section>
+            <section class="widget clearfix section Engine_Postcarousel secondary">
+              <h3 class="widget-title">
+                <span class="title-bg">旅游</span>
+                <span class="border"></span>
+              </h3>
+
+              <!-- .flexslider -->
+              <div class="flexslider post-carousel">
+
+                <span class="gradient"></span>
+
+                <ul class="slides">
+
+                  <li>
+
+                    <div class="post-2771 post type-post status-publish format-standard hentry category-entertainment category-politics">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="california-governor-arnold-schwarzenegger/default.html">
+                            <img width="200" height="111" src="/static/files/2012/07/4322738056_8f5433513d_b-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="4322738056_8f5433513d_b" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T16:48:16+00:00">Feb 13, 2013</time>
+                            <a href="california-governor-arnold-schwarzenegger/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="california-governor-arnold-schwarzenegger/default.html">California Governor Arnold Schwarzenegger</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla...
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="post-2767 post type-post status-publish format-standard hentry category-news category-politics">
+
+                      <div class="featured-area">
+
+                        <!-- .featured-image -->
+                        <div class="featured-image">
+
+                          <a href="president-barack-obama-to-addresses-the-nation/default.html">
+                            <img width="200" height="111" src="/static/files/2013/02/4404488882_b552d06a8b_o-200x111.jpg" class="attachment-small_thumb wp-post-image" alt="The Houses Of Parliament" />
+                          </a>
+
+                        </div>
+                        <!-- /.featured-image --> </div>
+
+                      <div class="overlay">
+
+                        <div class="entry-header">
+
+                          <div class="entry-meta">
+                            <time class="entry-date block" datetime="2013-02-13T16:42:15+00:00">Feb 13, 2013</time>
+                            <a href="president-barack-obama-to-addresses-the-nation/default.html#comments" class="entry-comments block">我要评论</a>
+                          </div>
+
+                          <h2 class="entry-title">
+                            <a href="president-barack-obama-to-addresses-the-nation/default.html">President Barack Obama to Addresses the Nation</a>
+                          </h2>
+
+                        </div>
+
+                        <div class="entry-content">
+                          Barack Hussein Obama II (born August 4, 1961) is the 44th and current President of the United States. He...
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+
+                </ul>
+
+              </div>
+              <!-- /.flexslider --> </section>
+          </div>
+        </div>
+
+      </div>
+      <!-- /.sidebar --> </div>
+
+  </div>
+  <!-- /.container -->{{template "footer.html" .}}</div>
+<!-- /.main-container -->
+
+<script type='text/javascript' src='/static/plugins/contact-form-7/includes/js/jquery.form.min-ver=3.36.0-2013.06.16.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"\/static\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
+/* ]]>*/</script>
+<script type='text/javascript' src='/static/plugins/contact-form-7/includes/js/scripts-ver=3.4.2.js'></script>
+<script type='text/javascript' src='/static/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='/static/bootstrap-2.1.1/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/static/assets/js/flexslider-ver=2.1.js'></script>
+<script type='text/javascript' src='/static/library/media-player/mediaelement-and-player.min-ver=3.5.1.js'></script>
+<script type='text/javascript' src='/static/assets/js/jquery.fitvids-ver=3.5.1.js'></script>
+<script type='text/javascript' src='/static/assets/js/jquery.imagesloaded.min-ver=1.js'></script>
+<script type='text/javascript' src='/static/assets/js/jquery.jcarousel-ver=1.js'></script>
+<script type='text/javascript' src='/static/assets/js/engine-ver=1374933754.js'></script>
+<script type='text/javascript' src='/static/assets/js/jquery.tweet-ver=3.5.1.js'></script>
+
+</body>
+
+</html>

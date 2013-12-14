@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+{{template "head.html".}}
+<body class="home blog">
+	{{template "header.html".}}
+	<div id="content">
+		<div class="bd clx">
+			<div id="index" class="clx">
+				<div class="main">
+					<div class="main-content">
+							<article>
+								<div class="entry-header">
+									<h1 class="entry-title page-title">
+										<span>创建话题</span>
+									</h1>
+
+								</div>
+
+								<div class="entry-content">
+									{{template "msgerr.html" .}}
+									<form action="" method="post">
+										<div class="sc row-fluid">
+											<div class="span6">
+												<div>
+													<h5>话题标题:</h5>
+													<input type="text" name="title" value="{{.topic.Title}}" class="input-xxlarge">
+													{{if .xsrfdata}}{{.xsrfdata}}{{end}}
+												</div>
+											</div>
+											<div class="span6">
+												<div>
+													<h5>选择节点:</h5>
+													<div class="controls">
+														<select id="selectError" name="nodeid">
+														{{if .nodes}}
+															<option value="{{.inode.Id}}" selected>{{.inode.Title}} [默认]</option>
+															{{range .nodes}}
+															<option value="{{.Id}}">{{.Title}}</option>
+															{{end}}
+		       											{{else}}
+															<option value="0" selected>尚无节点</option>
+														{{end}}
+														</select>
+														<span class="help-inline">（选择本话题归属的上级节点，必选）</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="sc row-fluid">
+											<div class="span12">
+												<div class="well">
+													<h5>话题内容：</h5>
+													<textarea class="editor" name="content" colspan="3" rowspan="20" style="z-index:9900;">{{.topic.Content}}</textarea>
+												</div>
+
+												<input type="submit" style="border: #000 1px solid;padding: 5px;margin-top:10px;margin-bottom:10px;font-size:16px;cursor:pointer;color: #000000;" value="提交"></div>
+										</div>
+									</form>
+									{{template "editor-tinymce.html" .}}
+								</div>
+							</article>
+							<div style="clear:both;"></div>
+					</div>
+
+		</div>
+		<div id="sidebar">
+			{{template "sidebar-search.html".}}
+			<div class="widgets">
+				<h3>热门标签</h3>
+				<div id="pin-tags" class="clx">
+					<a href='tag/%E6%80%A7%E6%84%9F.html' class='tag-link-13' title='711个话题' style='font-size: 10pt;'>性感</a>
+					<a href='tag/%E6%9C%89%E6%B2%9F%E5%BF%85%E7%81%AB.html' class='tag-link-15' title='635个话题' style='font-size: 10pt;'>有沟必火</a>
+					<a href='tag/%E7%BE%8E%E8%85%BF.html' class='tag-link-20' title='538个话题' style='font-size: 10pt;'>美腿</a>
+					<a href='tag/%E8%AF%B1%E6%83%91.html' class='tag-link-16' title='527个话题' style='font-size: 10pt;'>诱惑</a>
+					<a href='tag/%E6%B8%85%E7%BA%AF.html' class='tag-link-23' title='353个话题' style='font-size: 10pt;'>清纯</a>
+					<a href='tag/%E7%94%9C%E7%BE%8E.html' class='tag-link-32' title='340个话题' style='font-size: 10pt;'>甜美</a>
+					<a href='tag/%E5%88%B6%E6%9C%8D.html' class='tag-link-7' title='230个话题' style='font-size: 10pt;'>制服</a>
+					<a href='tag/%E6%AF%94%E5%9F%BA%E5%B0%BC.html' class='tag-link-18' title='181个话题' style='font-size: 10pt;'>比基尼</a>
+					<a href='tag/%E8%B5%B0%E5%85%89.html' class='tag-link-52' title='179个话题' style='font-size: 10pt;'>走光</a>
+					<a href='tag/%E5%B0%8F%E6%B8%85%E6%96%B0.html' class='tag-link-6' title='178个话题' style='font-size: 10pt;'>小清新</a>
+					<a href='tag/%E5%B0%8F%E7%9F%AD%E8%A3%99.html' class='tag-link-19' title='137个话题' style='font-size: 10pt;'>小短裙</a>
+					<a href='tag/%E7%BE%8E%E8%87%80.html' class='tag-link-33' title='115个话题' style='font-size: 10pt;'>美臀</a>
+					<a href='tag/%E6%B9%BF%E8%BA%AB.html' class='tag-link-50' title='91个话题' style='font-size: 10pt;'>湿身</a>
+					<a href='tag/rosi.html' class='tag-link-108' title='86个话题' style='font-size: 10pt;'>ROSI</a>
+					<a href='tag/%E9%BB%91%E4%B8%9D.html' class='tag-link-36' title='80个话题' style='font-size: 10pt;'>黑丝</a>
+					<a href='tag/%E4%B8%9D%E8%A2%9C.html' class='tag-link-71' title='44个话题' style='font-size: 10pt;'>丝袜</a>
+					<a href='tag/%E5%AD%A6%E7%94%9F.html' class='tag-link-14' title='28个话题' style='font-size: 10pt;'>学生</a>
+					<a href='tag/%E8%95%BE%E4%B8%9D.html' class='tag-link-8' title='25个话题' style='font-size: 10pt;'>蕾丝</a>
+				</div>
+			</div>
+			{{template "sidebar-topbox.html".}}
+		</div>
+	</div>
+</div>
+</div>
+{{template "footer.html".}}
+</body>
+</html>

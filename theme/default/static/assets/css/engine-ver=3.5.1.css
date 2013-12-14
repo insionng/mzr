@@ -1,0 +1,198 @@
+/*
+engine.css
+*/
+
+.flex-container { position: relative; }
+
+.footer-info { text-align: right; }
+
+ul.nav ul.dropdown-menu{   
+    margin-top: 0;
+}
+
+.nav li { position: relative; }
+
+.post-list {
+	list-style: none;
+	margin: 0;
+}
+
+.section { margin-bottom: 40px; }
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before { padding-right: 6px; }
+
+.flex-direction-nav a { opacity: 1; }
+
+
+/* Page Sidebars 
+.sidebar_left .content { float: right; }
+
+.sidebar_right .sidebar { float: right !important; }
+.sidebar_right .content { float: left !important; }
+*/
+
+/**** Isotope Filtering ****/
+.isotope-item { z-index: 2; }
+.isotope-item img { height: auto; }
+.isotope-hidden.isotope-item {
+	pointer-events: none;
+	z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+.isotope,
+.isotope .isotope-item {
+	-webkit-transition-duration: 0.8s;
+	 -moz-transition-duration: 0.8s;
+	  -ms-transition-duration: 0.8s;
+	   -o-transition-duration: 0.8s;
+	      transition-duration: 0.8s;
+}
+.isotope {
+	-webkit-transition-property: height, width;
+	 -moz-transition-property: height, width;
+	  -ms-transition-property: height, width;
+	   -o-transition-property: height, width;
+	      transition-property: height, width;
+}
+.isotope .isotope-item {
+	-webkit-transition-property: -webkit-transform, opacity;
+	 -moz-transition-property:    -moz-transform, opacity;
+	  -ms-transition-property:     -ms-transform, opacity;
+	   -o-transition-property:      -o-transform, opacity;
+	      transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+	-webkit-transition-duration: 0s;
+	 -moz-transition-duration: 0s;
+	  -ms-transition-duration: 0s;
+	   -o-transition-duration: 0s;
+	      transition-duration: 0s;
+}
+
+
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+    margin: 20px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 20px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 20px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 20px 20px 20px 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 20px auto;
+}
+
+a img.alignright {
+    float: right;
+    margin: 20px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 20px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 20px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    border: 1px solid #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 20px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 20px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 20px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 10px 0 0 0;
+    font-style: italic;
+    margin-bottom: -10px;
+}
+
+.sticky {}
+.gallery-caption {}
+.bypostauthor {}
+
+.post-content .gallery { margin: 0 auto 18px; }
+.post-content .gallery .gallery-item {
+	float: left;
+	margin-top: 0;
+	text-align: center;
+	width: 33%;
+}
+.post-content .gallery-columns-2 .gallery-item { width: 50%; }
+.post-content .gallery-columns-4 .gallery-item { width: 25%; }
+.post-content .gallery img {
+	box-shadow: 0px 0px 4px #999;
+	border: 1px solid white;
+	padding: 8px;
+	background: #f2f2f2;
+}
+.post-content .gallery img:hover {
+	background: white;
+}
+.post-content .gallery-columns-2 .attachment-medium {
+	max-width: 92%;
+	height: auto;
+}
+.post-content .gallery-columns-4 .attachment-thumbnail {
+	max-width: 84%;
+	height: auto;
+}
+.post-content .gallery .gallery-caption {
+	color: #888;
+	font-size: 12px;
+	margin: 0 0 12px;
+}
+.post-content .gallery dl, .gallery dt { margin: 0; }
+.post-content .gallery br+br { display: none; }
+

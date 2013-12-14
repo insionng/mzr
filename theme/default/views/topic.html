@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+{{template "head-single.html".}}
+<body class="home blog">
+{{template "header.html".}}
+<div id="content">
+   <div class="bd clx">
+      <div id="single" class="clx">
+         <div class="main">
+            <div class="main-content">
+               <div class="post image">
+                  <div class="main-header">
+                     <h2 class="main-title"><a href="/{{.article.Id}}/">{{.article.Title}}</a></h2>
+                     <div class="main-meta clx">
+                        <span class="post-span">{{dateformat .article.Created "2006-1-2  15:04"}}</span>
+                        <span class="post-category post-span">
+                           <a href="/category/{{.article.Category}}/" title="查看{{if .article.Category}}{{.article.Category}}{{else}}分类尚无名称{{end}}中的全部内容." rel="category tag">{{if .article.Category}}{{.article.Category}}{{else}}分类尚无名称{{end}}</a>
+                           <a href="/node/{{.article.Node}}/">{{.article.Node}}</a>
+                           <span title="{{if .article.Author}}会员:{{.article.Author}}{{else}}作者ID[{{.article.Uid}}]{{end}}" rel="author">{{if .article.Author}}来自:{{.article.Author}}{{else}}作者ID[{{.article.Uid}}]{{end}}</span>
+                           <span class="entry-categories">
+                                          <i class="icon-folder-close"></i>
+                                          <span class="topic-views">{{if .article.Views}}{{.article.Views}}次点击{{else}}尚无点击{{end}}</span>
+                                          <script type="text/javascript">
+                                          $.get("/view/topic/{{.article.Id}}/?ver="+(new Date()).valueOf(), function(data){
+                                             $(".topic-views").html(data+"次点击");
+                                          });
+                                          </script>
+                           </span>
+                           {{/*
+                           <span class="entry-comments">
+                                          <a href="#comments" class="entry-comments block">我要评论</a>
+                           </span>
+                           */}}
+                           {{if compare .userrole -1000}}
+                                    <span>
+                                       <button onclick="window.location='/edit/topic/{{.article.Id}}/'" class="btn btn-mini">编辑</button>
+                                       <button onclick="window.location='/delete/topic/{{.article.Id}}/'" class="btn btn-mini">删除</button>
+                                    </span>
+                           {{end}}
+                        </span>
+                     </div>
+                  </div>
+                  <div id="content-as" class="clx">
+                     <div style="text-align:center;">{{template "ads/ad-a.html".}}</div>
+                  </div>
+                  <div class="main-body">
+                     {{if .article.Content}}
+                        {{str2html .article.Content}}
+                     {{else}}
+                     <p>
+                        <img title="ROSI 078期 精选_妹子图 第1张" alt="ROSI 078期 精选_妹子图 第1张" src="/static/mzr/img/rosi-078-026.jpg" width="688" height="1152" class="alignnone size-full wp-image-13843 lazy" data-pinit="registered"></p>
+                     <p>
+                        <img title="ROSI 078期 精选_妹子图 第2张" alt="ROSI 078期 精选_妹子图 第2张" src="/static/mzr/img/rosi-078-0.jpg" width="688" height="512" class="alignnone size-full wp-image-13817 lazy" data-pinit="registered"></p>
+                     {{end}}
+                  </div>
+                  <div class="ad_page_bottom">{{template "ads/ad-f.html".}}</div>
+                  <div>
+                     {{if .pagebar}}{{.pagebar}} <div style="clear:both;"></div> {{end}}
+                     {{if .ipagesbar}}{{.ipagesbar}} <div style="clear:both;"></div> {{end}}
+                  </div>
+                  {{/*
+                  <div class="main-footer">
+                     <div class="clx">
+                        <div class="main-tags">
+                           相关标签：
+                           <a href="tag/rosi.html" rel="tag">ROSI</a>
+                           <a href="tag/%E5%88%B6%E6%9C%8D.html" rel="tag">制服</a>
+                           <a href="tag/%E6%80%A7%E6%84%9F.html" rel="tag">性感</a>
+                           <a href="tag/%E6%9C%89%E6%B2%9F%E5%BF%85%E7%81%AB.html" rel="tag">有沟必火</a>
+                           <a href="tag/%E8%AF%B1%E6%83%91.html" rel="tag">诱惑</a>
+                           <a href="tag/%E8%B5%B0%E5%85%89.html" rel="tag">走光</a>
+                        </div>
+                     </div>
+                  </div>
+                  */}}
+                  <div class="likes">
+                     <h3>推荐妹子：</h3>
+               {{if .topic_hotness_6_module}}
+                  {{.topic_hotness_6_module}}
+               {{else}}
+                     <ul class="widgets-similar clx">
+                        <li class="likesimilar">
+                           <a target="_blank" href="/" alt="粉嫩天真靓丽青春内衣美女" class="likeimglink">
+                              <img src="/static/mzr/img/7905_201110301601096773_medium.jpg" wdith="150" height="150">
+                              <span class="bg">粉嫩天真靓丽青春内衣美女</span>
+                           </a>
+                        </li>
+                        <li class="likesimilar">
+                           <a target="_blank" href="/" alt="粉嫩天真靓丽青春内衣美女" class="likeimglink">
+                              <img src="/static/mzr/img/7905_201110301601096773_medium.jpg" wdith="150" height="150">
+                              <span class="bg">粉嫩天真靓丽青春内衣美女</span>
+                           </a>
+                        </li>
+                        <li class="likesimilar likesimilar-3">
+                           <a target="_blank" href="/" alt="粉嫩天真靓丽青春内衣美女" class="likeimglink">
+                              <img src="/static/mzr/img/7905_201110301601096773_medium.jpg" wdith="150" height="150">
+                              <span class="bg">粉嫩天真靓丽青春内衣美女</span>
+                           </a>
+                        </li>
+                        <li class="likesimilar">
+                           <a target="_blank" href="/" alt="粉嫩天真靓丽青春内衣美女" class="likeimglink">
+                              <img src="/static/mzr/img/7905_201110301601096773_medium.jpg" wdith="150" height="150">
+                              <span class="bg">粉嫩天真靓丽青春内衣美女</span>
+                           </a>
+                        </li>
+                        <li class="likesimilar">
+                           <a target="_blank" href="/" alt="粉嫩天真靓丽青春内衣美女" class="likeimglink">
+                              <img src="/static/mzr/img/7905_201110301601096773_medium.jpg" wdith="150" height="150">
+                              <span class="bg">粉嫩天真靓丽青春内衣美女</span>
+                           </a>
+                        </li>
+                        <li class="likesimilar likesimilar-3">
+                           <a target="_blank" href="/" alt="粉嫩天真靓丽青春内衣美女" class="likeimglink">
+                              <img src="/static/mzr/img/7905_201110301601096773_medium.jpg" wdith="150" height="150">
+                              <span class="bg">粉嫩天真靓丽青春内衣美女</span>
+                           </a>
+                        </li>
+                     </ul>
+               {{end}}
+                  </div>
+
+               {{template "ads/ad-i.html".}}
+               {{template "ads/ad-h.html".}}
+               <div class="main-navi clx">
+            {{if .previd}}
+                  <div class="pages-prev">
+                     <div class="inner">
+                        <a href="/{{.previd}}/" rel="prev" title="{{.prev}}" style="text-indent: 0px; " class="colorTipContainer">
+                           <span class="colorTip left" style="display: none; ">
+                              {{.prev}}
+                              <span class="pointyTip"></span>
+                           </span>
+                        </a>
+                     </div>
+                  </div>
+            {{end}}
+            {{if .nextid}}
+                  <div class="pages-next">
+                     <div class="inner">
+                        <a href="/{{.nextid}}/" rel="next" title="{{.next}}" style="text-indent: 0px; " class="colorTipContainer">
+                           <span class="colorTip">
+                              {{.next}}
+                              <span class="pointyTip"></span>
+                           </span>
+                        </a>
+                     </div>
+                  </div>
+            {{end}}
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="sidebar">
+         {{template "sidebar-search.html".}}
+         <div class="widgets">
+            <h3>你可能喜欢</h3>
+      {{if .topic_sidebar_hotness_6_module}}
+         {{.topic_sidebar_hotness_6_module}}
+      {{else}}
+            <ul class="widgets-similar clx">
+               <li class="similar">
+                  <a target="_blank" href="10897.html" title="镂空黑丝野地诱惑">
+                     <img src="/static/mzr/img/4610_201306192352zrvobfnqklh_small.jpg" wdith="70px" height="70px"></a>
+               </li>
+               <li class="similar">
+                  <a target="_blank" href="http://www.lihuashu.com/8879" title="日本女优西田麻衣性感诱惑写真">
+                     <img src="/static/mzr/img/4610_201306192352zrvobfnqklh_small.jpg" wdith="70px" height="70px"></a>
+               </li>
+               <li class="similar similar-third">
+                  <a target="_blank" href="http://www.lihuashu.com/4610" title="全裸出镜">
+                     <img src="/static/mzr/img/4610_201306192352zrvobfnqklh_small.jpg" wdith="70px" height="70px"></a>
+               </li>
+               <li class="similar">
+                  <a target="_blank" href="http://www.lihuashu.com/4498" title="性感欢欢">
+                     <img src="/static/mzr/img/4610_201306192352zrvobfnqklh_small.jpg" wdith="70px" height="70px"></a>
+               </li>
+               <li class="similar">
+                  <a target="_blank" href="http://www.lihuashu.com/7316" title="性感婚纱">
+                     <img src="/static/mzr/img/4610_201306192352zrvobfnqklh_small.jpg" wdith="70px" height="70px"></a>
+               </li>
+               <li class="similar similar-third">
+                  <a target="_blank" href="http://www.lihuashu.com/7335" title="美空模特女仆制服">
+                     <img src="/static/mzr/img/4610_201306192352zrvobfnqklh_small.jpg" wdith="70px" height="70px"></a>
+               </li>
+            </ul>
+      {{end}}
+         </div>
+         <div id="sidebar-fixed">
+            <div class="widgets_mzitu">{{template "ads/ad-d.html".}}</div>
+            <div class="widgets_mzitu">{{template "ads/ad-c.html".}}</div>
+         </div>
+      </div>
+   </div>
+</div>
+</div>
+{{template "footer.html".}}
+</body>
+</html>

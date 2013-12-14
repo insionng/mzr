@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+{{template "head.html".}}
+<body class="home blog">
+	{{template "header.html".}}
+	<div id="content">
+		<div class="bd clx">
+			<div id="index" class="clx">
+				<div class="main">
+					<div class="main-content">
+					<article class="post-2591 page type-page status-publish hentry" >
+
+						<div class="entry-header">
+
+							<h1 class="entry-title page-title">
+								<span>编辑节点</span>
+							</h1>
+
+						</div>
+
+						<div class="entry-content">
+							<form action="" method="post">
+								<div class="sc row-fluid">
+									<div class="span12">
+										<h5>选择分类:</h5>
+										<div class="controls">
+											<select id="selectError" name="categoryid">
+												{{if .categorys}}
+            										{{range .categorys}}
+												<option value="{{.Id}}">{{.Title}}</option>
+												{{end}}
+        										{{else}}
+												<option value="0" selected>尚无分类</option>
+												{{end}}
+											</select>
+											<span class="help-inline">（选择本节点归属的上级分类，必选）</span>
+										</div>
+									</div>
+								</div>
+								<div class="sc row-fluid">
+									<div class="span6">
+										<h5>选择待修改节点:</h5>
+										<div class="controls">
+											<select id="selectError" name="nodeid">
+												{{range .nodes}}
+												<option value="{{.Id}}">{{.Title}}</option>
+												{{end}}
+											</select>
+											<span class="help-inline">（选择需要修改的节点，必选）</span>
+										</div>
+									</div>
+								
+									<div class="span6">
+										<div>
+											<h5>新节点标题:</h5>
+											<input type="text" name="title" value="" class="input-xxlarge">
+											{{if .xsrfdata}}{{.xsrfdata}}{{end}}
+										</div>
+									</div>
+								</div>
+								<div class="sc row-fluid">
+									<div class="span12">
+										<div class="well">
+											<h5>新节点简介：</h5>
+											<textarea class="editor" name="content" colspan="3" rowspan="10"></textarea>
+										</div>
+										<input type="submit" class="btn" value="提交">
+									</div>
+								</div>
+							</form>
+							{{template "editor-tinymce.html" .}}
+						</div>
+					</article>
+							<div style="clear:both;"></div>
+					</div>
+
+		</div>
+		<div id="sidebar">
+			<div id="widgets-sns" class="widgets">
+				<h3></h3>
+				<div id="search" class="clearfix">
+					<form method="get" id="searchform" action="/search/">
+						<input type="text" class="search-input" name="s" id="s" placeholder="搜索只有妹子的世界">
+						<input type="submit" class="search-submit" value="搜索只有妹子的世界"></form>
+				</div>
+			</div>
+			<div class="widgets">
+				<h3>热门标签</h3>
+				<div id="pin-tags" class="clx">
+					<a href='tag/%E6%80%A7%E6%84%9F.html' class='tag-link-13' title='711个话题' style='font-size: 10pt;'>性感</a>
+					<a href='tag/%E6%9C%89%E6%B2%9F%E5%BF%85%E7%81%AB.html' class='tag-link-15' title='635个话题' style='font-size: 10pt;'>有沟必火</a>
+					<a href='tag/%E7%BE%8E%E8%85%BF.html' class='tag-link-20' title='538个话题' style='font-size: 10pt;'>美腿</a>
+					<a href='tag/%E8%AF%B1%E6%83%91.html' class='tag-link-16' title='527个话题' style='font-size: 10pt;'>诱惑</a>
+					<a href='tag/%E6%B8%85%E7%BA%AF.html' class='tag-link-23' title='353个话题' style='font-size: 10pt;'>清纯</a>
+					<a href='tag/%E7%94%9C%E7%BE%8E.html' class='tag-link-32' title='340个话题' style='font-size: 10pt;'>甜美</a>
+					<a href='tag/%E5%88%B6%E6%9C%8D.html' class='tag-link-7' title='230个话题' style='font-size: 10pt;'>制服</a>
+					<a href='tag/%E6%AF%94%E5%9F%BA%E5%B0%BC.html' class='tag-link-18' title='181个话题' style='font-size: 10pt;'>比基尼</a>
+					<a href='tag/%E8%B5%B0%E5%85%89.html' class='tag-link-52' title='179个话题' style='font-size: 10pt;'>走光</a>
+					<a href='tag/%E5%B0%8F%E6%B8%85%E6%96%B0.html' class='tag-link-6' title='178个话题' style='font-size: 10pt;'>小清新</a>
+					<a href='tag/%E5%B0%8F%E7%9F%AD%E8%A3%99.html' class='tag-link-19' title='137个话题' style='font-size: 10pt;'>小短裙</a>
+					<a href='tag/%E7%BE%8E%E8%87%80.html' class='tag-link-33' title='115个话题' style='font-size: 10pt;'>美臀</a>
+					<a href='tag/%E6%B9%BF%E8%BA%AB.html' class='tag-link-50' title='91个话题' style='font-size: 10pt;'>湿身</a>
+					<a href='tag/rosi.html' class='tag-link-108' title='86个话题' style='font-size: 10pt;'>ROSI</a>
+					<a href='tag/%E9%BB%91%E4%B8%9D.html' class='tag-link-36' title='80个话题' style='font-size: 10pt;'>黑丝</a>
+					<a href='tag/%E4%B8%9D%E8%A2%9C.html' class='tag-link-71' title='44个话题' style='font-size: 10pt;'>丝袜</a>
+					<a href='tag/%E5%AD%A6%E7%94%9F.html' class='tag-link-14' title='28个话题' style='font-size: 10pt;'>学生</a>
+					<a href='tag/%E8%95%BE%E4%B8%9D.html' class='tag-link-8' title='25个话题' style='font-size: 10pt;'>蕾丝</a>
+				</div>
+			</div>
+			<div class="widgets">
+				<h3>排行榜</h3>
+				<ul class="widgets-popular widgets-similar clx">
+					<li class="similar">
+						<a target="_blank" href="/1/" title="ROSI 518期 精选">
+							<img src="/static/mzr/img/7223_original_qPi6_5c6b00015d5f125f_70.jpg" wdith="70" height="70" />
+						</a>
+					</li>
+					<li class="similar">
+						<a target="_blank" href="/1/" title="ROSI 518期 精选">
+							<img src="/static/mzr/img/7223_original_qPi6_5c6b00015d5f125f_70.jpg" wdith="70" height="70" />
+						</a>
+					</li>
+					<li class="similar similar-third">
+						<a target="_blank" href="9243.html" title="性感巨乳">
+							<img src="/static/mzr/img/7223_original_qPi6_5c6b00015d5f125f_70.jpg" wdith="70" height="70" />
+						</a>
+					</li>
+					<li class="similar">
+						<a target="_blank" href="/1/" title="ROSI 518期 精选">
+							<img src="/static/mzr/img/7223_original_qPi6_5c6b00015d5f125f_70.jpg" wdith="70" height="70" />
+						</a>
+					</li>
+					<li class="similar">
+						<a target="_blank" href="/1/" title="ROSI 518期 精选">
+							<img src="/static/mzr/img/7223_original_qPi6_5c6b00015d5f125f_70.jpg" wdith="70" height="70" />
+						</a>
+					</li>
+					<li class="similar similar-third">
+						<a target="_blank" href="9243.html" title="性感巨乳">
+							<img src="/static/mzr/img/7223_original_qPi6_5c6b00015d5f125f_70.jpg" wdith="70" height="70" />
+						</a>
+					</li>
+					<li class="similar">
+						<a target="_blank" href="/1/" title="ROSI 518期 精选">
+							<img src="/static/mzr/img/7223_original_qPi6_5c6b00015d5f125f_70.jpg" wdith="70" height="70" />
+						</a>
+					</li>
+					<li class="similar">
+						<a target="_blank" href="/1/" title="ROSI 518期 精选">
+							<img src="/static/mzr/img/7223_original_qPi6_5c6b00015d5f125f_70.jpg" wdith="70" height="70" />
+						</a>
+					</li>
+					<li class="similar similar-third">
+						<a target="_blank" href="9243.html" title="性感巨乳">
+							<img src="/static/mzr/img/7223_original_qPi6_5c6b00015d5f125f_70.jpg" wdith="70" height="70" />
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+{{template "footer.html".}}
+</body>
+</html>
