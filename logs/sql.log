@@ -1,0 +1,15 @@
+SELECT tablename FROM pg_tables WHERE tablename = $1
+[user]
+[xorm:cacheGet] find sql: SELECT "user"."id" FROM  "user" WHERE role=$1 LIMIT 1 [-1000]
+SELECT "user"."id" FROM  "user" WHERE role=$1 LIMIT 1
+[-1000]
+SELECT "category"."id" FROM  "category" ORDER BY "id" DESC
+[]
+SELECT "node"."id" FROM  "node" ORDER BY "created" DESC
+[]
+SELECT "node"."id" FROM  "node" ORDER BY "views" DESC LIMIT 4
+[]
+SELECT "node"."id" FROM  "node" ORDER BY "views" DESC LIMIT 20
+[]
+SELECT COUNT("id") AS "total" FROM "topic" LIMIT 30
+[]

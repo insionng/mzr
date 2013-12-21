@@ -2,7 +2,7 @@ package helper
 
 import (
 	"github.com/astaxie/beego"
-	"veryhour/plugin/goconfig"
+	"mzr/plugin/goconfig"
 )
 
 func init() {
