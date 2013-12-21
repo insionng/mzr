@@ -1,0 +1,26 @@
+添加一个对象：
+
+post:
+curl -X POST -d {\"Cid\":2,\"Nid\":4,\"Uid\":6,\"Ctype\":8,\"Title\":\"TitleTitleTitleTitle\",\"Content\":\"iamContentContentContentContent!!!!!!\"} http://localhost/core/topic
+
+返回一个相应的TopicID:1
+----------------------------------------------------------------------------------------------------
+查询一个对象
+
+curl -X GET http://localhost/core/topic/1
+
+----------------------------------------------------------------------------------------------------
+查询全部的对象
+
+curl -X GET http://localhost/core/topic
+
+----------------------------------------------------------------------------------------------------
+更新一个对象
+
+curl -X PUT -d {\"Title\":\"Fuck!!!OhEmOhYesleEmOhYes\",\"Content\":\"OhyestentCtentContent!!!!!!\"} http://localhost/core/topic/1
+
+curl -X PUT -d {\"Id\":1,\"Cid\":2,\"Nid\":3,\"Uid\":4,\"Ctype\":5,\"Title\":\"Fuck!!!OhEmOhYesleEmOhYes\",\"Content\":\"OhyestentCtentContent!!!!!!\",\"Attachment\":\"\",\"Created\":\"0001-01-01T00:00:00Z\",\"Updated\":\"0001-01-01T00:00:00Z\",\"Hotness\":6,\"Hotup\":7,\"Hotdown\":8,\"Views\":9,\"Author\":\"\",\"ReplyTime\":\"0001-01-01T00:00:00Z\",\"ReplyCount\":90,\"ReplyLastUserId\":11} http://localhost/core/topic/1
+----------------------------------------------------------------------------------------------------
+删除一个对象
+
+curl -X DELETE http://127.0.0.1/core/topic/1

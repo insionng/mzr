@@ -136,9 +136,6 @@ func main() {
 		beego.Router("/root/account", &root.RAccountHandler{})
 	*/
 
-	beego.Router("/debug/pprof/", &handler.PprofHandler{})
-	beego.Router("/debug/pprof/:pp([\\w]+)", &handler.PprofHandler{})
-
 	//模板函数
 	beego.AddFuncMap("timesince", helper.TimeSince)
 
