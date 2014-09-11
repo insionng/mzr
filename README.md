@@ -10,6 +10,13 @@ Mzr
 ,感谢那些捐助过本项目的用户,如需定制请联系我.
 
 
+##轻量级社区版本
+
+[YouGam社区](http://www.yougam.com/)
+
+(类似V2EX,购买系统请联系作者QQ547092001)
+
+
 ##线上开源技术分享平台版本
 
 [SudoChina](http://www.sudochina.com/)
